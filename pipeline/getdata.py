@@ -52,7 +52,7 @@ class Crawler:
             if response.ok:
                 jsondata.append(response.json())
         data = pd.DataFrame(jsondata)
-        data.to_csv(path + '/user.csv',index=False)
+        data.to_csv(path + '/user.csv', index=False)
 
     def _get_track_data(self, path):
         data = pd.DataFrame('')
