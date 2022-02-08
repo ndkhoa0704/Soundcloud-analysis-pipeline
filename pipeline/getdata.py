@@ -18,6 +18,7 @@ class Crawler:
         no_users: int,
         no_tracks_liked: int,
         no_tracks_created: int,
+        no_playlists_created: int,
         executable_path: str = None,
         data_path: str = '../data'
     ):
@@ -29,6 +30,7 @@ class Crawler:
         no_users: number of users to be crawled
         no_tracks_liked: number of liked tracks to be crawled for each user
         no_tracks_created: number of created tracks to be crawled for each user
+        no_playlists_created: number of created playlists to be crawled for each user
         executable_path: path to webdriver
         data_path: path to folder to save data
         '''
@@ -40,7 +42,7 @@ class Crawler:
         self._data_path = data_path
         self._no_tracks_liked = no_tracks_liked
         self._no_tracks_created = no_tracks_created
-
+        self._no_playlists_created = no_playlists_created
         self._user_ids = random.sample(
             range(self._userid_min, self._userid_max + 1), self._no_users)
 
@@ -72,7 +74,7 @@ class Crawler:
         client_id = re.search(r"client_id=(.*?)\&", log[0]['message']).group(1)
         return client_id
 
-    def _get_user_info(self, path):
+    def _get_user_info(self):
         # Get user data and store in user.csv
         jsondata = []
         for user_id in self._user_ids:
@@ -82,21 +84,33 @@ class Crawler:
             if response.ok:
                 jsondata.append(response.json())
         data = pd.DataFrame(jsondata)
-        data.to_csv(path + '/user.csv', index=False)
+        data.to_csv(self._data_path + '/user.csv', index=False)
 
-    def _get_track_data(self, path):
+    def _get_track_data(self):
         jsondata = []
         for user_id in self._user_ids:
             response = requests.get(
-                f"https://api-v2.soundcloud.com/users/{user_id}/tracks?client_id={self._client_id}&limit={self._no_tracks_created}")
+                f'https://api-v2.soundcloud.com/users/{user_id}/tracks?client_id={self._client_id}&limit={self._no_tracks_created}')
             if response.ok:
                 jsondata += response.json()['collection']
         data = pd.DataFrame(jsondata)
-        data.to_csv(path + '/created_tracks.csv', index=False)
+        data.to_csv(self._data_path + '/created_tracks.csv', index=False)
 
-    def get_data(self,  path='./data'):
-        self._get_user_info(path)
-        self._get_track_data(path)
+    def _get_playlist_data(self):
+        jsondata = []
+        for user_id in self._user_ids:
+            response = requests.get(
+                f'https://api-v2.soundcloud.com/users/{user_id}/playlists?client_id={self._client_id}&limit={self._no_playlists_created}'
+            )
+            if response.ok:
+                jsondata += response.json()['collection']
+        data = pd.DataFrame(jsondata)
+        data.to_csv(self._data_path + '/playlist.csv')
+
+    def get_data(self):
+        self._get_user_info()
+        self._get_track_data()
+        self._get_track_data()
         self._terminate()
 
     def _terminate(self):
