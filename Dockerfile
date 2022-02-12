@@ -22,9 +22,14 @@ RUN conda update -y conda
 
 # RUN git clone https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline.git
 
+# Copy files
 RUN mkdir /project
 WORKDIR /project
 COPY ./ /project
+
+# Get browser
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt install ./google-chrome-stable_current_amd64.deb -y
 
 RUN conda env create -f environment.yml
 RUN conda init bash

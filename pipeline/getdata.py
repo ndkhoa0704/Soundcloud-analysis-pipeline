@@ -1,7 +1,6 @@
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-from selenium.common.exceptions import WebDriverException
 import requests
 import re
 import numpy as np
@@ -69,13 +68,13 @@ class Crawler:
         while True:
             try:
                 self._driver.get('https://soundcloud.com')
-            except WebDriverException:
+                log = self._driver.get_log('browser')
+                client_id = re.search(
+                    r"client_id=(.*?)\&", log[0]['message']).group(1)
+            except:
                 pass
             else:
                 break
-        log = self._driver.get_log('browser')
-        client_id = re.search(r"client_id=(.*?)\&", log[0]['message']).group(1)
-        print(client_id)
         return client_id
 
     def _get_user_info(self):
