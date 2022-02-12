@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -yq curl wget jq vim git
 ENV TZ=Asia/Ho_Chi_Minh
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# Get browser
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt install ./google-chrome-stable_current_amd64.deb -y
 
 # Install miniconda to /miniconda
 ARG CONDA_VER
@@ -25,11 +28,8 @@ RUN conda update -y conda
 # Copy files
 RUN mkdir /project
 WORKDIR /project
-COPY ./ /project
+COPY environment.yml /project
 
-# Get browser
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt install ./google-chrome-stable_current_amd64.deb -y
-
+# Setup environment
 RUN conda env create -f environment.yml
 RUN conda init bash

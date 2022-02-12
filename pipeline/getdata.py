@@ -36,8 +36,8 @@ class Crawler:
         '''
 
         # Init variables
-        self._WAITING_TIME = 0.5
-        self._NUMBER_OF_ATTEMPTS = 5
+        self._WAITING_TIME = 0.2
+        self._NUMBER_OF_ATTEMPTS = 3
         self._userid_max = userid_max
         self._userid_min = userid_min
         self._no_users = no_users
@@ -108,9 +108,7 @@ class Crawler:
                             pass
 
                         if response and response.ok == True:
-                            raw = response.json()
-                            raw['id'] = self._userids
-                            jsondata.append(raw)
+                            jsondata.append(response.json())
                             self._userids.append(user_id)
                             got_user_in4 = True
                             break
@@ -123,6 +121,7 @@ class Crawler:
                     break
             if cur_idx == all_user_id.shape[0]:
                 break
+        print(len(self._userids))
 
         data = pd.DataFrame(jsondata)
         data['id'] = self._userids
@@ -194,6 +193,6 @@ class Crawler:
 
     def get_data(self):
         self._get_user_info()
-        self._get_track_data()
-        self._get_playlist_data()
+        # self._get_track_data()
+        # self._get_playlist_data()
         self._driver.close()
