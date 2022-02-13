@@ -19,25 +19,12 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN apt install ./google-chrome-stable_current_amd64.deb -y
 
-# Install miniconda to /miniconda
-# ARG CONDA_VER
-# ARG OS_TYPE
-# RUN curl -LO "http://repo.continuum.io/miniconda/Miniconda3-${CONDA_VER}-Linux-${OS_TYPE}.sh"
-# RUN bash Miniconda3-${CONDA_VER}-Linux-${OS_TYPE}.sh -b -p /miniconda
-# RUN rm Miniconda3-${CONDA_VER}-Linux-${OS_TYPE}.sh
-# ENV PATH=/miniconda/bin:${PATH}
-# RUN conda update -y conda
-
 # Copy files
 RUN mkdir /project
 WORKDIR /project
 COPY . /project
 
-# Setup environment
-# RUN conda env create -f environment.yml
-# RUN conda init bash
-# RUN conda activate workenv
-
+# Install dependencies
 RUN pip3 install -r requirements.txt
 
 CMD ["python3", "-m","main"]

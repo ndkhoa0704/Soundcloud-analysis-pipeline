@@ -13,6 +13,11 @@ docker run -it -d soundcloud bash
 conda activate workenv
 python -m main
 ```
+**To get data generated from container:**
+```
+docker cp <CONTAINER's NAME/ID>:<data path in the container> <data path on host>
+```
+
 ## Ubuntu
 **Dependencies:**
 * chromedriver
@@ -28,6 +33,17 @@ python -m main
 ```
 python -m main
 ```
+## Conda
+```
+conda env create -n environment.yml
+```
+
+## Python venv
+```
+pip install -r requirements.txt
+```
+
+
 
 # Collected data
 * User info

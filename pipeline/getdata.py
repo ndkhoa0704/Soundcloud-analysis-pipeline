@@ -8,7 +8,7 @@ import pandas as pd
 import time
 
 
-class Crawler:
+class SoundcloudCrawler:
 
     def __init__(
         self,
@@ -24,15 +24,15 @@ class Crawler:
     ):
         '''
         Use both api and html parser method to crawl data
-        Args:
-        userid_min: lower-bound of user id number
-        userid_max: upper-bound of user id number
-        no_users: number of users to be crawled
-        no_tracks_liked: number of liked tracks to be crawled for each user
-        no_tracks_created: number of created tracks to be crawled for each user
-        no_playlists_created: number of created playlists to be crawled for each user
-        executable_path: path to webdriver
-        data_path: path to folder to save data
+        Parameters:
+        * userid_min: lower-bound of user id number
+        * userid_max: upper-bound of user id number
+        * no_users: number of users to be crawled
+        * no_tracks_liked: number of liked tracks to be crawled for each user
+        * no_tracks_created: number of created tracks to be crawled for each user
+        * no_playlists_created: number of created playlists to be crawled for each user
+        * executable_path: path to webdriver
+        * data_path: path to folder to save data
         '''
 
         # Init variables
@@ -129,14 +129,16 @@ class Crawler:
         data['id'] = self._userids
         data.to_csv(self._data_path + '/user.csv', index=False)
 
-    def _crawl(self, url, limit):
+    def _crawl(self, url, limit, msg):
         '''
         Only used for get tracks and playlists
         limit: number of items to be crawled
         '''
         jsondata = []
+        count = 0
         for user_id in self._userids:
-            print(f'* User id: {user_id}')
+            print(f'* Task: {msg}, User id: {user_id}, user_number: {count}')
+            count += 1
             for i in range(self._NUMBER_OF_ATTEMPTS):
                 print(f'Attempt {i + 1}')
                 time.sleep(self._WAITING_TIME)
@@ -161,14 +163,16 @@ class Crawler:
         # Crawl created tracks
         data = pd.DataFrame(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/tracks?client_id={}&limit={}',
-            self._no_tracks_created
+            self._no_tracks_created,
+            "GET CREATED TRACKS DATA"
         ))
         data.to_csv(self._data_path + '/created_tracks.csv', index=False)
 
         # Crawl liked tracks
         data = pd.DataFrame(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/track_likes?client_id={}&limit={}',
-            self._no_tracks_liked
+            self._no_tracks_liked,
+            "GET LIKED TRACKS DATA"
 
         ))
         data.to_csv(self._data_path + '/liked_tracks.csv', index=False)
@@ -182,14 +186,16 @@ class Crawler:
         # Crawl created playlists
         data = pd.DataFrame(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/playlists?client_id={}&limit={}',
-            self._no_playlists_created
+            self._no_playlists_created,
+            "GET CREATED PLAYLISTS DATA"
         ))
         data.to_csv(self._data_path + '/created_playlist.csv', index=False)
 
         # Crawl liked playlists
         data = pd.DataFrame(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/playlist_likes?client_id={}&limit={}',
-            self._no_playlists_liked
+            self._no_playlists_liked,
+            "GET LIKED TRACKS DATA"
         ))
         data.to_csv(self._data_path + '/liked_playlist.csv', index=False)
 
