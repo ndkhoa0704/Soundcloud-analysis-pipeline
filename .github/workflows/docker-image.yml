@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  soundcloud:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+    - run: |
+          docker build . --tag sca
+          docker run sca --name=soundcloud
+          docker cp soundcloud:/project/data ./data
+    - run: | 
+          now=`date`
+          git config --global user.name "Robot"
+          git config --global user.email 'ndkhoa0704@gmail.com'
+          git add ./data
+          git commit -m "[ci skip] update ${now}" || echo 'Nothing to commit'
+          git push || echo 'Nothing to push'
