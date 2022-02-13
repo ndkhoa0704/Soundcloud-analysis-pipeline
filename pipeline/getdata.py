@@ -50,8 +50,10 @@ class Crawler:
 
         # Create driver
         option = Options()
-        option.add_argument('headless')
-        option.add_argument('disable-gpu')
+        option.add_argument('--headless')
+        option.add_argument('--disable-gpu')
+        option.add_argument('--no-sandbox')
+
         self._driver = None
         if executable_path:
             self._driver = Chrome(service=Service(
@@ -193,6 +195,6 @@ class Crawler:
 
     def get_data(self):
         self._get_user_info()
-        # self._get_track_data()
-        # self._get_playlist_data()
+        self._get_track_data()
+        self._get_playlist_data()
         self._driver.close()

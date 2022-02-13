@@ -9,7 +9,7 @@ A simple pipeline that does:
 ## Docker
 ```
 docker build . -t soundcloud-pipeline
-docker run -it --rm -v ./data:/project/data soundcloud-pipeline bash
+docker run -it -d soundcloud bash
 conda activate workenv
 python -m main
 ```
