@@ -11,14 +11,14 @@ jobs:
   soundcloud:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup envỉonment
-    - run: |
+      - uses: actions/checkout@v2
+      - name: Setup envỉonment
+      - run: |
           pip3 install -r requirements.txt
           export PYTHONPATH=.:$PYTHONPATH
           python3 ./main.py
-    - name: Save data
-    - run: | 
+      - name: Save data
+      - run: | 
           now=`date`
           git config --global user.name "Bot"
           git config --global user.email 'ndkhoa0704@gmail.com'
