@@ -1,5 +1,5 @@
 # Soundcloud-analysis-pipeline
-[![.github/workflows/docker-image.yml](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/docker-image.yml/badge.svg?event=push)](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/docker-image.yml)
+[![.github/workflows/crawljob.yml](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/crawljob.yml/badge.svg)](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/crawljob.yml)
 
 A simple pipeline that does:
 * Data collection 
