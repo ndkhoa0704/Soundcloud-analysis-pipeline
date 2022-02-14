@@ -137,7 +137,7 @@ class SoundcloudCrawler:
                 break
         print(len(self._userids))
 
-        data = pd.DataFrame(jsondata)
+        data = pd.json_normalize(jsondata)
         data['id'] = self._userids
         data.to_csv(self._data_path + '/user.csv', index=False)
 
@@ -165,6 +165,8 @@ class SoundcloudCrawler:
                     for i in raw:
                         i['id'] = user_id
                     jsondata += raw
+                    break
+        return jsondata
 
     def _get_track_data(self):
         '''
@@ -178,7 +180,7 @@ class SoundcloudCrawler:
             self._no_tracks_created,
             "GET CREATED TRACKS DATA"
         ))
-        data.to_csv(self._data_path + '/created_tracks.csv', index=False)
+        data.to_csv(self._data_path + '/created_tracks.csv', index=False, escapechar='\\')
 
         # Crawl liked tracks
         data = pd.DataFrame(self._crawl(
@@ -187,7 +189,7 @@ class SoundcloudCrawler:
             "GET LIKED TRACKS DATA"
 
         ))
-        data.to_csv(self._data_path + '/liked_tracks.csv', index=False)
+        data.to_csv(self._data_path + '/liked_tracks.csv', index=False, escapechar='\\')
 
     def _get_playlist_data(self):
         '''
@@ -201,7 +203,8 @@ class SoundcloudCrawler:
             self._no_playlists_created,
             "GET CREATED PLAYLISTS DATA"
         ))
-        data.to_csv(self._data_path + '/created_playlist.csv', index=False)
+        data.to_csv(self._data_path + '/created_playlist.csv',
+                    index=False, escapechar='\\')
 
         # Crawl liked playlists
         data = pd.DataFrame(self._crawl(
@@ -209,7 +212,8 @@ class SoundcloudCrawler:
             self._no_playlists_liked,
             "GET LIKED TRACKS DATA"
         ))
-        data.to_csv(self._data_path + '/liked_playlist.csv', index=False)
+        data.to_csv(self._data_path + '/liked_playlist.csv',
+                    index=False, escapechar='\\')
 
     def get_data(self, sampling_method: str = 'forward'):
         '''
