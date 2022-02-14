@@ -5,11 +5,11 @@ if __name__ == '__main__':
     crawler = SoundcloudCrawler(
         userid_min=1,
         userid_max=99999999,
-        no_users=10,
-        no_tracks_liked=100,
-        no_tracks_created=100,
-        no_playlists_liked=100,
-        no_playlists_created=100,
+        no_users=5000,
+        no_tracks_liked=1000,
+        no_tracks_created=1000,
+        no_playlists_liked=1000,
+        no_playlists_created=1000,
         executable_path='./chromedriver',
         data_path='./data'
     )
