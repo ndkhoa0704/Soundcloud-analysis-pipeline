@@ -36,7 +36,7 @@ class SoundcloudPreProcess:
         self._processed_path = processed_path
 
     def _proc_userinfo(self):
-        pass
+        ast.literal_eval()
 
     def _proc_tracks(self):
         pass
