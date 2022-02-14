@@ -1,5 +1,5 @@
 # Soundcloud-analysis-pipeline
-[![.github/workflows/crawljob.yml](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/crawljob.yml/badge.svg)](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/crawljob.yml)
+[![.github/workflows/pipelinejob.yml](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/pipelinejob.yml/badge.svg)](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/pipelinejob.yml)
 
 A simple pipeline that does:
 * Data collection 
