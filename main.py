@@ -13,6 +13,6 @@ if __name__ == '__main__':
         executable_path='./chromedriver',
         data_path='./data'
     )
-    crawler.get_data()
+    crawler.get_data('forward')
 
     # preproc = SoundcloudPreProcess

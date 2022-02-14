@@ -79,13 +79,25 @@ class SoundcloudCrawler:
                 break
         return client_id
 
-    def _get_user_info(self):
-        # Get user data and store in user.csv
+    def _get_user_info(self, sampling_method: str):
+        '''
+        Get user data and store in user.csv
+        '''
         jsondata = []
         print("GET USER INFO")
+
         all_user_id = np.arange(
             start=self._userid_min, stop=self._userid_max, step=1)
-        np.random.shuffle(all_user_id)
+        # Sampling
+        if sampling_method == 'random':
+            np.random.shuffle(all_user_id)
+        elif sampling_method == 'forward':
+            pass
+        elif sampling_method == 'backward':
+            all_user_id = all_user_id[::-1]
+        else:
+            raise Exception('Invalid argument')
+
         cur_idx = 0
         for i in range(self._no_users):
             '''
@@ -199,8 +211,16 @@ class SoundcloudCrawler:
         ))
         data.to_csv(self._data_path + '/liked_playlist.csv', index=False)
 
-    def get_data(self):
-        self._get_user_info()
+    def get_data(self, sampling_method: str = 'forward'):
+        '''
+        Parameters:
+
+        sampling_method: Decide how the user ids are chosen. Accepted values:
+        * random: random sampling
+        * forward: userid_min -> userid_max
+        * backward: userid_max -> userid_min
+        '''
+        self._get_user_info(sampling_method)
         self._get_track_data()
         self._get_playlist_data()
         self._driver.close()
