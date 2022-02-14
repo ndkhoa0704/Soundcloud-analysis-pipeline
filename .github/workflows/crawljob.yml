@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0, 0 * * *"
+
+jobs:
+  soundcloud:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Getting data
+        run: |
+          pip3 install -r requirements.txt
+          export PYTHONPATH=.:$PYTHONPATH
+          python3 ./main.py
+      - name: Update changes
+        run: |
+          now=`date`
+          git config --global user.name "Bot"
+          git config --global user.email 'ndkhoa0704@gmail.com'
+          git add ./data
+          git commit -m "[ci skip] update ${now}" || echo 'Nothing to commit'
+          git push || echo 'Nothing to push'
