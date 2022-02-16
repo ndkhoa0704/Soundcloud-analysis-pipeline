@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - name: Getting data
+      - name: Setup environment
         run: |
           pip3 install -r requirements.txt
           export PYTHONPATH=.:$PYTHONPATH
-          python3 ./main.py
+      - name: Getting data
+        run: python3 ./main.py
       - name: Update changes
         run: |
           now=`date`
