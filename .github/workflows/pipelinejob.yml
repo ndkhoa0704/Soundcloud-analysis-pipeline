@@ -3,7 +3,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 17 * * *"
+    - cron: "30 17 * * *"
 
 jobs:
   soundcloud:
