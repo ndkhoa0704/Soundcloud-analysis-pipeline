@@ -163,7 +163,7 @@ class SoundcloudCrawler:
                     # Add user id
                     raw = response.json()['collection']
                     for i in raw:
-                        i['id'] = user_id
+                        i['userid'] = user_id
                     jsondata += raw
                     break
         return jsondata

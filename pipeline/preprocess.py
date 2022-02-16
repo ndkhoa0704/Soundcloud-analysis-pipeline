@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 
 class SoundcloudPreProcess:
@@ -24,7 +25,7 @@ class SoundcloudPreProcess:
         likedtracks_path,
         createdplaylists_path,
         likedplaylists_path,
-        processed_path='../data/processed'
+        processed_path='./data/processed'
     ):
 
         # Init variables
@@ -39,18 +40,17 @@ class SoundcloudPreProcess:
         '''
         Preprocess user info data
         '''
-
         data = pd.read_csv(self._userfinfo_path)
 
-        data.drop(columns=[
-            'avatar_url', 'description', 'creator_subscriptions', 'full_name',
-            'last_name', 'first_name', 'groups_count', 'permalink', 'last_modified',
-            'permalink_url', 'uri', 'urn', 'username',  'station_urn',
-            'station_permalink', 'creator_subscription.product.id', 'visuals.urn',
-            'visuals.enabled', 'visuals.visuals', 'visuals.tracking', 'visuals'
-        ], inplace=True)
+        data = data[[
+            'city', 'comments_count', 'country_code', 'created_at',
+            'followers_count', 'followings_count', 'id', 'kind', 'last_modified',
+            'likes_count', 'playlist_likes_count', 'playlist_count',
+            'reposts_count', 'track_count', 'verified', 'badges.pro',
+            'badges.pro_unlimited', 'badges.verified'
+        ]]
 
-        data['created_date'] = pd.to_datetime(data['created_date'])
+        data['created_at'] = pd.to_datetime(data['created_at'])
         data['last_modified'] = pd.to_datetime(data['last_modified'])
 
         # Save
@@ -64,24 +64,13 @@ class SoundcloudPreProcess:
         # Created tracks
         data = pd.read_csv(self._createdtracks_path)
 
-        data.drop(columns=[
-            'artwork_url', 'caption', 'embeddable_by', 'kind', 'label_name', 'permalink',
-            'permalink_url', 'publisher_metadata', 'purchase_title', 'purchase_url',
-            'secret_token', 'sharing', 'tag_list', 'track_format', 'uri', 'urn',
-            'visuals', 'waveform_url', 'station_urn', 'station_permalink',
-            'track_authorization', 'monetization_model', 'policy', 'media.transcodings',
-            'user.avatar_url', 'user.first_name', 'user.followers_count', 'user.full_name',
-            'user.kind', 'user.last_modified', 'user.last_name', 'user.permalink',
-            'user.permalink_url', 'user.uri', 'user.urn', 'user.username',
-            'user.verified', 'user.city', 'user.country_code', 'user.badges.pro',
-            'user.badges.pro_unlimited', 'user.badges.verified', 'user.station_urn', 'user.station_permalink',
-            'publisher_metadata.id', 'publisher_metadata.urn', 'publisher_metadata.contains_music',
-            'publisher_metadata.artist', 'publisher_metadata.album_title', 'publisher_metadata.publisher',
-            'publisher_metadata.isrc', 'publisher_metadata.writer_composer', 'publisher_metadata.upc_or_ean',
-            'publisher_metadata.explicit', 'publisher_metadata.c_line', 'publisher_metadata.c_line_for_display',
-            'publisher_metadata.release_title', 'publisher_metadata.iswc', 'has_downloads_left',
-            'publisher_metadata.p_line', 'publisher_metadata.p_line_for_display'
-        ], inplace=True)
+        data = data[[
+            'commentable', 'comment_count', 'created_at', 'description',
+            'downloadable', 'download_count', 'duration', 'full_duration', 'genre',
+            'last_modified', 'license', 'likes_count', 'playback_count',
+            'public', 'release_date', 'reposts_count', 'state', 'streamable',
+            'title', 'display_date', 'user.id'
+        ]]
 
         # Convert string to datetime object
         data['created_at'] = pd.to_datetime(data['created_at'])
@@ -93,38 +82,17 @@ class SoundcloudPreProcess:
         # Liked tracks
         data = pd.read_csv(self._likedtracks_path)
 
-        data.drop(columns=[
-            'kind', 'track.artwork_url', 'track.caption',
-            'track.commentable', 'track.description', 'track.embeddable_by',
-            'track.has_downloads_left', 'track.kind',
-            'track.label_name', 'track.permalink', 'track.permalink_url',
-            'track.public', 'track.publisher_metadata.id',
-            'track.publisher_metadata.urn', 'track.publisher_metadata.contains_music',
-            'track.purchase_title', 'track.purchase_url', 'track.secret_token',
-            'track.sharing', 'track.streamable', 'track.tag_list',
-            'track.track_format', 'track.uri', 'track.urn',
-            'track.visuals', 'track.waveform_url',
-            'track.media.transcodings', 'track.station_urn',
-            'track.station_permalink', 'track.track_authorization',
-            'track.monetization_model', 'track.policy', 'track.user.avatar_url',
-            'track.user.first_name', 'track.user.followers_count',
-            'track.user.full_name', 'track.user.kind',
-            'track.user.last_modified', 'track.user.last_name',
-            'track.user.permalink', 'track.user.permalink_url', 'track.user.uri',
-            'track.user.urn', 'track.user.station_urn', 'track.user.station_permalink',
-            'track.publisher_metadata.artist', 'track.publisher_metadata.album_title',
-            'track.publisher_metadata.upc_or_ean', 'track.publisher_metadata.isrc',
-            'track.publisher_metadata.explicit', 'track.publisher_metadata.p_line',
-            'track.publisher_metadata.p_line_for_display',
-            'track.publisher_metadata.c_line',
-            'track.publisher_metadata.c_line_for_display',
-            'track.publisher_metadata.writer_composer',
-            'track.publisher_metadata.release_title',
-            'track.publisher_metadata.publisher', 'track.publisher_metadata',
-            'track.publisher_metadata.iswc', 'track.visuals.urn',
-            'track.visuals.enabled', 'track.visuals.visuals',
-            'track.visuals.tracking', 'track.visuals.tracking.impression'
-        ], inplace=True)
+        data = data[[
+            'created_at', 'userid', 'track.comment_count', 'track.created_at',
+            'track.downloadable', 'track.download_count', 'track.duration',
+            'track.full_duration', 'track.genre', 'track.id', 'track.last_modified',
+            'track.license', 'track.likes_count', 'track.playback_count',
+            'track.release_date', 'track.reposts_count', 'track.state',
+            'track.title', 'track.user_id', 'track.display_date', 'track.user.id',
+            'track.user.username', 'track.user.verified', 'track.user.city',
+            'track.user.country_code', 'track.user.badges.pro',
+            'track.user.badges.pro_unlimited', 'track.user.badges.verified'
+        ]]
 
         data['created_at'] = pd.to_datetime(data['created_at'])
         data['track.created_at'] = pd.to_datetime(data['track.created_at'])
@@ -142,20 +110,12 @@ class SoundcloudPreProcess:
 
         # Created playlists
         data = pd.read_csv(self._createdplaylists_path)
-        data.drop(columns=[
-            'artwork_url', 'description', 'embeddable_by',
-            'kind', 'label_name',
-            'managed_by_feeds', 'permalink', 'permalink_url',
-            'public', 'purchase_title', 'purchase_url',
-            'secret_token', 'sharing', 'tag_list', 'uri',
-            'set_type', 'is_album', 'track_count', 'user.avatar_url', 'user.first_name',
-            'user.followers_count', 'user.full_name', 'user.id', 'user.kind',
-            'user.last_modified', 'user.last_name', 'user.permalink',
-            'user.permalink_url', 'user.uri', 'user.urn', 'user.username',
-            'user.verified', 'user.city', 'user.country_code', 'user.badges.pro',
-            'user.badges.pro_unlimited', 'user.badges.verified', 'user.station_urn',
-            'user.station_permalink'
-        ])
+
+        data = data[[
+            'created_at', 'duration', 'genre', 'id', 'last_modified', 'license',
+            'likes_count', 'release_date', 'reposts_count', 'title', 'user_id',
+            'published_at', 'display_date'
+        ]]
 
         data['created_at'] = pd.to_datetime(data['created_at'])
         data['last_modified'] = pd.to_datetime(data['last_modified'])
@@ -167,19 +127,17 @@ class SoundcloudPreProcess:
         data.to_csv(self._processed_path + '/created_playlists.csv')
 
         # Liked playlists
-        data.drop(columns=[
-            'kind',
-            'playlist.managed_by_feeds', 'playlist.permalink',
-            'playlist.permalink_url', 'playlist.public',
-            'playlist.secret_token', 'playlist.sharing', 'playlist.user.kind',
-            'playlist.uri', 'playlist.set_type', 'playlist.kind',
-            'playlist.is_album', 'playlist.artwork_url',
-            'playlist.user.avatar_url', 'playlist.user.first_name',
-            'playlist.user.full_name', 'playlist.user.last_modified',
-            'playlist.user.last_name', 'playlist.user.permalink',
-            'playlist.user.permalink_url', 'playlist.user.uri', 'playlist.user.urn',
-            'playlist.user.station_urn', 'playlist.user.station_permalink'
-        ], inplace=True)
+        data = data[[
+            'created_at', 'id', 'playlist.created_at', 'playlist.duration',
+            'playlist.id', 'playlist.last_modified', 'playlist.likes_count',
+            'playlist.reposts_count', 'playlist.title', 'playlist.track_count',
+            'playlist.user_id', 'playlist.published_at', 'playlist.release_date',
+            'playlist.display_date', 'playlist.user.followers_count',
+            'playlist.user.id', 'playlist.user.username', 'playlist.user.verified',
+            'playlist.user.city', 'playlist.user.country_code',
+            'playlist.user.badges.pro', 'playlist.user.badges.pro_unlimited',
+            'playlist.user.badges.verified'
+        ]]
 
         data['created_at'] = pd.to_datetime(data['created_at'])
         data['playlist.created_at'] = pd.to_datetime(
