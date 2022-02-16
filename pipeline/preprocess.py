@@ -76,9 +76,9 @@ class SoundcloudPreProcess:
             'publisher_metadata.p_line', 'publisher_metadata.p_line_for_display'
         ], inplace=True)
 
-data['created_at'] = pd.to_datetime(data['created_at'])
-data['release_date'] = pd.to_datetime(data['release_date'])
-data['display_date'] = pd.to_datetime(data['display_date'])
+        data['created_at'] = pd.to_datetime(data['created_at'])
+        data['release_date'] = pd.to_datetime(data['release_date'])
+        data['display_date'] = pd.to_datetime(data['display_date'])
     
     def _proc_playlists(self):
         pass
