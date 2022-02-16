@@ -20,7 +20,7 @@ class SoundcloudCrawler:
         no_playlists_liked: int,
         no_playlists_created: int,
         executable_path: str = None,
-        data_path: str = '../data'
+        data_path: str = '../data/raw'
     ):
         '''
         Use both api and html parser method to crawl data
@@ -204,7 +204,7 @@ class SoundcloudCrawler:
             self._no_playlists_created,
             "GET CREATED PLAYLISTS DATA"
         ))
-        data.to_csv(self._data_path + '/created_playlist.csv',
+        data.to_csv(self._data_path + '/created_playlists.csv',
                     index=False, escapechar='\\')
 
         # Crawl liked playlists
@@ -213,7 +213,7 @@ class SoundcloudCrawler:
             self._no_playlists_liked,
             "GET LIKED TRACKS DATA"
         ))
-        data.to_csv(self._data_path + '/liked_playlist.csv',
+        data.to_csv(self._data_path + '/liked_playlists.csv',
                     index=False, escapechar='\\')
 
     def get_data(self, sampling_method: str = 'forward'):
