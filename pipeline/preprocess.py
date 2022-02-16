@@ -1,6 +1,4 @@
 import pandas as pd
-import numpy as np
-import ast
 
 
 class SoundcloudPreProcess:
@@ -41,9 +39,9 @@ class SoundcloudPreProcess:
         '''
         Preprocess user info data
         '''
+
         data = pd.read_csv(self._userfinfo_path)
 
-        # Drop columns
         data.drop(columns=[
             'avatar_url', 'description', 'creator_subscriptions', 'full_name',
             'last_name', 'first_name', 'groups_count', 'permalink', 'last_modified',
@@ -52,7 +50,6 @@ class SoundcloudPreProcess:
             'visuals.enabled', 'visuals.visuals', 'visuals.tracking', 'visuals'
         ], inplace=True)
 
-        # Convert string to datetime object
         data['created_date'] = pd.to_datetime(data['created_date'])
         data['last_modified'] = pd.to_datetime(data['last_modified'])
 
@@ -91,7 +88,6 @@ class SoundcloudPreProcess:
         data['release_date'] = pd.to_datetime(data['release_date'])
         data['display_date'] = pd.to_datetime(data['display_date'])
 
-        # Save
         data.to_csv(self._processed_path + '/created_tracks.csv')
 
         # Liked tracks
@@ -137,7 +133,6 @@ class SoundcloudPreProcess:
         data['track.release_date'] = pd.to_datetime(data['track.release_date'])
         data['track.display_date'] = pd.to_datetime(data['track.display_date'])
 
-        # Save
         data.to_csv(self._processed_path + '/liked_tracks.csv')
 
     def _proc_playlists(self):
@@ -162,7 +157,6 @@ class SoundcloudPreProcess:
             'user.station_permalink'
         ])
 
-        # Convert str to datetime
         data['created_at'] = pd.to_datetime(data['created_at'])
         data['last_modified'] = pd.to_datetime(data['last_modified'])
         data['release_date'] = pd.to_datetime(data['release_date'])
@@ -198,6 +192,8 @@ class SoundcloudPreProcess:
             data['playlist.release_date'])
         data['playlist.display_date'] = pd.to_datetime(
             data['playlist.display_date'])
+
+        data.to_csv(self._processed_path + '/liked_playlists.csv')
 
     def process(self):
         self._proc_userinfo()
