@@ -4,7 +4,7 @@
 A simple pipeline that does:
 * Data collection 
 * Preprocess data
-* Analyzing and generate report
+* Analyze and generate report
 
 ---
 # Usage
