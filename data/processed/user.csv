@@ -1,0 +1,11 @@
+,city,comments_count,country_code,created_at,followers_count,followings_count,id,kind,last_modified,likes_count,playlist_likes_count,playlist_count,reposts_count,track_count,verified,badges.pro,badges.pro_unlimited,badges.verified
+0,LONDON,69,,2007-12-05 11:15:34+00:00,1260,264,867,user,2018-07-24 10:12:03+00:00,688,9,7,,2,False,False,False,False
+1,,5,,2007-07-27 14:17:07+00:00,948,59,11,user,2022-01-11 15:05:16+00:00,151,7,4,,1,False,False,False,False
+2,Stockholm,36,SE,2007-09-13 07:12:00+00:00,3390,13,131,user,2012-05-13 18:32:29+00:00,5,0,1,,11,False,False,False,False
+3,Helsingborg,23,SE,2007-11-15 13:37:00+00:00,179,177,643,user,2021-11-04 17:45:01+00:00,10,0,0,,0,False,False,False,False
+4,Stockholm,46,SE,2007-11-22 09:38:01+00:00,707,174,723,user,2022-01-28 08:57:34+00:00,13,1,0,,10,False,False,False,False
+5,Berlin,103,DE,2007-10-02 12:27:00+00:00,3296,325,270,user,2022-02-08 09:24:39+00:00,531,19,13,,28,False,False,True,False
+6,,7,,2007-09-30 18:39:13+00:00,153,6,259,user,2018-01-11 09:35:07+00:00,0,0,0,,4,False,False,False,False
+7,Stockholm,0,SE,2007-09-16 00:17:55+00:00,493,29,147,user,2014-04-12 08:22:01+00:00,15,0,0,,3,False,False,False,False
+8,"Bologna, ",0,IT,2007-11-23 16:35:00+00:00,85,11,746,user,2018-01-11 09:35:30+00:00,0,0,0,,0,False,False,False,False
+9,PERUGIA,48,IT,2007-12-04 23:33:00+00:00,1666,1990,861,user,2018-10-30 13:02:41+00:00,234,5,1,,13,False,False,False,False

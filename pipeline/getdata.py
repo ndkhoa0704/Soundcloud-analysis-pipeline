@@ -86,32 +86,34 @@ class SoundcloudCrawler:
         jsondata = []
         print("GET USER INFO")
 
-        all_user_id = np.arange(
-            start=self._userid_min, stop=self._userid_max, step=1)
         # Sampling
-        if sampling_method == 'random':
-            np.random.shuffle(all_user_id)
-        elif sampling_method == 'forward':
-            pass
-        elif sampling_method == 'backward':
-            all_user_id = all_user_id[::-1]
-        else:
-            raise Exception('Invalid argument')
+        def sampling(count):
+            if sampling_method == 'random':
+                return np.random.randint(self._userid_min, self._userid_max + 1)
+            elif sampling_method == 'forward':
+                return count + 1
+            elif sampling_method == 'backward':
+                return count - 1
+            else:
+                raise Exception('Invalid argument')
 
-        cur_idx = 0
+        cur_id = self._userid_min
         for i in range(self._no_users):
-            '''
-            Randomly choose a number between userid_min and userid_max
-            Check for the id's validity and get user information
-            Randoly pick a number that is used for user_id
-            '''
+            attempts = 0
             while True:
-                user_id = all_user_id[cur_idx]
-                cur_idx += 1
+                attempts += 1
+                cur_id = sampling(cur_id)
+                # This checking is used for random method
+                if cur_id in self._userids:
+                    continue
+
+                user_id = cur_id
                 got_user_in4 = False
                 if user_id not in self._userids:
                     print(f'* Try: {user_id}, collected_users: {i}')
                     for j in range(self._NUMBER_OF_ATTEMPTS):
+                        # Reset attemps since user id has not crawled yet
+                        attempts = 0
                         time.sleep(self._WAITING_TIME)
                         print(f'Attempt {j + 1}')
                         response = None
@@ -126,14 +128,16 @@ class SoundcloudCrawler:
                             self._userids.append(user_id)
                             got_user_in4 = True
                             break
-                # Stop the loop
+                # User info retrieved
                 if got_user_in4 == True:
                     break
 
                 # Stopping condition
-                if cur_idx == all_user_id.shape[0]:
+                # Forward and backward
+                if not self._userid_min <= cur_id <= self._userid_max:
                     break
-            if cur_idx == all_user_id.shape[0]:
+                # Maximum attempts
+            if not self._userid_min <= cur_id <= self._userid_max:
                 break
         print(len(self._userids))
 
@@ -211,7 +215,7 @@ class SoundcloudCrawler:
         data = pd.json_normalize(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/playlist_likes?client_id={}&limit={}',
             self._no_playlists_liked,
-            "GET LIKED TRACKS DATA"
+            "GET LIKED PLAYLISTS DATA"
         ))
         data.to_csv(self._data_path + '/liked_playlists.csv',
                     index=False, escapechar='\\')

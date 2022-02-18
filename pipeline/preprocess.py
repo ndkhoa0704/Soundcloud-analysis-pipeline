@@ -5,42 +5,30 @@ import os
 class SoundcloudPreProcess:
     '''
     A module to preprocess soundcloud raw data. Raw data should have csv format. Data to be processed:
-    * User info
-    * Created/Liked tracks
-    * Created/Liked playlists
+    * User info (user.csv)
+    * Created and liked tracks (created_tracks.csv and liked_tracks.csv)
+    * Created and liked playlists (created_playlists.csv and liked_playlists.csv)
     Parameters:
-    * userinfo_path: path to user info raw data
-    * createdtracks_path: path to created tracks raw data
-    * likedtracks_path: path to liked tracks raw data
-    * createdplaylists_path: path to created playlists raw data
-    * likedplaylists_path: path to liked playlists raw data
-    * processed_path: path to processed data
+    * raw_path: path to folder that contains raw data
+
 
     '''
 
     def __init__(
         self,
-        userinfo_path,
-        createdtracks_path,
-        likedtracks_path,
-        createdplaylists_path,
-        likedplaylists_path,
+        raw_path='./data/raw',
         processed_path='./data/processed'
     ):
 
         # Init variables
-        self._userfinfo_path = userinfo_path
-        self._createdtracks_path = createdtracks_path
-        self._likedtracks_path = likedtracks_path
-        self._createdplaylists_path = createdplaylists_path
-        self._likedplaylists_path = likedplaylists_path
+        self._raw_path = raw_path
         self._processed_path = processed_path
 
     def _proc_userinfo(self):
         '''
         Preprocess user info data
         '''
-        data = pd.read_csv(self._userfinfo_path)
+        data = pd.read_csv(self._raw_path + '/user.csv')
 
         data = data[[
             'city', 'comments_count', 'country_code', 'created_at',
@@ -62,14 +50,14 @@ class SoundcloudPreProcess:
         '''
 
         # Created tracks
-        data = pd.read_csv(self._createdtracks_path)
+        data = pd.read_csv(self._raw_path + '/created_tracks.csv')
 
         data = data[[
-            'commentable', 'comment_count', 'created_at', 'description',
-            'downloadable', 'download_count', 'duration', 'full_duration', 'genre',
-            'last_modified', 'license', 'likes_count', 'playback_count',
-            'public', 'release_date', 'reposts_count', 'state', 'streamable',
-            'title', 'display_date', 'user.id'
+            'id', 'userid', 'commentable', 'comment_count', 'created_at',
+            'description', 'downloadable', 'download_count', 'duration',
+            'full_duration', 'genre', 'last_modified', 'license',
+            'likes_count', 'playback_count', 'public', 'release_date',
+            'reposts_count', 'state', 'streamable', 'title', 'display_date',
         ]]
 
         # Convert string to datetime object
@@ -80,7 +68,7 @@ class SoundcloudPreProcess:
         data.to_csv(self._processed_path + '/created_tracks.csv')
 
         # Liked tracks
-        data = pd.read_csv(self._likedtracks_path)
+        data = pd.read_csv(self._raw_path + '/liked_tracks.csv')
 
         data = data[[
             'created_at', 'userid', 'track.comment_count', 'track.created_at',
@@ -91,7 +79,8 @@ class SoundcloudPreProcess:
             'track.title', 'track.user_id', 'track.display_date', 'track.user.id',
             'track.user.username', 'track.user.verified', 'track.user.city',
             'track.user.country_code', 'track.user.badges.pro',
-            'track.user.badges.pro_unlimited', 'track.user.badges.verified'
+            'track.user.badges.pro_unlimited', 'track.user.badges.verified',
+            'track.commentable'
         ]]
 
         data['created_at'] = pd.to_datetime(data['created_at'])
@@ -109,12 +98,12 @@ class SoundcloudPreProcess:
         '''
 
         # Created playlists
-        data = pd.read_csv(self._createdplaylists_path)
+        data = pd.read_csv(self._raw_path + '/created_playlists.csv')
 
         data = data[[
-            'created_at', 'duration', 'genre', 'id', 'last_modified', 'license',
-            'likes_count', 'release_date', 'reposts_count', 'title', 'user_id',
-            'published_at', 'display_date'
+            'userid', 'created_at', 'duration', 'genre', 'id', 'last_modified',
+            'license', 'likes_count', 'release_date', 'reposts_count', 'title',
+            'published_at', 'display_date', 'track_count'
         ]]
 
         data['created_at'] = pd.to_datetime(data['created_at'])
@@ -127,13 +116,15 @@ class SoundcloudPreProcess:
         data.to_csv(self._processed_path + '/created_playlists.csv')
 
         # Liked playlists
+
+        data = pd.read_csv(self._raw_path + '/liked_playlists.csv')
+
         data = data[[
-            'created_at', 'id', 'playlist.created_at', 'playlist.duration',
+            'userid', 'created_at', 'playlist.created_at', 'playlist.duration',
             'playlist.id', 'playlist.last_modified', 'playlist.likes_count',
             'playlist.reposts_count', 'playlist.title', 'playlist.track_count',
-            'playlist.user_id', 'playlist.published_at', 'playlist.release_date',
-            'playlist.display_date', 'playlist.user.followers_count',
-            'playlist.user.id', 'playlist.user.username', 'playlist.user.verified',
+            'playlist.published_at', 'playlist.release_date', 'playlist.display_date',
+            'playlist.user.followers_count', 'playlist.user.username', 'playlist.user.verified',
             'playlist.user.city', 'playlist.user.country_code',
             'playlist.user.badges.pro', 'playlist.user.badges.pro_unlimited',
             'playlist.user.badges.verified'
