@@ -61,9 +61,12 @@ class SoundcloudPreProcess:
         ]]
 
         # Convert string to datetime object
-        data['created_at'] = pd.to_datetime(data['created_at'])
-        data['release_date'] = pd.to_datetime(data['release_date'])
-        data['display_date'] = pd.to_datetime(data['display_date'])
+        data['created_at'] = pd.to_datetime(
+            data['created_at'], errors='coerce')
+        data['release_date'] = pd.to_datetime(
+            data['release_date'], errors='coerce')
+        data['display_date'] = pd.to_datetime(
+            data['display_date'], errors='coerce')
 
         data.to_csv(self._processed_path + '/created_tracks.csv')
 
@@ -84,11 +87,14 @@ class SoundcloudPreProcess:
         ]]
 
         data['created_at'] = pd.to_datetime(data['created_at'])
-        data['track.created_at'] = pd.to_datetime(data['track.created_at'])
+        data['track.created_at'] = pd.to_datetime(
+            data['track.created_at'], errors='coerce')
         data['track.last_modified'] = pd.to_datetime(
             data['track.last_modified'])
-        data['track.release_date'] = pd.to_datetime(data['track.release_date'])
-        data['track.display_date'] = pd.to_datetime(data['track.display_date'])
+        data['track.release_date'] = pd.to_datetime(
+            data['track.release_date'], errors='coerce')
+        data['track.display_date'] = pd.to_datetime(
+            data['track.display_date'], errors='coerce')
 
         data.to_csv(self._processed_path + '/liked_tracks.csv')
 
@@ -106,11 +112,16 @@ class SoundcloudPreProcess:
             'published_at', 'display_date', 'track_count'
         ]]
 
-        data['created_at'] = pd.to_datetime(data['created_at'])
-        data['last_modified'] = pd.to_datetime(data['last_modified'])
-        data['release_date'] = pd.to_datetime(data['release_date'])
-        data['published_at'] = pd.to_datetime(data['published_at'])
-        data['display_date'] = pd.to_datetime(data['display_date'])
+        data['created_at'] = pd.to_datetime(
+            data['created_at'], errors='coerce')
+        data['last_modified'] = pd.to_datetime(
+            data['last_modified'], errors='coerce')
+        data['release_date'] = pd.to_datetime(
+            data['release_date'], errors='coerce')
+        data['published_at'] = pd.to_datetime(
+            data['published_at'], errors='coerce')
+        data['display_date'] = pd.to_datetime(
+            data['display_date'], errors='coerce')
 
         # Save
         data.to_csv(self._processed_path + '/created_playlists.csv')
@@ -130,17 +141,18 @@ class SoundcloudPreProcess:
             'playlist.user.badges.verified'
         ]]
 
-        data['created_at'] = pd.to_datetime(data['created_at'])
+        data['created_at'] = pd.to_datetime(
+            data['created_at'], errors='coerce')
         data['playlist.created_at'] = pd.to_datetime(
-            data['playlist.created_at'])
+            data['playlist.created_at'], errors='coerce')
         data['playlist.last_modified'] = pd.to_datetime(
-            data['playlist.last_modified'])
+            data['playlist.last_modified'], errors='coerce')
         data['playlist.published_at'] = pd.to_datetime(
-            data['playlist.published_at'])
+            data['playlist.published_at'], errors='coerce')
         data['playlist.release_date'] = pd.to_datetime(
-            data['playlist.release_date'])
+            data['playlist.release_date'], errors='coerce')
         data['playlist.display_date'] = pd.to_datetime(
-            data['playlist.display_date'])
+            data['playlist.display_date'], errors='coerce')
 
         data.to_csv(self._processed_path + '/liked_playlists.csv')
 

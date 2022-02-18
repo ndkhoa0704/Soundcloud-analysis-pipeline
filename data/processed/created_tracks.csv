@@ -1,42 +1,448 @@
 ,id,userid,commentable,comment_count,created_at,description,downloadable,download_count,duration,full_duration,genre,last_modified,license,likes_count,playback_count,public,release_date,reposts_count,state,streamable,title,display_date
-0,332844424,867,True,2,2017-07-12 10:00:48+00:00,"This is set 2 from our Ibiza pool party, deeper, longer, with unfortunately a bit to much reverb...  Recorded with my loves, family and best friends for one special special day in Ibiza. Forgive my friends playing with my knobs haha and my fuck ups, 10 hour sets do that...",False,0,7162245,7162245,Deep House,2017-07-12T10:03:19Z,all-rights-reserved,99,3051,True,,6,finished,True,10 hours by an Ibiza pool - #2,2017-07-12 10:00:48+00:00
-1,332672244,867,True,0,2017-07-11 12:54:29+00:00,"With my loves, family and best friends for one special special day in ibiza.  Forgive my friends playing with my knobs haha and the fuck ups, 10 hour sets, having fun with friends...",False,0,3116256,3116256,House,2017-07-12T07:54:05Z,all-rights-reserved,60,1611,True,,4,finished,True,10 hours by an Ibiza Pool - #1,2017-07-12 07:54:05+00:00
-2,1194520792,11,True,0,2022-01-11 17:21:20+00:00,,False,0,30000,326426,Electronic,2022-01-11T17:22:04Z,all-rights-reserved,0,6,True,2022-01-20 00:00:00+00:00,0,finished,True,I'm A Guru (Original Mix),2022-01-20 00:00:00+00:00
-3,37040016,131,True,0,2012-02-18 16:08:00+00:00,,False,0,201167,201167,,2012-02-18T16:08:02Z,all-rights-reserved,3,188,True,,0,finished,True,04 Clone,2012-02-18 16:08:00+00:00
-4,37040015,131,True,1,2012-02-18 16:08:00+00:00,,False,0,157603,157603,,2016-03-09T12:02:34Z,all-rights-reserved,2,99,True,,0,finished,True,03 Clean,2012-02-18 16:08:00+00:00
-5,37040014,131,True,2,2012-02-18 16:08:00+00:00,,False,0,129092,129092,,2016-03-09T11:59:33Z,all-rights-reserved,3,118,True,,0,finished,True,02 Doshida,2012-02-18 16:08:00+00:00
-6,233,131,True,6,2007-09-14 08:35:13+00:00,"Stairland “chung II”, recorded in Västerås. Latest and last(?). ",False,79,206576,206576,,2019-03-29T05:12:52Z,all-rights-reserved,9,1749,True,,0,finished,True,unending,2007-09-14 08:35:13+00:00
-7,232,131,True,9,2007-09-14 08:34:28+00:00,"Stairland ""chung"" (self)release",False,94,171470,171470,,2019-03-29T05:12:52Z,all-rights-reserved,7,1307,True,,0,finished,True,spiral,2007-09-14 08:34:28+00:00
-8,231,131,True,1,2007-09-14 08:33:33+00:00,"Stairland ""chung"" (self)release",False,86,183588,183588,,2019-03-29T05:12:52Z,all-rights-reserved,4,847,True,,0,finished,True,fall,2007-09-14 08:33:33+00:00
-9,230,131,True,1,2007-09-14 08:32:45+00:00,"Stairland ""chung"" (self)release",False,64,108460,108460,,2019-03-29T05:12:52Z,all-rights-reserved,10,1897,True,,0,finished,True,panic,2007-09-14 08:32:45+00:00
-10,229,131,True,1,2007-09-14 08:30:49+00:00,"Stairland ""chung"" (self)release",False,63,120659,120659,,2019-03-29T05:12:52Z,all-rights-reserved,4,972,True,,0,finished,True,punishing,2007-09-14 08:30:49+00:00
-11,228,131,True,1,2007-09-14 08:25:28+00:00,"Stairland ""chung"" (self)release",False,69,177502,177502,,2019-03-29T05:12:52Z,all-rights-reserved,6,1114,True,,0,finished,True,shunyata,2007-09-14 08:25:28+00:00
-12,227,131,True,2,2007-09-14 08:24:16+00:00,stairland “chung” (self)release,False,81,169691,169691,,2019-03-29T05:12:52Z,all-rights-reserved,5,1769,True,,0,finished,True,astro,2007-09-14 08:24:16+00:00
-13,226,131,True,5,2007-09-14 08:22:17+00:00,Stairland track from the fluorescent yellow release “Shapeless”.,False,75,209118,209118,,2019-03-29T05:12:52Z,all-rights-reserved,9,1561,True,,0,finished,True,01 Shapeless,2007-09-14 08:22:17+00:00
-14,160936829,723,True,1,2014-07-30 11:24:24+00:00,"Electroish synthy thing, free for grabs, hope you like it!",True,35,428970,428970,Electronic,2015-01-06T01:03:14Z,all-rights-reserved,13,294,True,,5,finished,True,Patrik Björkman - Shackmoe,2014-07-30 11:24:24+00:00
-15,126462091,723,True,3,2013-12-25 15:38:34+00:00,Released in 2009 on the excellent label Incorrect Music.,False,0,551548,551548,Techno,2013-12-25T15:42:40Z,all-rights-reserved,8,394,True,,3,finished,True,Meds Gone Wrong - Team Bang (Patrik Björkman Remix),2013-12-25 15:38:34+00:00
-16,73717617,723,True,3,2013-01-05 11:00:08+00:00,"Track from 2009 that never got released. 
+0,157396442,31623787,True,0,2014-07-05 12:32:38+00:00,,False,0,2540567,2540567,World,2014-11-29T19:31:51Z,all-rights-reserved,292,22452,True,,20,finished,True,林俊杰22首歌,2014-07-05 12:32:38+00:00
+1,115569042,30658758,True,1,2013-10-16 06:26:15+00:00,,True,9,1524779,1524779,dJ @TIL,2013-10-16T06:27:32Z,all-rights-reserved,4,278,True,,1,finished,True,Pna rol @t h0me,2013-10-16 06:26:15+00:00
+2,111537937,30658758,True,3,2013-09-21 09:51:16+00:00,,False,0,260411,260411,,2013-10-18T16:36:48Z,all-rights-reserved,8,1526,True,,1,finished,True,Maitre Gims - Bella (Scratch Remix Edit 2013),2013-09-21 09:51:16+00:00
+3,109256427,30658758,True,1,2013-09-07 13:02:57+00:00, Badtameez Dil  rMx vs Major Lazer _Watch Out For This (Bumaye)_,False,1,250485,250485,dJ @til,2013-09-08T06:47:11Z,all-rights-reserved,7,139,True,,1,finished,True,- YJHD - Badtameez Dil  rMx,2013-09-07 13:02:57+00:00
+4,103085070,30658758,True,1,2013-07-29 12:41:04+00:00,,False,0,258767,258767,atil,2013-07-29T12:41:33Z,all-rights-reserved,9,880,True,,2,finished,True,Give me everthing tonignt mix 2,2013-07-29 12:41:04+00:00
+5,102680062,30658758,True,2,2013-07-26 11:49:54+00:00,2013 rMx,False,0,1056542,1056542,DJ mAsT,2013-10-16T16:02:05Z,all-rights-reserved,6,467,True,,4,finished,True,DJ MAST  CDJ2000Nexus + DJM900Nexus + REKORDBOX,2013-07-26 11:49:54+00:00
+6,99939939,30658758,True,4,2013-07-06 17:48:07+00:00,frist mix ,False,0,407600,407600,DJ ATIL,2013-10-16T16:02:05Z,all-rights-reserved,18,7087,True,,2,finished,True,tum HI HO VERSION REGGAE,2013-07-06 17:48:07+00:00
+7,79113042,5617949,True,0,2013-02-13 21:29:03+00:00,,False,0,271019,271019,,2013-02-13T21:29:03Z,all-rights-reserved,2,129,True,,0,finished,True,Mosqueteros de amor - La Solucion,2013-02-13 21:29:03+00:00
+8,51296157,5617949,True,0,2012-06-29 21:50:01+00:00,,False,0,180705,180705,,2012-06-29T21:50:01Z,all-rights-reserved,0,350,True,,0,finished,True,Mr Saik-For Ever Alone,2012-06-29 21:50:01+00:00
+9,134147835,50463918,True,0,2014-02-11 01:16:56+00:00,Um pouco de rap rock'n roll,False,0,203408,203408,rock,2014-02-11T01:17:15Z,all-rights-reserved,1,76,True,,0,finished,True,O quê é a vida pra você?,2014-02-11 01:16:56+00:00
+10,117655275,50463918,True,0,2013-10-29 19:04:45+00:00,,False,0,119625,119625,,2013-10-29T19:04:58Z,all-rights-reserved,0,10,True,,0,finished,True,Me (Piano) And My Father (Flute),2013-10-29 19:04:45+00:00
+11,109020662,50463918,True,0,2013-09-05 21:35:20+00:00,Single da banda Jeffrey,False,0,267700,267700,reggae,2013-09-05T21:35:20Z,all-rights-reserved,0,62,True,,0,finished,True,Minha Morena,2013-09-05 21:35:20+00:00
+12,100066882,50463918,True,0,2013-07-07 19:34:15+00:00,just a short version of Meu Pai É Rastafara-i from Maneva.,False,0,129970,129970,Reggae,2013-07-07T19:37:27Z,all-rights-reserved,15,1806,True,,2,finished,True,Meu Pai É Rastafra-i - Cedric Lucci short version,2013-07-07 19:34:15+00:00
+13,131622261,13528888,True,2,2014-01-27 11:31:53+00:00,"Messin' about at school, makin' some tunes :P",False,0,26071,26071,parody,2014-01-27T11:31:55Z,all-rights-reserved,1,78,True,,1,finished,True,Am I Skrillex Yet Mommy?,2014-01-27 11:31:53+00:00
+14,115496834,13528888,True,0,2013-10-15 19:29:38+00:00,Just got my set up and my software working so hopefully should have some new stuff up soon and be working on some more music. Random test recorded to test rig. Messing about with the software. Maybe a work in progress depends on how i feel. New stuff up soon hopefully but probably not i'm kind of a lazy F&*K,False,0,9351,9351,wip,2013-10-15T19:29:40Z,all-rights-reserved,2,23,True,,0,finished,True,Running from an evil squid W.I.P?,2013-10-15 19:29:38+00:00
+15,85549982,13528888,True,0,2013-03-30 00:42:21+00:00,"Random ideas for a song. A little messy and unedited, recorded straight in; Work in progress. Do you ever get that feeling time isn't real or that people arn't real? I think it's just a dream and we're all in the matrix. Am I an Alien?",True,2,244450,244450,Acoustic,2013-03-30T00:47:53Z,all-rights-reserved,1,37,True,,0,finished,True,Martians Stole Ma Weed (WIP),2013-03-30 00:42:21+00:00
+16,118954661,63989016,True,0,2013-11-07 06:32:59+00:00,,False,0,155102,155102,,2013-11-07T06:33:14Z,all-rights-reserved,1,195,True,,0,finished,True,"Aro_Solo,- Free Rekm,& Klipz",2013-11-07 06:32:59+00:00
+17,118387138,63989016,True,0,2013-11-03 16:46:09+00:00,,True,0,44202,44202,,2013-11-03T16:46:18Z,all-rights-reserved,1,95,True,,0,finished,True,FreestyleOffTheBrain-No Beat,2013-11-03 16:46:09+00:00
+18,117861324,63989016,True,0,2013-10-31 00:26:14+00:00,,False,0,107450,107450,,2013-10-31T00:26:15Z,all-rights-reserved,5,569,True,,0,finished,True,MR ARO freestyle(MR HIT THAT HOE),2013-10-31 00:26:14+00:00
+19,117569229,63989016,True,0,2013-10-29 05:06:21+00:00,,False,0,131878,131878,,2013-10-29T05:17:00Z,all-rights-reserved,2,191,True,,1,finished,True,These niggas love to talk that shit,2013-10-29 05:06:21+00:00
+20,117450643,63989016,True,0,2013-10-28 14:33:07+00:00,,True,3,56220,56220,,2013-10-28T14:33:20Z,all-rights-reserved,2,66,True,,0,finished,True,RideAlonee.,2013-10-28 14:33:07+00:00
+21,861600160,42542346,True,1,2020-07-21 01:24:50+00:00,"ست الحبايب
 
-Free download!",True,44,466093,466093,Dance,2016-01-16T22:13:06Z,all-rights-reserved,7,360,True,,2,finished,True,Patrik Björkman - Judas,2013-01-05 11:00:08+00:00
-17,54374496,723,True,3,2012-07-28 10:52:57+00:00,,True,100,526829,526829,Tech House,2015-05-31T17:31:27Z,all-rights-reserved,41,1839,True,,5,finished,True,Christopher Norman & The Reverb Junkie - You Don't Know (Patrik Björkman Remix),2012-07-28 10:52:57+00:00
-18,26193659,723,True,7,2011-10-23 11:15:51+00:00,,False,0,430269,430269,Tech House,2015-04-05T19:55:30Z,all-rights-reserved,63,13145,True,2010-04-14 00:00:00+00:00,5,finished,True,Gate 42 - Gypsy Kings,2011-10-23 11:15:51+00:00
-19,5832938,723,True,4,2010-10-05 19:09:42+00:00,Remix made for Emote Music in 2007,False,0,370818,370818,Techno,2011-03-19T21:35:44Z,all-rights-reserved,26,914,True,2007-02-22 00:00:00+00:00,3,finished,True,Jacob Todd & Kelly Noland - Promises (Patrik Björkman Remix),2010-10-05 19:09:42+00:00
-20,4926989,723,True,6,2010-08-29 15:20:56+00:00,,False,0,403692,403692,Tech House,2014-07-09T18:53:57Z,all-rights-reserved,17,1163,True,2008-07-21 00:00:00+00:00,1,finished,True,Christopher Norman & Topher Jones - Otherside (Patrik Björkman Remix),2010-08-29 15:20:56+00:00
-21,4205437,723,True,4,2010-07-26 07:29:57+00:00,,False,0,465443,465443,House,2012-11-25T14:25:08Z,all-rights-reserved,12,267,True,2008-05-26 00:00:00+00:00,1,finished,True,Patrik Björkman - What Is This?!,2010-07-26 07:29:57+00:00
-22,3236230,723,True,3,2010-06-02 09:32:23+00:00,Follow me @ www.twitter.com/OMGitsPatrik,False,0,466829,466829,Techno,2021-03-15T13:06:40Z,all-rights-reserved,7,297,True,,0,finished,True,Patrik Björkman - Porsche,2010-06-02 09:32:23+00:00
-23,1420,723,True,1,2007-11-29 09:07:30+00:00,,False,0,441182,441182,Techno,2019-03-29T05:12:52Z,all-rights-reserved,5,349,True,2007-12-12 00:00:00+00:00,1,finished,True,Patrik Björkman - Bedside Manners,2007-11-29 09:07:30+00:00
-24,19854,259,True,0,2008-08-19 12:22:05+00:00,"Att älta eller inte älta? Det är frågan för detta tredje avsnitt av Radio R där vi tar hjälp av psykologen och forskaren Edward Watkins och ger dig tre tips för hur du ältar på bästa sätt!
+عود هشام الشلال
+غناء عمرو أبوالنصر",False,0,179513,179513,,2020-07-21T08:56:04Z,all-rights-reserved,30,796,True,,2,finished,True,ست الحبايب - عمرو أبوالنصر وهشام الشلال,2020-07-21 01:24:50+00:00
+22,321444568,42542346,True,4,2017-05-07 19:22:52+00:00,"الشيخ محمد الفيومي
+كلمات والحان اسماعيل سكر",False,0,449165,449165,,2017-06-13T14:33:13Z,all-rights-reserved,415,12731,True,,22,finished,True,أمدح المُكمّل - الشيخ محمد الفيومي,2017-05-07 19:22:52+00:00
+23,171124486,42542346,True,0,2014-10-08 01:38:42+00:00,,False,38,245390,245390,ابتهالات,2019-05-14T15:49:30Z,cc-by-nc-sa,198,5757,True,,40,finished,True,ترقرق همستي نغماً - الشيخ محمد عمران,2014-10-08 01:38:42+00:00
+24,171119708,42542346,True,0,2014-10-08 00:56:13+00:00,,False,0,296909,296909,Oriental,2020-07-29T04:53:35Z,cc-by-nc-sa,28,728,True,,5,finished,True,تقاسيم بياتي - رياض السنباطي,2014-10-08 00:56:13+00:00
+25,169504617,42542346,True,6,2014-09-26 20:58:21+00:00," لَيْسَ عَلَى الأَعْمَى حَرَجٌ وَلا عَلَى الأَعْرَجِ حَرَجٌ وَلا عَلَى الْمَرِيضِ حَرَجٌ وَمَن يُطِعِ اللَّهَ وَرَسُولَهُ يُدْخِلْهُ جَنَّاتٍ تَجْرِي مِن تَحْتِهَا الأَنْهَارُ وَمَن يَتَوَلَّ يُعَذِّبْهُ عَذَابًا أَلِيمًا
 
-Det har nu gått en tid sedan Sigmund Freud gjorde sin analys av Hamlet. Det är dags för en ny. Radio Rorschachs analys är att Hamlet ältar.",False,0,408450,408450,,2008-08-19T12:22:05Z,all-rights-reserved,2,202,True,,0,finished,True,RR 3 Att älta eller inte älta ,2008-08-19 12:22:05+00:00
-25,17143,259,True,5,2008-08-08 12:47:13+00:00,Publiken ger sig in i diskussionen: Kan helt automatiserad behandling på nätet fungera? Är det bra att människor som lider av psykiska problem samlas och diskuterar på sajter som terapisnack.com? ,False,0,588930,588930,,2018-08-02T11:54:26Z,all-rights-reserved,2,212,True,,0,finished,True,Psykologifabrikens panel - Psykologer & internet del 3,2008-08-08 12:47:13+00:00
-26,17140,259,True,3,2008-08-08 12:36:33+00:00,"Hur kan man som psykolog marknadsföra sig via internet? Vi snackar om hur man kan använda Googles annonstjänst AdWords och psykologiföretaget WeMind som samarbetar med Aftonbladet.se för att pusha sin sajt Sömnklubben.se.
-                    Och hur påverkas relationen mellan klient och terapeut av att alla är sökbara offentliga personer på internet? Kan en offentlig Flickr-ström med 800 bilder ur privatlivet påverka behandlingskvaliteten?",False,0,545358,545358,,2008-08-08T12:36:33Z,all-rights-reserved,1,150,True,,0,finished,True,Psykologifabrikens panel - Psykologer & internet del 2,2008-08-08 12:36:33+00:00
-27,17137,259,True,2,2008-08-08 12:21:28+00:00,"Vi pratar bland annat om svensk spjutspetsforskning om parterapi över internet och forskaren som har megalomaniska planer på gratis internetterapi åt alla.
-                                      
-                                      I panelen: 
-                                      John Airaksinen, journalist och psykologstudent (Uppsala termin 5) 
-                                      Oskar Henriksson, anställd på psykologiföretaget Cute och psykologstudent (Linköping termin 9) 
-                                      Jonas Mosskin, bloggare och psykologstudent (Stockholm, termin 5)",False,0,423497,423497,,2008-08-08T12:21:28Z,all-rights-reserved,0,265,True,,0,finished,True,Psykologifabrikens panel - Psykologer & internet del 1,2008-08-08 12:21:28+00:00
-28,163904,147,True,17,2009-02-28 14:01:54+00:00,"Malice Days from the album ""A Highway Farewell""",False,0,249835,249835,,2018-10-30T09:37:26Z,all-rights-reserved,73,951,True,,5,finished,True,In words alone,2009-02-28 14:01:54+00:00
-29,279,147,True,25,2007-09-20 18:38:18+00:00,,False,0,413816,413816,,2019-03-29T05:12:52Z,all-rights-reserved,65,1089,True,,6,finished,False,People Get Ready,2007-09-20 18:38:18+00:00
-30,278,147,True,8,2007-09-20 18:30:24+00:00,"Malice Days is a country-folk music project consisting of Anders Widd, David Bolin, Susanna Sjödin, Gustav Rydeman, Simon Kallioinen, Stephan Brian, Marcus Dahlström and Liselott Persson.",False,0,278961,278961,,2019-03-29T05:12:52Z,all-rights-reserved,46,558,True,,3,finished,True,Dead End,2007-09-20 18:30:24+00:00
+لَقَدْ رَضِيَ اللَّهُ عَنِ الْمُؤْمِنِينَ إِذْ يُبَايِعُونَكَ تَحْتَ الشَّجَرَةِ فَعَلِمَ مَا فِي قُلُوبِهِمْ فَأَنزَلَ السَّكِينَةَ عَلَيْهِمْ وَأَثَابَهُمْ فَتْحًا قَرِيبًا
+
+وَمَغَانِمَ كَثِيرَةً يَأْخُذُونَهَا وَكَانَ اللَّهُ عَزِيزًا حَكِيمًا
+
+وَعَدَكُمُ اللَّهُ مَغَانِمَ كَثِيرَةً تَأْخُذُونَهَا فَعَجَّلَ لَكُمْ هَذِهِ وَكَفَّ أَيْدِيَ النَّاسِ عَنكُمْ وَلِتَكُونَ آيَةً لِّلْمُؤْمِنِينَ وَيَهْدِيَكُمْ صِرَاطًا مُّسْتَقِيمًا",False,0,463950,463950,Qur'an,2014-09-26T20:58:29Z,cc-by-nc-sa,322,24956,True,,24,finished,True,"سورة الفتح ""الآية 17 - 20"" - الشيخ محمد رفعت",2014-09-26 20:58:21+00:00
+26,169465265,42542346,True,0,2014-09-26 15:43:01+00:00," تَبَارَكَ الَّذِي جَعَلَ فِي السَّمَاء بُرُوجًا وَجَعَلَ فِيهَا سِرَاجًا وَقَمَرًا مُّنِيرًا
+
+وَهُوَ الَّذِي جَعَلَ اللَّيْلَ وَالنَّهَارَ خِلْفَةً لِّمَنْ أَرَادَ أَن يَذَّكَّرَ أَوْ أَرَادَ شُكُورًا
+
+وَعِبَادُ الرَّحْمَنِ الَّذِينَ يَمْشُونَ عَلَى الأَرْضِ هَوْنًا وَإِذَا خَاطَبَهُمُ الْجَاهِلُونَ قَالُوا سَلامًا
+
+وَالَّذِينَ يَبِيتُونَ لِرَبِّهِمْ سُجَّدًا وَقِيَامًا
+
+وَالَّذِينَ يَقُولُونَ رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ إِنَّ عَذَابَهَا كَانَ غَرَامًا
+
+إِنَّهَا سَاءَتْ مُسْتَقَرًّا وَمُقَامًا
+
+وَالَّذِينَ إِذَا أَنفَقُوا لَمْ يُسْرِفُوا وَلَمْ يَقْتُرُوا وَكَانَ بَيْنَ ذَلِكَ قَوَامًا
+
+وَالَّذِينَ لا يَدْعُونَ مَعَ اللَّهِ إِلَهًا آخَرَ وَلا يَقْتُلُونَ النَّفْسَ الَّتِي حَرَّمَ اللَّهُ إِلاَّ بِالْحَقِّ وَلا يَزْنُونَ وَمَن يَفْعَلْ ذَلِكَ يَلْقَ أَثَامًا
+
+يُضَاعَفْ لَهُ الْعَذَابُ يَوْمَ الْقِيَامَةِ وَيَخْلُدْ فِيهِ مُهَانًا
+
+إِلاَّ مَن تَابَ وَآمَنَ وَعَمِلَ عَمَلا صَالِحًا فَأُولَئِكَ يُبَدِّلُ اللَّهُ سَيِّئَاتِهِمْ حَسَنَاتٍ وَكَانَ اللَّهُ غَفُورًا رَّحِيمًا
+
+وَمَن تَابَ وَعَمِلَ صَالِحًا فَإِنَّهُ يَتُوبُ إِلَى اللَّهِ مَتَابًا
+
+وَالَّذِينَ لا يَشْهَدُونَ الزُّورَ وَإِذَا مَرُّوا بِاللَّغْوِ مَرُّوا كِرَامًا
+
+وَالَّذِينَ إِذَا ذُكِّرُوا بِآيَاتِ رَبِّهِمْ لَمْ يَخِرُّوا عَلَيْهَا صُمًّا وَعُمْيَانًا
+
+وَالَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+",False,0,1406590,1406590,قرآن,2017-06-13T14:34:49Z,all-rights-reserved,22,817,True,,1,finished,True,سورة الفرقان الآية 61 - 74  -  الشيخ محمد رفعت,2014-09-26 15:43:01+00:00
+27,154056549,42542346,True,2,2014-06-12 16:24:48+00:00,,False,19,550529,550529,quran,2019-05-14T15:51:05Z,all-rights-reserved,163,6736,True,,22,finished,True,خواتيم سورة الزمر - الشيخ محمد عمران,2014-06-12 16:24:48+00:00
+28,108958111,42542346,True,1,2013-09-05 13:36:51+00:00,"رسالة في فنون الضرب
+---------------------------
+
+اضرب فلسنا نخاف السوط والوجع
+اضرب لانك تبدو خائفا جزعا
+
+الضرب قشه قسم الظهر في بلدي
+فاضرب فما كنت في ذا الامر مبتدعا
+
+واضرب برأسك حيطان واعمده
+واضرب بظلمك احزابا ومجتمعا
+
+الضرب بالكف سهل ان صبرت له
+والضرب بالحرف دوما يورث الهلعا
+
+فاضرب بكفك طول اليوم تؤامها
+حتي بدوت كمن في اهله فجعا
+
+الضرب بالصفع في ارضي
+مخاطره كم قد رأينا مرارا صافعا صفعا
+
+واضرب بليلك اخماسا لتسكتنا
+تري النتيجه صوت الحق مرتفعا
+
+كم مارس الضرب قوادا وعاهره
+كلاهما لصنوف العهر قد رضعا
+
+فاضرب بدفوفك يا مغوار بلدتنا
+ونم بنصرك طول الليل منخدعا
+
+لا الضرب يجدي ولا الاجناد ترهبنا
+كم ضارب قد دفنا بعدما قمعا
+
+وفر سياطك ليس السوط يرهبني
+واضرب لتسكت شعري في الدجى الوَدََعَا
+
+يا من بدا بارعا في ضرب إخوته
+لكن بضرب عدو الأرض ما برعا
+
+راقب خطاك فتلك الأرض ناقمة
+والأرض تطرح دوما جنس ما زُرعا
+
+يكفيك ما قد جمعت العمر من عرقي
+يا من خزانته لا تعرف الشبعا
+
+لا تعرف الزهد إلا في كرامتنا
+وإن بدا مالنا تبدي به طمعا
+
+ما زلت تضرب إخوانا بإخوتهم
+حتى ظننت بأن فرقتنا شيعا
+
+اليوم كل رجال الحق قد وقفت
+هل فرق الضرب هذا الشمل أم جمعا
+
+وحدت كل جنود الرفض في بلدي
+فاشكر لضاربنا وافرح بما صنعا
+
+ما زلت تكره صوت الحق متزنا
+وتكره الخير والإحسان والورعا
+
+الظلم نار على الظلام تحرقهم
+مهما بدا عرشهم بالجند ممتنعا
+
+فاحذر من النارِ إن النارَ محرقة
+ولترتدع مرة لو كنت مرتدعا",False,0,294191,294191,Poetry,2013-09-05T13:43:23Z,all-rights-reserved,89,4973,True,,19,finished,True,إضرب ! - عبد الرحمن يوسف,2013-09-05 13:36:51+00:00
+29,108715202,42542346,True,4,2013-09-03 22:25:42+00:00,"كلمات : أحمد فؤاد نجم
+ألحان : الشيخ إمام
+أداء : عمرو ابو النصر
+
+ليلة امتحان الورقة الرابعة من امتحان الباطنة :)
+3 -9 -2013",False,0,52692,52692,Arabic,2013-09-03T22:25:47Z,all-rights-reserved,11,481,True,,2,finished,True,مُرّ الكلام - عمرو ابو النصر,2013-09-03 22:25:42+00:00
+30,105170003,42542346,True,0,2013-08-13 01:02:31+00:00,تقاسيم في مقام الجهاركاه,False,0,133158,133158,oriental,2013-08-13T01:02:38Z,all-rights-reserved,8,338,True,,4,finished,True,جهاركاه - مارسيل خليفة,2013-08-13 01:02:31+00:00
+31,103800934,42542346,True,0,2013-08-03 04:35:15+00:00,"بستنظرك.. بستنظرك
+رغم القساوة ف منظرك
+لحظة هروبك يا رباب
+م الحب لما استنصرك
+
+بستنظرك
+
+رغم الشتا والبرد والرعد المخيف
+بستنظرك
+في الشارع المشغول بأوحال الرصيف
+
+أنا اصلي حاسب موعدك
+وعارف اللي بيبعدك
+
+وأنا اللي خابر تبقي مين
+وأنا اللي صابر من سنين
+وباعدّلك بالثانية عمري
+وأعدّلك مطرح ف بستان الامل
+وبامدّ لك.. وف كل خطوة أمدّلك ايدي اللي شققها العمل
+
+مدي الخطاوي يا حبيبيتي وقدّمي
+وان كنتي خايفه م الطريق اتبسمي
+يا شمس ياللي ضحكتك قمر ينور سكتك
+أنا اللي عشقك عزّني
+وانتي اللي عشقي يستتك
+
+بستنظرك
+يا جرحي يا حلمي العنيد
+بستنظرك
+يا مصر يا حبي الوحيد
+
+وحتيجي يوم وتصدّقي
+عشقي الأصيل وتحققي
+حلمي الجميل وتزوقي
+عمري اللي ضاع
+مستنظرك
+
+بستنظرك
+
+كلمات : أحمد فؤاد نجم",False,0,565577,565577,Egyptian,2013-08-03T04:35:25Z,all-rights-reserved,53,2171,True,,11,finished,True,بستنظرك - الشيخ إمام,2013-08-03 04:35:15+00:00
+32,103774314,42542346,True,3,2013-08-02 23:40:34+00:00,"رابسودية - Rhapsody
+
+هو مصطلح إغريقى الأصل يعنى قصيدة شعرية تلقي بشكل غنائي ملحمي بواسطة الشعراء الجائلون فى اليونان القديمة وهي تعبر عن الروح القومية للشعب .",False,0,204087,204087,rhapsody,2020-09-22T09:45:36Z,all-rights-reserved,1140,59838,True,,121,finished,True,رابسودية عربية - 2 - عمر خيرت II Arabic Rhapsody,2013-08-02 23:40:34+00:00
+33,103630378,42542346,True,2,2013-08-01 23:32:45+00:00,"كلمات / د. يوسف القرضاوي
+ألحان وأداء / أبو مازن
+
+من ابداعات النشيد الاسلامي في السبعينيات والثمانينيات بقيادة المنشد ""أبومازن"" 
+والذي كان يعتمد على امكانيات غاية في البساطة 
+وينتظر ابداعاته الالاف من الدعاة حول العالم ليكون زادا لهم على طريق الدعوة",False,0,273160,273160,islamic,2013-08-01T23:52:47Z,all-rights-reserved,343,15796,True,,30,finished,True,مسلمون - أبو مازن,2013-08-01 23:32:45+00:00
+34,102688502,42542346,True,0,2013-07-26 13:26:47+00:00,استمتعوا بموال جميل لكارم محمود :),False,0,183866,183866,oriental,2014-09-20T20:17:16Z,all-rights-reserved,30,935,True,,4,finished,True,موال حلاوة المغنى - كارم محمود,2013-07-26 13:26:47+00:00
+35,102180193,42542346,True,2,2013-07-22 23:06:11+00:00,"من اوبريت "" إش ""
+كلمات بديع خيري
+الحان الشيخ سيد درويش
+أداء إيمان البحر درويش
+
+
+احنا افندم تجار الأعجام 
+حضرنا من شان جبت بضاعة تمام
+
+بيعوا أنتيكات بيعوا مقويات 
+بيعوا منعنشات حاجات محتاجات
+
+من شان سواحين 
+من شان سواحات
+
+آه آه آمان
+
+سجادة بساط عليه السلام 
+مافيش واردات من بلاد أعجام
+
+مادام فيه حروبات 
+سكة مقطوعات
+
+ميرزاخان مسكين 
+كان يكسب جنيهات
+
+دلوقت أفندم مش لاقي لقمة 
+مش لاقى هدمه
+
+آه آه آمان
+
+فيه عندي منزول 
+يسطل عشرة يوم
+
+إذا كان دقوا طبول 
+مش إصحى م النوم
+
+إمسك حبة نشوق ضيعهم ميات 
+إمنع عكوسات إمنع تعكيسات
+
+طلع لك عفاريت بتاع الستات 
+في واخد ساعات
+
+آه آه آمان
+
+شيش بيش دوسة جهار 
+محبوسة جلبهار
+
+فلتو العيار 
+يابتوع مولد الفار
+
+يطلعم بالليل واللا بالنهار 
+لابسين لي طراطير مواجير واللا زيار
+
+حمص لب فشار جاتكم نايبة عشار 
+تيجي سبع تمتار
+
+آه آه آمان",True,40,276140,276140,Middle Eastern,2013-07-23T06:05:07Z,all-rights-reserved,60,3428,True,,8,finished,True,تجار العجم,2013-07-22 23:06:11+00:00
+36,99163349,49740521,True,0,2013-07-01 02:56:55+00:00,,False,0,65286,65286,,2013-07-01T02:57:02Z,all-rights-reserved,0,29,True,,0,finished,True,Cinta Datang Terlambat(cover),2013-07-01 02:56:55+00:00
+37,99150871,49740521,True,0,2013-07-01 00:37:36+00:00,,False,0,165370,165370,,2013-07-01T00:37:49Z,all-rights-reserved,0,9,True,,0,finished,True,Opening yg amburadul,2013-07-01 00:37:36+00:00
+38,890362792,6240389,True,1,2020-09-09 14:14:01+00:00,decided to make a slowed + reverb version of my song Heartbreak in Heaven. Hope it helps you sleep at night <3,False,0,277917,277917,Pop,2020-09-17T08:01:56Z,all-rights-reserved,1,48,True,,0,finished,True,Heartbreak in Heaven (slowed + reverb),2020-09-09 14:14:01+00:00
+39,818598043,6240389,True,0,2020-05-12 01:21:52+00:00,,False,0,245420,245420,Pop,2020-05-12T13:17:28Z,all-rights-reserved,5,122,True,,1,finished,True,u / me (demo),2020-05-12 13:17:28+00:00
+40,120428578,16938224,True,0,2013-11-16 16:13:45+00:00,,True,7,17399,17399,,2013-11-16T16:13:52Z,all-rights-reserved,0,282,True,,0,finished,True,เสียงสาวอีกคอมมูนึง [แอ็บชิบหัย] at หมู่บ้านบางแสนมหานคร,2013-11-16 16:13:45+00:00
+41,63289663,16938224,True,0,2012-10-13 17:22:31+00:00,เเค่ฝึกเเนะนำตัวเอง,False,0,86029,86029,,2012-10-13T17:22:31Z,all-rights-reserved,0,62,True,,0,finished,True,ฝึกซ้อมเเนะนำตัว ของWendy 1,2012-10-13 17:22:31+00:00
+42,1206887017,52867657,True,0,2022-01-31 03:56:31+00:00,,False,0,50547,50547,,2022-01-31T03:56:31Z,all-rights-reserved,1,2,True,,0,finished,True,Spiced Cranberry Apple Tea,2022-01-31 03:56:31+00:00
+43,1206885541,52867657,True,0,2022-01-31 03:51:27+00:00,,False,0,105639,105639,,2022-01-31T03:51:27Z,all-rights-reserved,1,1,True,,0,finished,True,From a Place of Gratitude,2022-01-31 03:51:27+00:00
+44,1110483730,52867657,True,0,2021-08-22 02:06:27+00:00,Recorded for Hold My Hand Spaceman in 2019,False,0,66717,66717,,2021-08-22T02:06:27Z,all-rights-reserved,1,1,True,,0,finished,True,Abandonment (Demo),2021-08-22 02:06:27+00:00
+45,1110483148,52867657,True,0,2021-08-22 02:04:40+00:00,,False,0,30093,30093,,2021-08-22T02:04:40Z,all-rights-reserved,0,2,True,,0,finished,True,A Sudden Lucidity,2021-08-22 02:04:40+00:00
+46,1067667568,52867657,True,0,2021-06-13 17:05:09+00:00,,False,0,176039,176039,Electronic/Post Rock,2021-06-13T17:05:22Z,all-rights-reserved,0,2,True,,0,finished,True,Reverie,2021-06-13 17:05:09+00:00
+47,1067667199,52867657,True,0,2021-06-13 17:04:18+00:00,,False,0,123376,123376,Post Rock/Ambient,2021-06-13T17:04:18Z,all-rights-reserved,0,2,True,,0,finished,True,Recontextualize,2021-06-13 17:04:18+00:00
+48,831422959,52867657,True,0,2020-05-31 03:18:26+00:00,,True,0,222772,222772,Soundtrack,2021-06-13T17:07:07Z,all-rights-reserved,0,8,True,2020-05-29 00:00:00+00:00,0,finished,True,Everything is Terrible (Chef's Table inspired soundtrack),2020-05-31 03:18:26+00:00
+49,408346902,52867657,True,0,2018-03-04 03:10:05+00:00,"Made with an MTD Kingston Heir 5 and Line 6 Helix, into Reason 10.",False,0,218090,218090,Ambient,2021-06-13T17:08:46Z,all-rights-reserved,1,41,True,,0,finished,True,Bass Swells (Reflection),2018-03-04 03:10:05+00:00
+50,123508334,52867657,True,1,2013-12-06 11:33:17+00:00,"Timing was off at the end and I'm cheesed but I don't wanna redo it.. so whatever, lol. Enjoy my cover of this beautiful song :)
+
+If you're interested, first half was tapped and the other was finger-picked.",True,94,52798,52798,Instrumental,2014-02-23T08:40:28Z,all-rights-reserved,15,986,True,,1,finished,True,Smiling by Harry Gregson-Williams (Bass Cover),2013-12-06 11:33:17+00:00
+51,436490499,72161940,True,0,2018-04-28 17:31:12+00:00,"Requiem  para Guilherme Vaz (1948-2018)
+Flora Rouanet - Ganzas. 
+Piqueras Santangelo - Caixa preparada, sinos e guitarra
+
+Gravado ao vivo nos estudios Galo de Briga Artes & Ofícios, SP
+abril, 2018",False,0,153065,153065,,2018-04-28T21:48:37Z,all-rights-reserved,2,40,True,,0,finished,True,Requiem To Vaz,2018-04-28 17:31:12+00:00
+52,319022848,72161940,True,0,2017-04-23 00:35:19+00:00,"captação com radio amador na oficina do seu Joviano em 2015
+itaquera - zona leste de sp",False,0,132975,132975,Música do Mundo,2017-04-23T00:59:50Z,all-rights-reserved,1,17,True,,0,finished,True,Joviano,2017-04-23 00:35:19+00:00
+53,239224152,72161940,True,3,2015-12-26 22:22:49+00:00,"bruno schiavo - guitarra, pedais, kefir, café, cigarro e produção musical 
+piqueras - extintocello mastroiani, tabaco, gravador de rolo cerveja e ganja
+
+gravado no copan 
+outono de 2015",False,0,184101,184101,brunoschiavo,2015-12-26T22:22:53Z,all-rights-reserved,5,169,True,,0,finished,True,Eschiveras 51,2015-12-26 22:22:49+00:00
+54,234682741,72161940,True,0,2015-11-25 17:25:28+00:00,"extintocello
+gravado nos estudios cidade mãe do céu sonoridades celestiais com zoom h6
+produzido em audacity
+extintorcello - piqueras
+extintorcello picapau- piqueras
+2015",False,0,133106,133106,brasil,2015-11-25T17:25:34Z,all-rights-reserved,5,137,True,,0,finished,True,ephicodé,2015-11-25 17:25:28+00:00
+55,233784129,72161940,True,0,2015-11-19 15:53:24+00:00,extintocello,False,0,366479,366479,brasil,2015-11-19T15:53:30Z,all-rights-reserved,3,67,True,,0,finished,True,prática diária,2015-11-19 15:53:24+00:00
+56,227340823,72161940,True,0,2015-10-07 15:45:41+00:00,"trecho do ""Projeto Minerva"" sobre Noel Rosa
+
+digitalização de rolo por Piqueras Santangelo
+
+O Projeto Minerva foi um programa de rádio brasileiro elaborado pelo governo federal e que teve por finalidade educar pessoas adultas. Todas as emissoras do país eram obrigadas a transmitir a sua programação, veiculada após a Hora do Brasil.
+Foi criado pelo então Serviço de Radiodifusão Educativa do Ministério da Educação e Cultura (SRE). Iniciou suas transmissões 1º de setembro de 1970. O nome Minerva é uma homenagem à deusa romana da sabedoria.
+Sua divulgação foi decorrente de um decreto presidencial e uma portaria interministerial de nº 408/70, que determinava a transmissão de programação educativa em caráter obrigatório, por todas as emissoras de rádio do país. Esta obrigatoriedade é fundamentada na Lei 5.692/71.",False,0,1727508,1727508,radio,2015-10-07T15:45:42Z,all-rights-reserved,4,84,True,,0,finished,True,sobre Noel Rosa,2015-10-07 15:45:41+00:00
+57,220674720,72161940,True,0,2015-08-24 16:22:16+00:00,"pandeiro modificado.
+gravado ao vivo  nos estúdios cidade mãe do céu - sonoridades celestiais
+2015
+
+Foto por Rebecca Ramos",False,0,107085,107085,brasil,2015-08-24T17:51:09Z,all-rights-reserved,3,69,True,,0,finished,True,Ressaca do acaso,2015-08-24 16:22:16+00:00
+58,217827457,72161940,True,0,2015-08-05 00:47:51+00:00,"vibrador peniano e imã sobre cabeçote de tocador de k7
+
+gravado e produzido nos estudios cidade mãe do céu - sonoridades celestiais. s/a
+2015",False,0,134960,134960,musique concrete,2015-08-05T00:48:02Z,all-rights-reserved,8,296,True,,0,finished,True,Vibração Magnética,2015-08-05 00:47:51+00:00
+59,177173259,72161940,True,0,2014-11-16 14:32:40+00:00,"estudo para trilha sonora ao vivo
+samplers freesound.org",False,0,125372,125372,arabic,2016-07-28T19:35:39Z,all-rights-reserved,9,177,True,,0,finished,True,Arabian Pa,2014-11-16 14:32:40+00:00
+60,169813082,72161940,True,1,2014-09-29 03:05:31+00:00,"voz e violão gravados em fita k7 nos estúdios Cidade Mãe do Céu Sonoridades Celestiais
+
+2014",False,0,64397,64397,Brazil,2014-09-29T03:08:52Z,all-rights-reserved,5,259,True,,0,finished,True,Bernadete,2014-09-29 03:05:31+00:00
+61,168476168,72161940,True,0,2014-09-19 18:49:35+00:00,"Gravado e produzido nos estúdios da Cidade Mãe do Céu Sonoridades Celestiais em fita k7. 
+
+Órgão elétrico giannini tocatta 49  e samples de www.freesound.org
+ 
+Imagem: DOUBLE DRAGON (1988) - É um típico jogo de briga de rua. No entanto, a história se passa em um cenário pós-apocalíptico, no qual a cidade de Nova Iorque foi tomada por gangues e facções criminosas. O objetivo é resgatar a namorada de Billy, um dos personagens principais.",False,0,121270,121270,atari,2014-09-19T18:49:38Z,all-rights-reserved,1,274,True,,0,finished,True,Toccata.ri,2014-09-19 18:49:35+00:00
+62,158056272,72161940,True,1,2014-07-10 03:33:44+00:00,gravado e produzido na cidade mãe do céu - sonoridades celestias s/a,False,0,97628,97628,radio,2014-07-10T03:38:02Z,all-rights-reserved,1,156,True,,0,finished,True,A Noite do Caminhoneiro - Instalação Radiofônica Humana - 3,2014-07-10 03:33:44+00:00
+63,157750738,72161940,True,0,2014-07-08 01:56:05+00:00,"ruído acidental em fita k7   
+
+para meu amigo maestro guilherme vaz - 
+
+imagem: ""ostinato or rhythmic order” de kurt kranz",False,0,217019,217019,,2016-07-28T19:42:10Z,all-rights-reserved,3,109,True,,0,finished,True,Ostinato Ordinário,2014-07-08 01:56:05+00:00
+64,157562367,72161940,True,0,2014-07-06 20:03:28+00:00,"luciana fróes - piano
+
+gravado no rio de janeiro - rj - 2014",False,0,219500,219500,piano solo,2014-07-06T20:03:28Z,all-rights-reserved,2,76,True,,0,finished,True,Luciana,2014-07-06 20:03:28+00:00
+65,154342538,72161940,True,1,2014-06-14 15:03:51+00:00,"gravado nos estúdios da cidade mãe do céu barulhento - sonoridades celestiais.
+
+produzido em fita k7",False,0,184623,184623,oxossi,2014-06-14T15:03:56Z,all-rights-reserved,4,99,True,,0,finished,True,Odé,2014-06-14 15:03:51+00:00
+66,153489287,72161940,True,0,2014-06-09 03:18:44+00:00,"Ode a Rádio AM
+Captações realizadas nos estúdios Cidade Mãe do Céu - Sonoridades  Celestiais - Z/L SP
+
+homenagem e aparição cosmogônica de Rogério Duprat",False,0,119756,119756,,2014-06-09T03:20:25Z,all-rights-reserved,4,220,True,,0,finished,True,A Noite dos Caminhoneiros - Instalação Radiofônica Humana,2014-06-09 03:18:44+00:00
+67,126705097,72161940,True,0,2013-12-27 14:25:26+00:00,radio ao vivo ,False,0,167408,167408,K7,2015-10-31T00:52:05Z,all-rights-reserved,7,414,True,,0,finished,True,A Noite dos Caminhoneiros - Instalação Radiofonica Humana,2013-12-27 14:25:26+00:00
+68,90998797,33697888,True,2,2013-05-06 16:06:51+00:00,"Something short and sweet for the homely and lyrically stagnant, David Monk a.k.a. Laires Rellik. At least, Swifty Ky could rap decently well.",False,0,42087,42087,Hip Hop ,2016-03-28T19:16:23Z,all-rights-reserved,2,177,True,,0,finished,True,Dear David (Laires Rellik Diss),2013-05-06 16:06:51+00:00
+69,90019885,33697888,True,0,2013-04-29 17:06:35+00:00,,True,11,217959,217959,Instrumental,2013-04-29T17:06:35Z,all-rights-reserved,2,177,True,,0,finished,True,Novalie Shae (Instrumental),2013-04-29 17:06:35+00:00
+70,89629315,33697888,True,4,2013-04-26 19:28:31+00:00,"Off of my forthcoming mixtape, Not Too Far From Nothing.",False,0,193245,193245,Hip-hop ,2013-04-26T19:28:31Z,all-rights-reserved,3,212,True,,1,finished,True,Table For Two (Rough Demo Version),2013-04-26 19:28:31+00:00
+71,89335379,33697888,True,1,2013-04-24 19:19:25+00:00,I don't know where this came from but I like it.,False,0,34380,34380,Hip-Hop,2013-04-24T19:19:25Z,all-rights-reserved,3,110,True,,1,finished,True,Sippin' On My Schweppes (Freestyle),2013-04-24 19:19:25+00:00
+72,88891736,33697888,True,0,2013-04-21 19:48:30+00:00,,False,0,221617,221617,Instrumental,2013-04-21T19:48:31Z,all-rights-reserved,2,176,True,,1,finished,True,Neo-Retro Luv (Instrumental),2013-04-21 19:48:30+00:00
+73,88873257,33697888,True,0,2013-04-21 17:32:31+00:00,Available For Sale.,False,0,299520,299520,Hip-Hop Instrumental,2013-04-21T17:32:31Z,all-rights-reserved,1,133,True,,0,finished,True,Slow It Down (Instrumental),2013-04-21 17:32:31+00:00
+74,88868813,33697888,True,0,2013-04-21 16:58:45+00:00,"A rough version of my new song.
+Not for sale.",False,0,147788,147788,Hip-Hop Instrumental,2013-04-21T16:58:46Z,all-rights-reserved,1,214,True,,0,finished,True,My Favorite Girls (Instrumental),2013-04-21 16:58:45+00:00
+75,88737775,33697888,True,4,2013-04-20 17:26:46+00:00,,False,0,104786,104786,Instrumental,2013-04-20T17:26:46Z,all-rights-reserved,2,150,True,,0,finished,True,Something For My Homies (Instrumental),2013-04-20 17:26:46+00:00
+76,88736972,33697888,True,0,2013-04-20 17:20:52+00:00,,False,0,274440,274440,Unknown,2013-04-20T17:20:52Z,all-rights-reserved,2,52,True,,0,finished,True,Cheesecake Love (Instrumental),2013-04-20 17:20:52+00:00
+77,88670412,33697888,True,0,2013-04-20 04:51:28+00:00,Boredom makes beats like these...,True,6,174643,174643,Unknown,2013-04-20T23:43:48Z,all-rights-reserved,2,156,True,,1,finished,True,Nobody's Gonna Come Save You (Instrumental),2013-04-20 04:51:28+00:00
+78,88664164,33697888,True,0,2013-04-20 03:37:48+00:00,Available for purchase.,False,0,230603,230603,Instrumental,2013-04-20T03:48:59Z,all-rights-reserved,1,90,True,,0,finished,True,Toast To The Good Life (Instrumental),2013-04-20 03:37:48+00:00
+79,88632613,33697888,True,1,2013-04-19 22:02:07+00:00,"If interested, contact me on Facebook - www.facebook.com/NWilliamsMusic570.",False,0,265950,265950,Instrumental,2013-04-20T02:57:29Z,all-rights-reserved,2,44,True,,0,finished,True,Damaging Winds (Instrumental) **Available For Sale**,2013-04-19 22:02:07+00:00
+80,88490562,33697888,True,0,2013-04-18 22:48:28+00:00,,False,0,61837,61837,Instrumental,2013-04-18T22:48:40Z,all-rights-reserved,1,33,True,,0,finished,True,Strange Details (Instrumental),2013-04-18 22:48:28+00:00
+81,87892429,33697888,True,0,2013-04-14 22:18:12+00:00,,False,0,268407,268407,Hip-Hop Instrumental,2013-04-14T22:18:13Z,all-rights-reserved,2,73,True,,0,finished,True,Something Memorable (Instrumental),2013-04-14 22:18:12+00:00
+82,87749682,33697888,True,0,2013-04-13 21:16:29+00:00,,False,0,56560,56560,Hip-Hop,2013-04-13T21:16:29Z,all-rights-reserved,1,53,True,,0,finished,True,First Family (Freestyle),2013-04-13 21:16:29+00:00
+83,87693495,33697888,True,0,2013-04-13 13:20:36+00:00,"Inspired by 90s New York Hip-Hop.
+Perfect for a quick cypher. ",False,0,92795,92795,Hip-Hop Instrumental,2013-04-29T17:34:31Z,all-rights-reserved,1,178,True,,0,finished,True,Back To The Basics (Instrumental) **SOLD**,2013-04-13 13:20:36+00:00
+84,87575726,33697888,True,1,2013-04-12 16:40:39+00:00,A rough draft of a solo track I'm working on...,False,0,103453,103453,Hip-Hop Instrumental,2013-04-12T16:44:40Z,all-rights-reserved,2,134,True,,0,finished,True,Long Overdue (Instrumental Snippet),2013-04-12 16:40:39+00:00
+85,87453824,33697888,True,0,2013-04-11 20:37:56+00:00,Something short and sweet for my fans...,False,0,41799,41799,Hip-Hop,2013-04-11T20:37:56Z,all-rights-reserved,1,63,True,,0,finished,True,4PM In Williamsport (Freestyle),2013-04-11 20:37:56+00:00
+86,87452310,33697888,True,0,2013-04-11 20:27:13+00:00,,False,0,0,0,Hip,2013-04-11T20:27:13Z,all-rights-reserved,0,0,True,,0,processing,True,4PM In Williamsport (Freestyle),2013-04-11 20:27:13+00:00
+87,87036751,33697888,True,0,2013-04-09 02:01:11+00:00,,False,0,79183,79183,Hip-Hop Instrumental,2013-04-09T02:01:11Z,all-rights-reserved,0,41,True,,0,finished,True,BMCR-3 (Snippet),2013-04-09 02:01:11+00:00
+88,86798384,33697888,True,1,2013-04-07 15:52:11+00:00,,False,0,100083,100083,R&B Instrumental,2013-04-07T15:53:56Z,all-rights-reserved,3,70,True,,0,finished,True,Untitled R&B Track 2 (Snippet),2013-04-07 15:52:11+00:00
+89,86736814,33697888,True,1,2013-04-07 03:32:23+00:00,,False,0,96139,96139,Hip-Hop Instrumental,2013-04-07T03:32:23Z,all-rights-reserved,6,115,True,,0,finished,True,Smooth Sh*t (Instrumental),2013-04-07 03:32:23+00:00
+90,86721012,33697888,True,0,2013-04-07 00:27:20+00:00,,False,0,184755,184755,Instrumental,2013-04-07T00:27:20Z,all-rights-reserved,2,43,True,,0,finished,True,BMCR-2,2013-04-07 00:27:20+00:00
+91,86246869,33697888,True,4,2013-04-03 19:52:51+00:00,,False,0,209417,209417,Hip-Hop Instrumental,2013-04-03T19:52:51Z,all-rights-reserved,2,79,True,,1,finished,True,BMCR -1,2013-04-03 19:52:51+00:00
+92,85968646,33697888,True,0,2013-04-01 23:54:54+00:00,Perfect for a rapper. Available for purchase.,False,0,121793,121793,Hip Hop ,2013-04-01T23:55:08Z,all-rights-reserved,2,63,True,,0,finished,True,Hydrotherapy (Instrumental),2013-04-01 23:54:54+00:00
+93,84800422,33697888,True,2,2013-03-25 05:13:14+00:00,,True,4,163122,163122,,2013-03-25T05:13:14Z,all-rights-reserved,2,111,True,,0,finished,True,Love Is (Rough Version),2013-03-25 05:13:14+00:00
+94,84709659,33697888,True,2,2013-03-24 16:37:29+00:00,,False,0,110872,110872,Hip-Hop,2013-03-24T16:50:26Z,all-rights-reserved,2,69,True,,0,finished,True,Pigs Feet (Instrumental),2013-03-24 16:37:29+00:00
+95,84703856,33697888,True,0,2013-03-24 15:51:29+00:00,,False,0,119260,119260,Hip-Hop,2013-03-24T15:51:30Z,all-rights-reserved,1,78,True,,0,finished,True,Pain In My Eyes (Rough Beat Idea),2013-03-24 15:51:29+00:00
+96,83868274,33697888,True,0,2013-03-18 23:25:56+00:00,"1st Verse: RichFraZ, 
+2nd Verse: myself 
+Hook: SaxMan.
+Produced by Chase N. Cashe.",True,18,170072,170072,Hip-Hop,2013-03-18T23:25:56Z,all-rights-reserved,3,425,True,,0,finished,True,The LadyKillers - In My Head,2013-03-18 23:25:56+00:00
+97,78742761,33697888,True,3,2013-02-11 07:45:01+00:00,"Produced by Frontier.
+Mixed and mastered by SaxMan & RichFraz.",True,7,80908,80908,Hip-Hop,2013-02-13T01:09:56Z,all-rights-reserved,6,263,True,,0,finished,True,NTFFN Freestyle,2013-02-11 07:45:01+00:00
+98,78732796,33697888,True,3,2013-02-11 05:13:53+00:00,"Produced by Frontier.
+Mixed and mastered by SaxMan & RichFraz.",True,6,204713,204713,Hip-Hop,2013-02-13T01:55:24Z,all-rights-reserved,2,313,True,,0,finished,True,In The Building (Swifty Ky Diss),2013-02-11 05:13:53+00:00
+99,77051101,33697888,True,3,2013-01-30 02:08:53+00:00,Something dark.,True,12,186218,186218,R&B/Soul,2013-04-10T16:31:12Z,all-rights-reserved,6,247,True,,2,finished,True,Everything's Broken (Instrumental),2013-01-30 02:08:53+00:00
+100,76901123,33697888,True,0,2013-01-29 01:53:38+00:00,,False,0,229036,229036,Hip Hop Instrumental,2013-01-29T01:54:12Z,all-rights-reserved,1,112,True,,0,finished,True,Onion Rings (Instrumental),2013-01-29 01:53:38+00:00
+101,76599441,33697888,True,0,2013-01-26 22:23:33+00:00,,False,0,171770,171770,Hip Hop,2013-01-26T22:23:33Z,all-rights-reserved,1,71,True,,0,finished,True,Venison Jerky (Instrumental),2013-01-26 22:23:33+00:00
+102,76450753,33697888,True,0,2013-01-25 20:45:18+00:00,Thought I would try my hand at something softer.,False,0,150296,150296,R&B Instrumental,2013-01-25T20:45:28Z,all-rights-reserved,0,83,True,,0,finished,True,Untitled R&B Track,2013-01-25 20:45:18+00:00
+103,76133826,33697888,True,0,2013-01-23 15:47:25+00:00,Rough draft of my verse.,True,2,85767,85767,HipHop,2013-01-23T15:57:06Z,all-rights-reserved,1,147,True,,0,finished,True,AA Meeting (Snippet),2013-01-23 15:47:25+00:00
+104,76009641,33697888,True,1,2013-01-22 18:26:30+00:00,A moody R&B beat.,True,16,157270,157270,Hip-hop Instrumental,2015-03-25T23:21:54Z,all-rights-reserved,2,269,True,,0,finished,True,Suicide Note (Instrumental),2013-01-22 18:26:30+00:00
+105,76009146,33697888,True,0,2013-01-22 18:23:01+00:00,A DubStep beat,False,0,94728,94728,Hip-Hop Instrumental,2013-01-22T21:19:54Z,all-rights-reserved,0,99,True,,0,finished,True,Shall We Start (Instrumental),2013-01-22 18:23:01+00:00
+106,76008570,33697888,True,1,2013-01-22 18:19:02+00:00,A club inspired beat.,False,0,100580,100580,Hip-Hop Instrumental,2013-01-22T21:19:41Z,all-rights-reserved,1,122,True,,0,finished,True,Paint The City Red (Instrumental),2013-01-22 18:19:02+00:00
+107,76006142,33697888,True,0,2013-01-22 18:01:51+00:00,A great beat to freestyle to.,False,1,98411,98411,Hip-Hop Instrumental,2013-04-02T06:15:22Z,all-rights-reserved,1,114,True,,0,finished,True,How It Should Be Done (Instrumental),2013-01-22 18:01:51+00:00
+108,76002792,33697888,True,2,2013-01-22 17:36:29+00:00,A Dirty South-inspired beat.,True,3,167041,167041,Hip-Hop Instrumental,2013-04-30T12:51:44Z,all-rights-reserved,2,108,True,,0,finished,True,Dangerous Group (Instrumental),2013-01-22 17:36:29+00:00
+109,75999530,33697888,True,1,2013-01-22 17:10:29+00:00,A R&B/Soul track. Great for storytelling.,False,0,235489,235489,Hip-Hop Instrumental ,2013-01-22T21:20:40Z,all-rights-reserved,0,126,True,,0,finished,True,City Lights (Instrumental),2013-01-22 17:10:29+00:00
+110,75997287,33697888,True,1,2013-01-22 16:52:00+00:00,A moody track. Great for introspective lyrics.,False,0,137887,137887,Hip-Hop Instrumental,2013-01-22T21:21:08Z,all-rights-reserved,0,74,True,,0,finished,True,AA Meeting (Instrumental),2013-01-22 16:52:00+00:00
+111,308882596,91297854,True,1,2017-02-21 20:34:41+00:00,This was a track from 2015. Written by the performers in a music program at VAV summer camp.,True,1,246252,246252,,2017-02-21T21:56:25Z,all-rights-reserved,5,197,True,,1,finished,True,Standin Next To Me Ft. Smoovdapoet x Moody 2015,2017-02-21 20:34:41+00:00
+112,308874452,91297854,True,0,2017-02-21 19:43:39+00:00,,False,0,170569,170569,,2017-02-21T19:43:40Z,all-rights-reserved,1,104,True,,1,finished,True,Cover of At Last by Etta James,2017-02-21 19:43:39+00:00
+113,308868809,91297854,True,0,2017-02-21 19:06:11+00:00,,False,0,236848,236848,,2017-02-21T19:08:03Z,all-rights-reserved,2,489,True,,0,finished,True,Seven Years Old (cover) 720p,2017-02-21 19:06:11+00:00
+114,139256934,36079267,True,1,2014-03-12 19:57:03+00:00,,False,0,228436,228436,Hip Hop,2014-03-12T19:57:34Z,all-rights-reserved,0,2,True,,0,finished,True,Andromeda,2014-03-12 19:57:03+00:00
+115,125220067,36079267,True,0,2013-12-17 05:38:11+00:00,,False,0,93500,93500,Hip Hop,2013-12-17T05:38:11Z,all-rights-reserved,1,1,True,,0,finished,True,Go (get It),2013-12-17 05:38:11+00:00
+116,100341383,36079267,True,0,2013-07-09 18:07:17+00:00,,False,0,208110,208110,Hip-Hop,2013-07-09T18:07:39Z,all-rights-reserved,0,4,True,,0,finished,True,Holy,2013-07-09 18:07:17+00:00
+117,100337333,36079267,True,0,2013-07-09 17:37:00+00:00,,True,0,226371,226371,Hiphop experimental,2013-07-09T17:37:24Z,all-rights-reserved,0,4,True,,0,finished,True,The Birth,2013-07-09 17:37:00+00:00
+118,111129661,57835844,True,1,2013-09-18 19:52:59+00:00,"Who needs ineffective, sugary energy drinks? What use is an energy drink that makes you burn out?
+We developed an energy drink that is loaded with effective herbs and vitamins that will give you healthy, sustained energy â€“ effectively, without the crash. Xtreme gives you more than just energy, you'll get great nutrition. This refreshing, fruity flavored drink is unique, effective and convenient.
+
+What's in it? Only the most incredible proprietary blend of fruit and berries that give you an ORAC value of 5,000 per serving. Imagine combining grape, wild blueberry, cranberry, raspberry, prune, strawberry, acai berry, maqui berry, wild bilberry, goji berry, pineapple, apple, orange, grapefruit, plum, raspberry, watermelon, lemon, lime, cantaloupe, cherry, papaya, peach and pear. We could have stopped there, but didn't.
+
+Like all our products, Xtreme has been infused with our exclusive H1X1 Super Concentrate Agaricus Blazei.
+
+This jam-packed formula means only three wordsâ€¦. HEALTHY HIGH ENERGY; all natural, low calorie, and tons and tons of sustained energy.
+
+Oh and did we mention it tastes great with only 30 calories?! Just rip, pour into your water bottle & off you go!
+
+Visit http://www.drinkvidacup.net
+
+Contact me for Free Sample Today!
+Eric Carten
+404-855-1848
+Facebook: http://www.facebook.com/ecarten",False,0,215842,215842,energy drinks,2013-09-18T19:54:41Z,all-rights-reserved,2,308,True,,0,finished,True,Dr. Daria Davidson Reviews Xtreme High Energy drink.,2013-09-18 19:52:59+00:00
+119,110493044,57835844,True,0,2013-09-15 04:34:55+00:00,"Who needs ineffective, sugary energy drinks? What use is an energy drink that makes you burn out?
+
+We developed an energy drink that is loaded with effective herbs and vitamins that will give you healthy, sustained energy â€“ effectively, without the crash. Xtreme gives you more than just energy, you'll get great nutrition. This refreshing, fruity flavored drink is unique, effective and convenient.
+
+What's in it? Only the most incredible proprietary blend of fruit and berries that give you an ORAC value of 5,000 per serving. Imagine combining grape, wild blueberry, cranberry, raspberry, prune, strawberry, acai berry, maqui berry, wild bilberry, goji berry, pineapple, apple, orange, grapefruit, plum, raspberry, watermelon, lemon, lime, cantaloupe, cherry, papaya, peach and pear. We could have stopped there, but didn't.
+
+Like all our products, Xtreme has been infused with our exclusive H1X1 Super Concentrate Agaricus Blazei.
+
+For more info http://www.drinkvidacup.net
+
+Contact me for a Free sample of Xtreme Energy
+Eric Carten
+Phone: 404-855-1848
+Facebook: http://www.facebook.com/ecarten",False,0,90679,90679,"redbull,",2013-09-17T14:03:41Z,all-rights-reserved,1,114,True,,0,finished,True,Attention! Energy Drinkers get a Free sample of Xtreme Energy.,2013-09-15 04:34:55+00:00
+120,110381306,57835844,True,0,2013-09-14 12:35:48+00:00,Jim Rohn shares some great advice.,False,0,62908,62908,jim rohn,2013-09-14T12:37:46Z,all-rights-reserved,9,353,True,,0,finished,True,How to Avoid being  broke & stupid!,2013-09-14 12:35:48+00:00
+121,110272301,57835844,True,0,2013-09-13 21:00:54+00:00,"Vidacup has a very simple business model. The coffee does the presentation. If you can share a sample of coffee, Then you can build a successful Vidacup home based Business. Its easy, Its simple its coffee.",False,0,240191,240191,vidacup,2013-09-13T21:00:55Z,all-rights-reserved,4,142,True,,0,finished,True,Tips on Sampling your Way to Success,2013-09-13 21:00:54+00:00
+122,110238922,57835844,True,0,2013-09-13 16:42:48+00:00,Powerful Message from Pastor Joel Osteen,False,0,225745,225745,joel osteen,2013-09-13T16:51:07Z,all-rights-reserved,143,15151,True,,4,finished,True,Don't let anyone steal your Joy by: Joel Osteen,2013-09-13 16:42:48+00:00
+123,110230555,57835844,True,0,2013-09-13 15:42:01+00:00,"Why settle for ordinary products when extraordinary products from Vidacup are right at your fingertips?
+
+Vidacup's products feature proprietary formulations of superior quality, functional and high-impact in the form of coffees, teas and other nutritional products. Our products are unique because they all contain an extremely potent extract of a specialized strain of the Agaricus Blazei Murill mushroom. Called H1X1 Super Concentrate and exclusive to Vidacup, this ingredient is highly touted for its multitude of health benefits and supported by dozens of clinical studies.
+About H1X1 Super Concentrate
+
+Named H1X1 in the lab, this patent-pending mushroom extract has much higher levels of beta-glucans (help lower cholesterol), enzymes and other health-enhancing nutrients than many other extracts on the market.
+H1X1 Super concentrate is a super hero ingredient when it comes to providing incredible health benefits and it's in every product that Vidacup makes. Simply put, it has the ability to better your overall well-being by directly supporting healthy immune function. 
+
+
+Please contact me for a free sample of Lean Bean. Lean Bean is a black Fat Burning coffee that has clinical studies to help lose weight and burn Fat.
+
+For more info visit http://www.drinkvidacup.net
+
+
+Eric Carten
+Text me for a Sample!
+404-855-1848",False,0,59041,59041,"coffee,",2013-09-15T03:29:57Z,all-rights-reserved,0,134,True,,0,finished,True,Get your Free sample of Lean Bean Today!,2013-09-13 15:42:01+00:00
+124,110204442,57835844,True,0,2013-09-13 11:56:01+00:00,This is a timeless piece by Earl Nightingale. This is a must listen to. You ears and mind will love you for it.,False,0,1895961,1895961,Business & Technology,2013-09-13T11:56:03Z,all-rights-reserved,26,1372,True,,3,finished,True,The Strangest Secret by Earl Nightingale - YouTube,2013-09-13 11:56:01+00:00
+125,110152543,57835844,True,0,2013-09-13 03:24:32+00:00,"Les Brown shares some powerful information about Life, dreams, and so much more!!",False,0,542535,542535,Les Brown,2013-09-13T03:28:33Z,all-rights-reserved,52,5056,True,,3,finished,True,Les Brown,2013-09-13 03:24:32+00:00
+126,110140920,57835844,True,0,2013-09-13 02:14:38+00:00,The Late Great Jim Rohn talks about walking away from the people who are full of excuses. Great teaching by The Late great Jim Rohn,False,0,196823,196823,"jim rohn,",2013-09-13T02:14:39Z,all-rights-reserved,808,97776,True,,40,finished,True,Jim Rohn - Walk Away From The 90 Percent,2013-09-13 02:14:38+00:00
+127,282822998,32993512,True,0,2016-09-14 03:43:44+00:00,,False,0,110951,110951,,2016-09-14T03:43:45Z,all-rights-reserved,0,9,True,,0,finished,True,TÉCNICAS MULTIMEDIA - WALTER ALBERTO QUISPE GAMARRA,2016-09-14 03:43:44+00:00
+128,47796111,17627819,True,0,2012-05-28 04:00:33+00:00,Late night at the Winter's ,False,0,261559,261559,,2012-05-28T04:00:34Z,all-rights-reserved,2,51,True,,0,finished,True,...and we digress,2012-05-28 04:00:33+00:00
+129,127399781,58212147,True,0,2014-01-01 14:27:12+00:00,,False,0,0,0,,2014-01-01T14:27:24Z,all-rights-reserved,0,0,True,2014-01-01 00:00:00+00:00,0,processing,True,"Surrounded by Idiots, Saturday Edition - Show Starts at High Noon! (made with Spreaker)",2014-01-01 14:27:12+00:00
+130,127321056,58212147,True,0,2013-12-31 20:21:32+00:00,,False,0,256389,256389,,2014-08-21T22:43:58Z,all-rights-reserved,0,7,True,2013-12-31 00:00:00+00:00,0,finished,True,ThePerryNoid01's Mantra Cave - test show (made with Spreaker),2013-12-31 20:21:32+00:00
+131,127320095,58212147,True,0,2013-12-31 20:12:45+00:00,,False,0,8541,8541,,2014-08-21T22:43:58Z,all-rights-reserved,0,7,True,2013-12-31 00:00:00+00:00,0,finished,True,ThePerryNoid01's Mantra Cave - test (made with Spreaker),2013-12-31 20:12:45+00:00
+132,126310222,58212147,True,0,2013-12-24 11:58:54+00:00,,False,0,679116,679116,,2014-08-21T22:43:58Z,all-rights-reserved,0,20,True,2013-12-24 00:00:00+00:00,0,finished,True,"Surrounded by Idiots, Saturday Edition - test2 (made with Spreaker)",2013-12-24 11:58:54+00:00
+133,126309075,58212147,True,0,2013-12-24 11:46:21+00:00,,False,0,89581,89581,,2014-08-21T22:43:58Z,all-rights-reserved,0,14,True,2013-12-24 00:00:00+00:00,0,finished,True,Families Reunited with Any Peacher - test broadcast (made with Spreaker),2013-12-24 11:46:21+00:00
+134,124758267,58212147,True,0,2013-12-14 03:55:26+00:00,Dan Perkins on Surrounded by Idiots.,False,0,5254265,5254265,,2014-08-21T22:43:58Z,all-rights-reserved,1,62,True,2013-12-08 00:00:00+00:00,0,finished,True,Surrounded by Idiots - dan_perkins (made with Spreaker),2013-12-14 03:55:26+00:00
+135,70909108,30294241,True,0,2012-12-12 02:26:38+00:00,,False,0,236951,236951,,2012-12-12T02:26:39Z,all-rights-reserved,5,1698,True,,4,finished,True,02 - Blown Away (In The Style of Carrie Underwood) [Instrumental Only],2012-12-12 02:26:38+00:00
+136,104468083,52341412,True,0,2013-08-07 23:28:50+00:00,,True,35,41198,41198,,2013-08-07T23:28:59Z,all-rights-reserved,1,110,True,,0,finished,True,takbir al fitr  at Masjid Rotowijayan,2013-08-07 23:28:50+00:00
+137,102753811,52341412,True,0,2013-07-26 22:12:25+00:00,,True,3,22049,22049,,2013-07-26T22:12:30Z,all-rights-reserved,1,23,True,,0,finished,True,owl city introduction of fireflies at Kaveling janan borobudur,2013-07-26 22:12:25+00:00
