@@ -13,7 +13,6 @@ A simple pipeline that does:
 docker build . -t soundcloud-pipeline
 docker run -it -d soundcloud bash
 conda activate workenv
-python -m main
 ```
 **To get data generated from container:**
 ```
@@ -31,21 +30,36 @@ docker cp <CONTAINER's NAME/ID>:<data path in the container> <data path on host>
 * pandas
 * requests 2.27.1
 
-**Execution:**
-```
-python -m main
-```
-## Conda
+
+### Conda
 ```
 conda env create -n environment.yml
 ```
 
-## Python venv
+### Python venv
 ```
 pip install -r requirements.txt
 ```
 
+## Execution:
 
+**Arguments**: 
+
+    -r <userid_min:userid_max> (default: 1:999999999)
+    --nu <number of users> (default: 1000)
+    --nr <number of records for each users> (default: 1000)
+    --ep <driver path> (default: ./chromedriver)
+    --rdp <rdata path> (default: ./data/raw)
+    --nct <number of created tracks> (default: 1000)
+    --nlt <number of liked tracks> (default: 1000)
+    --ncp <number of created playlists> (default: 1000)
+    --nlp <number of liked playlists> (default: 1000)
+    --pdp <processed data path> (default: ./data/processed)
+    -m <sampling method> (default: random)
+**Run**
+```
+python -m main <arguments>
+```
 
 # Collected data
 * User info
