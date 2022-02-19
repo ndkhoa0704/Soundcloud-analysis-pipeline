@@ -42,7 +42,7 @@ class SoundcloudPreProcess:
         data['last_modified'] = pd.to_datetime(data['last_modified'])
 
         # Save
-        data.to_csv(self._processed_path + '/user.csv')
+        data.to_csv(self._processed_path + '/user.csv', index=False)
 
     def _proc_tracks(self):
         '''
@@ -68,7 +68,7 @@ class SoundcloudPreProcess:
         data['display_date'] = pd.to_datetime(
             data['display_date'], errors='coerce')
 
-        data.to_csv(self._processed_path + '/created_tracks.csv')
+        data.to_csv(self._processed_path + '/created_tracks.csv', index=False)
 
         # Liked tracks
         data = pd.read_csv(self._raw_path + '/liked_tracks.csv')
@@ -96,7 +96,7 @@ class SoundcloudPreProcess:
         data['track.display_date'] = pd.to_datetime(
             data['track.display_date'], errors='coerce')
 
-        data.to_csv(self._processed_path + '/liked_tracks.csv')
+        data.to_csv(self._processed_path + '/liked_tracks.csv', index=False)
 
     def _proc_playlists(self):
         '''
@@ -124,7 +124,8 @@ class SoundcloudPreProcess:
             data['display_date'], errors='coerce')
 
         # Save
-        data.to_csv(self._processed_path + '/created_playlists.csv')
+        data.to_csv(self._processed_path +
+                    '/created_playlists.csv', index=False)
 
         # Liked playlists
 
@@ -154,7 +155,7 @@ class SoundcloudPreProcess:
         data['playlist.display_date'] = pd.to_datetime(
             data['playlist.display_date'], errors='coerce')
 
-        data.to_csv(self._processed_path + '/liked_playlists.csv')
+        data.to_csv(self._processed_path + '/liked_playlists.csv', index=False)
 
     def process(self):
         self._proc_userinfo()
