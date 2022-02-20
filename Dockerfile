@@ -1,13 +1,10 @@
 ARG UBUNTU_VER=20.04
-# ARG CONDA_VER=latest
-# ARG OS_TYPE=x86_64
 
 FROM ubuntu:${UBUNTU_VER}
 
 # System packages 
 RUN apt-get update && apt-get install -yq curl wget jq vim
-RUN apt-get update && apt-get install -y software-properties-common gcc && \
-    add-apt-repository -y ppa:deadsnakes/ppa
+RUN apt-get update && apt-get install -y software-properties-common gcc
 
 RUN apt-get update && apt-get install -y python3.10 python3-distutils python3-pip python3-apt
 RUN python3 -m pip install --upgrade pip

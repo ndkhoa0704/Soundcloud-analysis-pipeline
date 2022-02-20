@@ -1,5 +1,5 @@
 from pipeline.getdata import SoundcloudCrawler
-from pipeline.preprocess import SoundcloudPreProcess
+from pipeline.preprocess import SoundcloudPreprocess
 import sys
 import getopt
 
@@ -77,6 +77,6 @@ if __name__ == '__main__':
     crawler.get_data(method)
 
     # Preprocess
-    preproc = SoundcloudPreProcess(rdp, pdp)
+    preproc = SoundcloudPreprocess(rdp, pdp)
 
     preproc.process()

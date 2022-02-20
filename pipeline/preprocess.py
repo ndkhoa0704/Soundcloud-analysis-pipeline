@@ -1,25 +1,21 @@
 import pandas as pd
-import os
 
 
-class SoundcloudPreProcess:
-    '''
-    A module to preprocess soundcloud raw data. Raw data should have csv format. Data to be processed:
-    * User info (user.csv)
-    * Created and liked tracks (created_tracks.csv and liked_tracks.csv)
-    * Created and liked playlists (created_playlists.csv and liked_playlists.csv)
-    Parameters:
-    * raw_path: path to folder that contains raw data
-
-
-    '''
+class SoundcloudPreprocess:
 
     def __init__(
         self,
         raw_path='./data/raw',
         processed_path='./data/processed'
     ):
-
+        '''
+        A module to preprocess soundcloud raw data. Raw data should have csv format. Data to be processed:
+        * User info (user.csv)
+        * Created and liked tracks (created_tracks.csv and liked_tracks.csv)
+        * Created and liked playlists (created_playlists.csv and liked_playlists.csv)
+        Parameters:
+        * raw_path: path to folder that contains raw data
+        '''
         # Init variables
         self._raw_path = raw_path
         self._processed_path = processed_path
@@ -32,12 +28,13 @@ class SoundcloudPreProcess:
 
         data = data[[
             'city', 'comments_count', 'country_code', 'created_at',
-            'followers_count', 'followings_count', 'id', 'kind', 'last_modified',
+            'followers_count', 'followings_count', 'id', 'last_modified',
             'likes_count', 'playlist_likes_count', 'playlist_count',
             'reposts_count', 'track_count', 'verified', 'badges.pro',
-            'badges.pro_unlimited', 'badges.verified'
+            'badges.pro_unlimited', 'badges.verified', 'username'
         ]]
 
+        data['country_code'].fillna('Other', inplace=True)
         data['created_at'] = pd.to_datetime(data['created_at'])
         data['last_modified'] = pd.to_datetime(data['last_modified'])
 
@@ -54,7 +51,7 @@ class SoundcloudPreProcess:
 
         data = data[[
             'id', 'userid', 'commentable', 'comment_count', 'created_at',
-            'description', 'downloadable', 'download_count', 'duration',
+            'downloadable', 'download_count', 'duration',
             'full_duration', 'genre', 'last_modified', 'license',
             'likes_count', 'playback_count', 'public', 'release_date',
             'reposts_count', 'state', 'streamable', 'title', 'display_date',
