@@ -19,8 +19,9 @@ class SoundcloudCrawler:
         no_tracks_created: int,
         no_playlists_liked: int,
         no_playlists_created: int,
+        checkpoint: bool,
         executable_path: str = None,
-        data_path: str = '../data/raw'
+        data_path: str = './data/raw'
     ):
         '''
         Use both api and html parser method to crawl data
@@ -31,6 +32,7 @@ class SoundcloudCrawler:
         * no_tracks_liked: number of liked tracks to be crawled for each user
         * no_tracks_created: number of created tracks to be crawled for each user
         * no_playlists_created: number of created playlists to be crawled for each user
+        * checkpoint: boolean indicates use of check point
         * executable_path: path to webdriver
         * data_path: path to folder to save data
         '''
@@ -42,11 +44,17 @@ class SoundcloudCrawler:
         self._userid_min = userid_min
         self._no_users = no_users
         self._data_path = data_path
+
+        # Only used for forward and backward sampling
+        self._checkpoint_path = './checkpoint'
+        self._checkpoint = checkpoint
+
         self._no_tracks_liked = no_tracks_liked
         self._no_tracks_created = no_tracks_created
         self._no_playlists_liked = no_playlists_liked
         self._no_playlists_created = no_playlists_created
         self._userids = []
+        self._cur_user_id = None
 
         # Create driver
         option = Options()
@@ -79,6 +87,16 @@ class SoundcloudCrawler:
                 break
         return client_id
 
+    def __sampling(self, count, sampling_method):
+        if sampling_method == 'random':
+            return np.random.randint(self._userid_min, self._userid_max + 1)
+        elif sampling_method == 'forward':
+            return count + 1
+        elif sampling_method == 'backward':
+            return count - 1
+        else:
+            raise Exception('Invalid argument')
+
     def _get_user_info(self, sampling_method: str):
         '''
         Get user data and store in user.csv
@@ -86,29 +104,25 @@ class SoundcloudCrawler:
         jsondata = []
         print("GET USER INFO")
 
-        # Sampling
-        def sampling(count):
-            if sampling_method == 'random':
-                return np.random.randint(self._userid_min, self._userid_max + 1)
-            elif sampling_method == 'forward':
-                return count + 1
-            elif sampling_method == 'backward':
-                return count - 1
-            else:
-                raise Exception('Invalid argument')
+        # Load checkpoint
+        if self._checkpoint:
+            with open(self._checkpoint_path, 'r') as f:
+                self._userid_min, self._userid_max = tuple(
+                    map(int, f.read().split()))
 
         cur_id = self._userid_min
         for i in range(self._no_users):
             attempts = 0
             while True:
                 attempts += 1
-                cur_id = sampling(cur_id)
+                cur_id = self.__sampling(cur_id, sampling_method)
                 # This checking is used for random method
                 if cur_id in self._userids:
                     continue
 
                 user_id = cur_id
                 got_user_in4 = False
+
                 if user_id not in self._userids:
                     print(f'* Try: {user_id}, collected_users: {i}')
                     for j in range(self._NUMBER_OF_ATTEMPTS):
@@ -117,6 +131,7 @@ class SoundcloudCrawler:
                         time.sleep(self._WAITING_TIME)
                         print(f'Attempt {j + 1}')
                         response = None
+
                         try:
                             response = requests.get(
                                 f'https://api-v2.soundcloud.com/users/{user_id}?client_id={self._client_id}')
@@ -139,7 +154,9 @@ class SoundcloudCrawler:
                 # Maximum attempts
             if not self._userid_min <= cur_id <= self._userid_max:
                 break
-        print(len(self._userids))
+
+        # Used as checkpoint
+        self._cur_user_id = cur_id
 
         data = pd.json_normalize(jsondata)
         data['id'] = self._userids
@@ -233,3 +250,9 @@ class SoundcloudCrawler:
         self._get_track_data()
         self._get_playlist_data()
         self._driver.close()
+
+        # Update checkpoint
+        if self._checkpoint:
+            with open(self._checkpoint_path, 'w') as f:
+                f.write(str(self._cur_user_id) + '\n')
+                f.write(str(self._userid_max))

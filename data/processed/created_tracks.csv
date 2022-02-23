@@ -1,0 +1,97 @@
+id,userid,commentable,comment_count,created_at,downloadable,download_count,duration,full_duration,genre,last_modified,license,likes_count,playback_count,public,release_date,reposts_count,state,streamable,title,display_date
+135091099,125,True,3,2014-02-16 09:42:26+00:00,False,0,238101,238101,Remix,2014-02-16T09:42:27Z,all-rights-reserved,19,340,True,,1,finished,True,permafrost_d (summer chill),2014-02-16 09:42:26+00:00
+125887520,125,True,2,2013-12-21 15:13:33+00:00,False,0,305347,305347,melodic electronic,2013-12-21T15:13:33Z,all-rights-reserved,10,132,True,,1,finished,False,Saving Daylight,2013-12-21 15:13:33+00:00
+125887519,125,True,0,2013-12-21 15:13:33+00:00,False,0,232406,232406,melodic electronic,2013-12-21T15:13:33Z,all-rights-reserved,8,84,True,,1,finished,False,39 5 Above,2013-12-21 15:13:33+00:00
+125887517,125,True,0,2013-12-21 15:13:32+00:00,False,0,195831,195831,melodic electronic,2013-12-21T15:13:33Z,all-rights-reserved,2,39,True,,1,finished,False,Soft Takeover,2013-12-21 15:13:32+00:00
+125887516,125,True,1,2013-12-21 15:13:32+00:00,False,0,259340,259340,melodic electronic,2019-03-29T05:12:57Z,all-rights-reserved,2,36,True,,0,finished,False,Chapter B,2013-12-21 15:13:32+00:00
+125887515,125,True,0,2013-12-21 15:13:32+00:00,False,0,335050,335050,melodic electronic,2013-12-21T15:13:32Z,all-rights-reserved,3,47,True,,1,finished,False,Two Wheeled Tricycle,2013-12-21 15:13:32+00:00
+125887514,125,True,0,2013-12-21 15:13:32+00:00,False,0,800937,800937,melodic electronic,2013-12-21T15:13:32Z,all-rights-reserved,0,36,True,,0,finished,False,D'autre Part,2013-12-21 15:13:32+00:00
+125887513,125,True,1,2013-12-21 15:13:32+00:00,False,0,159073,159073,melodic electronic,2013-12-21T15:13:32Z,all-rights-reserved,0,75,True,,0,finished,False,The Space Between,2013-12-21 15:13:32+00:00
+125887512,125,True,0,2013-12-21 15:13:32+00:00,False,0,40075,40075,melodic electronic,2013-12-21T15:13:32Z,all-rights-reserved,1,27,True,,0,finished,False,Interlude Ii,2013-12-21 15:13:32+00:00
+125887511,125,True,0,2013-12-21 15:13:32+00:00,False,0,153012,153012,melodic electronic,2013-12-21T15:13:32Z,all-rights-reserved,3,27,True,,0,finished,False,Monoptik,2013-12-21 15:13:32+00:00
+125887510,125,True,0,2013-12-21 15:13:32+00:00,False,0,182377,182377,melodic electronic,2013-12-21T15:13:32Z,all-rights-reserved,0,46,True,,0,finished,False,Am Strand,2013-12-21 15:13:32+00:00
+125887508,125,True,0,2013-12-21 15:13:32+00:00,False,0,42242,42242,melodic electronic,2013-12-21T15:13:32Z,all-rights-reserved,0,21,True,,0,finished,False,Interlude I,2013-12-21 15:13:32+00:00
+97684962,125,True,1,2013-06-20 11:25:41+00:00,False,0,256729,256729,melodic electronica,2013-06-20T11:25:44Z,all-rights-reserved,2,66,True,,0,finished,True,Almost there,2013-06-20 11:25:41+00:00
+97684012,125,True,0,2013-06-20 11:14:03+00:00,False,0,342288,342288,melodic electronica,2013-06-20T11:28:02Z,all-rights-reserved,1,63,True,,0,finished,True,Two wheeled tricycle,2013-06-20 11:14:03+00:00
+97683762,125,True,0,2013-06-20 11:10:49+00:00,False,0,414783,414783,melodic electronica,2013-06-20T11:27:07Z,all-rights-reserved,1,94,True,,0,finished,True,What is it about today,2013-06-20 11:10:49+00:00
+97683761,125,True,0,2013-06-20 11:10:49+00:00,False,0,336175,336175,melodic electronica,2013-06-20T11:28:15Z,all-rights-reserved,0,53,True,,0,finished,True,We will be in flight (when we touch the ground),2013-06-20 11:10:49+00:00
+97683760,125,True,0,2013-06-20 11:10:49+00:00,False,0,310963,310963,melodic electronica,2013-06-20T11:26:29Z,all-rights-reserved,0,48,True,,0,finished,True,Warm room,2013-06-20 11:10:49+00:00
+97683759,125,True,0,2013-06-20 11:10:49+00:00,False,0,316110,316110,melodic electronica,2013-06-20T11:28:08Z,all-rights-reserved,0,44,True,,0,finished,True,Trainyard at sunset,2013-06-20 11:10:49+00:00
+97683758,125,True,0,2013-06-20 11:10:49+00:00,False,0,343541,343541,melodic electronica,2013-06-20T11:27:48Z,all-rights-reserved,1,40,True,,0,finished,True,Time is all we don't have,2013-06-20 11:10:49+00:00
+97683757,125,True,0,2013-06-20 11:10:48+00:00,False,0,393728,393728,melodic electronica,2013-06-20T11:27:56Z,all-rights-reserved,0,49,True,,0,finished,True,Jusqu'a la prochaine fois,2013-06-20 11:10:48+00:00
+97683756,125,True,0,2013-06-20 11:10:48+00:00,False,0,290116,290116,melodic electronica,2013-06-20T11:26:01Z,all-rights-reserved,0,48,True,,0,finished,True,D'autre part,2013-06-20 11:10:48+00:00
+31309822,128,True,28,2011-12-22 10:25:09+00:00,False,153,3298613,3298613,Mixtape,2017-06-04T10:49:26Z,all-rights-reserved,116,2646,True,,13,finished,True,A walk to the crossroads,2011-12-22 10:25:09+00:00
+7537276,128,True,28,2010-11-30 10:24:46+00:00,False,260,3187159,3187159,Raregroove,2015-07-06T21:12:50Z,all-rights-reserved,135,3311,True,,12,finished,True,On a spliff with John Dillinger,2010-11-30 10:24:46+00:00
+1079129,128,True,20,2009-12-08 20:40:51+00:00,False,37,1801508,1801508,mixtape,2018-07-23T21:09:49Z,all-rights-reserved,36,1615,True,,4,finished,True,Beats and basslines from back then ...,2009-12-08 20:40:51+00:00
+496984,128,True,23,2009-08-14 20:42:36+00:00,False,96,3096241,3096241,mixtape,2016-04-27T00:14:21Z,all-rights-reserved,98,2584,True,,9,finished,True,a small selection of some rare grooves,2009-08-14 20:42:36+00:00
+10120,128,True,20,2008-07-09 21:38:45+00:00,False,40,2543098,2543098,mixtape,2014-08-14T15:37:00Z,all-rights-reserved,27,1053,True,,3,finished,True,Obscure mixin' at approx. 100 bpm,2008-07-09 21:38:45+00:00
+10113,128,True,23,2008-07-09 21:10:57+00:00,False,182,3590844,3590844,mixtape,2015-01-03T15:55:20Z,all-rights-reserved,264,10288,True,,24,finished,True,"Broken jazz, jazzy breaks ...",2008-07-09 21:10:57+00:00
+1193554234,135,True,1,2022-01-10 04:58:15+00:00,False,0,225358,225358,,2022-01-10T04:58:15Z,all-rights-reserved,1,72,True,,0,finished,True,I Would Die 4 U,2022-01-10 04:58:15+00:00
+1188955438,135,True,7,2022-01-02 16:32:42+00:00,False,0,210756,210756,Electronic,2022-01-10T18:18:38Z,all-rights-reserved,4,110,True,,0,finished,True,Behind The Lines (127bpm) (G),2022-01-02 16:32:42+00:00
+1176128455,135,True,0,2021-12-11 17:17:20+00:00,False,0,288836,288836,,2021-12-11T17:38:08Z,all-rights-reserved,0,18,True,,0,finished,True,Shout,2021-12-11 17:17:20+00:00
+1160809414,135,True,1,2021-11-16 05:36:10+00:00,False,0,247510,247510,Electronic,2021-11-16T05:36:28Z,all-rights-reserved,4,58,True,,0,finished,True,Something There To Remind Me,2021-11-16 05:36:10+00:00
+1139210164,135,True,0,2021-10-10 05:52:42+00:00,False,0,192575,192575,,2021-10-10T05:52:45Z,all-rights-reserved,0,47,True,,0,finished,True,Home,2021-10-10 05:52:42+00:00
+1116103543,135,True,1,2021-08-31 06:51:28+00:00,False,0,398263,398263,,2021-09-13T12:03:07Z,all-rights-reserved,1,39,True,,0,finished,True,All In A Day,2021-08-31 06:51:28+00:00
+1106241733,135,True,0,2021-08-15 03:42:33+00:00,False,0,198975,198975,,2021-08-15T18:42:02Z,all-rights-reserved,1,49,True,,0,finished,True,The King Is Half Undressed,2021-08-15 03:42:33+00:00
+1105130437,135,True,0,2021-08-13 04:55:08+00:00,False,0,292075,292075,,2021-08-13T04:56:27Z,all-rights-reserved,1,67,True,,0,finished,True,Red Rain,2021-08-13 04:55:08+00:00
+1098216886,135,True,0,2021-08-01 17:49:35+00:00,False,0,280033,280033,,2021-08-01T17:50:05Z,all-rights-reserved,1,87,True,,0,finished,True,Tomorrow Never Knows,2021-08-01 17:49:35+00:00
+1093975990,135,True,1,2021-07-25 21:30:21+00:00,False,0,227683,227683,,2021-09-13T10:38:08Z,all-rights-reserved,1,23,True,,0,finished,True,Not In Love,2021-07-25 21:30:21+00:00
+1091842498,135,True,1,2021-07-22 02:42:58+00:00,False,0,240744,240744,,2021-08-01T17:50:57Z,all-rights-reserved,2,37,True,,0,finished,True,Unbreakable,2021-07-22 02:42:58+00:00
+1028789929,135,True,0,2021-04-13 17:04:50+00:00,False,0,282044,282044,,2021-07-13T05:43:43Z,all-rights-reserved,0,13,True,,0,finished,True,Vola - 24 Light Years (Kearley Remix),2021-07-13 05:43:43+00:00
+1040358835,135,True,0,2021-05-01 05:45:55+00:00,False,0,228598,228598,,2021-08-01T17:51:05Z,all-rights-reserved,1,35,True,,0,finished,True,Not Quite Paradise,2021-05-01 05:45:55+00:00
+1015871308,135,True,0,2021-03-25 04:11:44+00:00,False,0,255269,255269,,2021-03-25T04:11:47Z,all-rights-reserved,0,33,True,,0,finished,True,Enjoy The Silence,2021-03-25 04:11:44+00:00
+1014361441,135,True,1,2021-03-23 05:01:17+00:00,False,0,327314,327314,,2021-03-25T04:08:21Z,all-rights-reserved,0,47,True,,0,finished,True,Where The Streets Have No Name,2021-03-23 05:01:17+00:00
+866961265,135,True,0,2020-07-30 05:02:52+00:00,False,0,252134,252134,Ambient,2020-07-30T05:02:53Z,all-rights-reserved,1,59,True,2020-07-29 00:00:00+00:00,0,finished,True,01 - Hand Touch Heaven,2020-07-30 05:02:52+00:00
+866961259,135,True,0,2020-07-30 05:02:51+00:00,False,0,175256,175256,Ambient,2020-07-30T05:02:52Z,all-rights-reserved,0,32,True,2020-07-29 00:00:00+00:00,0,finished,True,02 - Nothing But Joy,2020-07-30 05:02:51+00:00
+866961247,135,True,0,2020-07-30 05:02:50+00:00,False,0,234841,234841,Ambient,2020-07-30T05:02:51Z,all-rights-reserved,0,22,True,2020-07-29 00:00:00+00:00,0,finished,True,03 - Burned At The Edges,2020-07-30 05:02:50+00:00
+866961244,135,True,0,2020-07-30 05:02:49+00:00,False,0,216424,216424,Ambient,2020-07-30T05:02:49Z,all-rights-reserved,1,22,True,2020-07-29 00:00:00+00:00,0,finished,True,04 - Plyophony,2020-07-30 05:02:49+00:00
+866961238,135,True,0,2020-07-30 05:02:47+00:00,False,0,346436,0,Ambient,2020-07-30T05:02:48Z,all-rights-reserved,0,17,True,2020-07-29 00:00:00+00:00,0,finished,True,05 - Rainy Day Film,2020-07-30 05:02:47+00:00
+866961220,135,True,0,2020-07-30 05:02:46+00:00,False,0,253440,253440,Ambient,2020-07-30T05:02:47Z,all-rights-reserved,0,11,True,2020-07-29 00:00:00+00:00,0,finished,True,06 - Skaftafel,2020-07-30 05:02:46+00:00
+866961211,135,True,0,2020-07-30 05:02:44+00:00,False,0,176091,176091,Ambient,2020-07-30T05:02:45Z,all-rights-reserved,0,9,True,2020-07-29 00:00:00+00:00,0,finished,True,07 - Mosa,2020-07-30 05:02:44+00:00
+866961205,135,True,0,2020-07-30 05:02:43+00:00,False,0,277159,277159,Ambient,2020-07-30T05:02:44Z,all-rights-reserved,1,11,True,2020-07-29 00:00:00+00:00,0,finished,True,08 - Duress Code,2020-07-30 05:02:43+00:00
+866961196,135,True,0,2020-07-30 05:02:42+00:00,False,0,232725,232725,Ambient,2020-07-30T05:02:43Z,all-rights-reserved,0,8,True,2020-07-29 00:00:00+00:00,0,finished,True,09 - Isolated Ozone,2020-07-30 05:02:42+00:00
+866961181,135,True,0,2020-07-30 05:02:41+00:00,False,0,217913,217913,Ambient,2020-07-30T05:02:42Z,all-rights-reserved,0,12,True,2020-07-29 00:00:00+00:00,0,finished,True,10 - Like A Muffled Fistifight,2020-07-30 05:02:41+00:00
+810706558,135,True,0,2020-04-30 18:14:11+00:00,False,0,241816,241816,,2020-05-04T02:11:09Z,all-rights-reserved,1,33,True,,0,finished,True,Dan Kearley - Hero (Cover),2020-05-04 02:11:09+00:00
+241183292,135,True,0,2016-01-09 22:28:01+00:00,False,0,286902,286902,Electronic,2016-01-09T22:31:12Z,all-rights-reserved,3,161,True,,0,finished,True,01 Not A Cipher,2016-01-09 22:28:01+00:00
+241183285,135,True,1,2016-01-09 22:27:58+00:00,False,0,199776,199776,Electronic,2016-01-09T22:31:23Z,all-rights-reserved,4,154,True,,0,finished,True,02 Why Blind,2016-01-09 22:27:58+00:00
+241183280,135,True,0,2016-01-09 22:27:53+00:00,False,0,60033,60033,Electronic,2016-01-09T22:31:33Z,all-rights-reserved,1,80,True,,0,finished,True,03 Draem,2016-01-09 22:27:53+00:00
+241183270,135,True,0,2016-01-09 22:27:50+00:00,False,0,212760,212760,Electronic,2016-01-09T22:35:06Z,all-rights-reserved,2,72,True,,0,finished,True,04 Map Of The Instant,2016-01-09 22:27:50+00:00
+241183264,135,True,2,2016-01-09 22:27:47+00:00,False,0,354985,354985,Electronic,2016-01-11T10:08:29Z,all-rights-reserved,2,64,True,,0,finished,True,05 PicturePixelate,2016-01-09 22:27:47+00:00
+241183259,135,True,0,2016-01-09 22:27:44+00:00,False,0,165945,165945,Electronic,2016-01-09T22:35:26Z,all-rights-reserved,2,51,True,,0,finished,True,06 Sketch And Shadow,2016-01-09 22:27:44+00:00
+241183255,135,True,2,2016-01-09 22:27:41+00:00,False,0,233032,233032,Electronic,2016-01-11T10:20:15Z,all-rights-reserved,2,75,True,,0,finished,True,07 Pure Point Of View,2016-01-09 22:27:41+00:00
+206941788,135,True,1,2015-05-24 05:39:38+00:00,False,0,136110,136110,Ambient,2015-05-24T05:40:21Z,all-rights-reserved,3,208,True,,1,finished,True,Quite Quiet,2015-05-24 05:39:38+00:00
+188599289,135,True,1,2015-01-30 07:12:26+00:00,False,0,306940,306940,Piano,2015-02-05T04:02:47Z,all-rights-reserved,1,166,True,2015-01-27 00:00:00+00:00,1,finished,True,07 - Your Inside Voicings,2015-01-30 07:12:26+00:00
+188599198,135,True,1,2015-01-30 07:10:51+00:00,False,0,247323,247323,Piano,2015-02-05T04:03:06Z,all-rights-reserved,1,144,True,2015-01-27 00:00:00+00:00,0,finished,True,05 - WaterArmy,2015-01-30 07:10:51+00:00
+188599142,135,True,0,2015-01-30 07:09:57+00:00,False,0,195543,195543,Piano,2015-02-05T04:03:19Z,all-rights-reserved,3,392,True,2015-01-27 00:00:00+00:00,0,finished,True,01 - Dilation,2015-01-30 07:09:57+00:00
+188599141,135,True,3,2015-01-30 07:09:56+00:00,False,0,304380,304380,Piano,2015-02-05T04:03:34Z,all-rights-reserved,3,279,True,2015-01-27 00:00:00+00:00,0,finished,True,02 - Small Signs,2015-01-30 07:09:56+00:00
+188599140,135,True,0,2015-01-30 07:09:55+00:00,False,0,207039,207039,Piano,2015-02-05T04:03:42Z,all-rights-reserved,0,160,True,2015-01-27 00:00:00+00:00,0,finished,True,03 - Effing Ineffable,2015-01-30 07:09:55+00:00
+188599139,135,True,0,2015-01-30 07:09:54+00:00,False,0,131355,131355,Piano,2015-02-05T04:03:49Z,all-rights-reserved,1,134,True,2015-01-26 00:00:00+00:00,0,finished,True,04 - Delusion,2015-01-30 07:09:54+00:00
+188599137,135,True,1,2015-01-30 07:09:53+00:00,False,0,100841,100841,Piano,2015-02-05T04:03:58Z,all-rights-reserved,3,109,True,2015-01-27 00:00:00+00:00,0,finished,True,06 - Dilution,2015-01-30 07:09:53+00:00
+76374110,135,True,6,2013-01-25 06:32:55+00:00,True,12,248002,248002,Downtempo,2016-06-26T07:57:08Z,all-rights-reserved,11,364,True,,1,finished,True,Not Getting A Pulse,2013-01-25 06:32:55+00:00
+627796,135,True,45,2009-09-18 18:27:21+00:00,False,0,385097,385097,IDM,2017-04-13T05:01:35Z,all-rights-reserved,29,2161,True,,2,finished,True,Shutting Down Your Sleep,2009-09-18 18:27:21+00:00
+589778,135,True,12,2009-09-09 15:51:34+00:00,True,53,242860,242860,IDM,2018-08-02T09:24:31Z,all-rights-reserved,9,969,True,,0,finished,True,Drag,2009-09-09 15:51:34+00:00
+531799,135,True,13,2009-08-25 05:02:13+00:00,False,3,345182,345182,IDM,2014-08-21T12:01:40Z,all-rights-reserved,19,557,True,,0,finished,True,Kearley - June,2009-08-25 05:02:13+00:00
+119297,135,True,12,2009-01-21 18:46:33+00:00,False,36,389981,389981,IDM,2018-11-19T21:02:23Z,all-rights-reserved,26,1045,True,,1,finished,True,Kearley - This is The Sea,2009-01-21 18:46:33+00:00
+1131997330,137,True,2,2021-09-27 18:32:25+00:00,True,1,326139,326139,Electronic,2021-11-12T08:50:02Z,all-rights-reserved,2,19,True,,0,finished,True,Moose und Farne,2021-11-12 06:42:28+00:00
+610199256,137,True,0,2019-04-23 13:18:46+00:00,True,1,364571,364571,German melancholic indie synth funk pop,2019-04-23T13:28:02Z,cc-by-nc-nd,2,30,True,2019-04-23 00:00:00+00:00,0,finished,True,Idar-Oberstein,2019-04-23 13:18:46+00:00
+594138441,137,True,0,2019-03-22 15:32:20+00:00,True,3,324549,324549,German melancholic indie synth funk pop,2019-03-22T15:40:37Z,cc-by-nc-sa,3,31,True,2019-03-22 00:00:00+00:00,0,finished,True,Amateur Amateur,2019-03-22 15:32:20+00:00
+306937422,137,True,1,2017-02-09 20:13:54+00:00,False,0,479626,479626,,2017-02-09T20:28:04Z,all-rights-reserved,3,118,True,,0,finished,True,Bobby Baby: Bobby (Rupert Remix),2017-02-09 20:13:54+00:00
+306935995,137,True,0,2017-02-09 20:05:23+00:00,False,0,274310,274310,,2017-02-09T20:05:40Z,all-rights-reserved,2,75,True,2004-06-06 00:00:00+00:00,0,finished,True,Slow-Brainer,2017-02-09 20:05:23+00:00
+306935991,137,True,0,2017-02-09 20:05:22+00:00,False,0,302630,302630,,2017-02-09T20:05:51Z,all-rights-reserved,4,73,True,2004-06-06 00:00:00+00:00,0,finished,True,Power Optimal,2017-02-09 20:05:22+00:00
+306935987,137,True,0,2017-02-09 20:05:21+00:00,False,0,78270,78270,,2017-02-09T20:06:03Z,all-rights-reserved,1,51,True,2004-06-06 00:00:00+00:00,0,finished,True,Klarfeldt Ohne Haftpflicht,2017-02-09 20:05:21+00:00
+306935979,137,True,0,2017-02-09 20:05:20+00:00,False,0,396366,396366,,2017-02-09T20:06:15Z,all-rights-reserved,3,101,True,2004-06-06 00:00:00+00:00,0,finished,True,Nebelschwungflug,2017-02-09 20:05:20+00:00
+306935458,137,True,1,2017-02-09 20:01:53+00:00,False,0,371757,371757,,2017-02-09T20:04:58Z,all-rights-reserved,9,426,True,2005-06-01 00:00:00+00:00,1,finished,True,Wir Bleiben Ganz Entspannt.,2017-02-09 20:01:53+00:00
+306935453,137,True,0,2017-02-09 20:01:52+00:00,False,0,349680,349680,,2017-02-09T20:05:08Z,all-rights-reserved,6,1117,True,2005-06-01 00:00:00+00:00,0,finished,True,Ja. Nein. Vielleicht.,2017-02-09 20:01:52+00:00
+306933477,137,True,0,2017-02-09 19:49:40+00:00,False,0,415098,415098,,2017-02-09T19:57:02Z,all-rights-reserved,1,31,True,,0,finished,True,Aromastar.,2017-02-09 19:49:40+00:00
+306933352,137,True,0,2017-02-09 19:49:07+00:00,False,0,292441,292441,,2017-02-09T19:57:22Z,all-rights-reserved,2,85,True,,0,finished,True,Gib Mir Satelliten.,2017-02-09 19:49:07+00:00
+306932994,137,True,0,2017-02-09 19:46:53+00:00,False,0,286092,286092,,2017-02-09T19:57:40Z,all-rights-reserved,2,50,True,,0,finished,True,Fehlerengel.,2017-02-09 19:46:53+00:00
+306599267,137,True,0,2017-02-07 20:54:25+00:00,False,0,320943,320943,,2017-02-09T19:58:10Z,all-rights-reserved,3,30,True,2005-01-01 00:00:00+00:00,0,finished,True,Fehlerengel [keindesign Raum].,2017-02-07 20:54:25+00:00
+306590736,137,True,0,2017-02-07 20:01:25+00:00,False,0,173599,173599,,2017-02-07T20:05:35Z,all-rights-reserved,3,41,True,,0,finished,True,Madame Curie,2017-02-07 20:01:25+00:00
+306590721,137,True,0,2017-02-07 20:01:16+00:00,False,0,321570,321570,,2017-02-09T20:07:22Z,all-rights-reserved,7,160,True,,0,finished,True,Erklärs mir bitte noch einmal,2017-02-07 20:01:16+00:00
+306590656,137,True,0,2017-02-07 20:00:27+00:00,False,0,294375,294375,,2017-02-07T20:00:45Z,all-rights-reserved,4,172,True,,0,finished,True,In Ordnung wenn du mich rufst,2017-02-07 20:00:27+00:00
+174973,137,True,19,2009-03-09 09:53:51+00:00,True,84,355866,355866,,2018-10-12T02:40:58Z,all-rights-reserved,30,1646,True,2009-01-01 00:00:00+00:00,1,finished,True,Bisher waren wir Kinder,2009-03-09 09:53:51+00:00
+2814,137,True,19,2008-02-14 21:02:06+00:00,False,97,342047,342047,,2019-03-29T05:12:51Z,all-rights-reserved,34,1260,True,,2,finished,True,Emily in Love: Lullaby (Rupert Falsch Remix),2008-02-14 21:02:06+00:00
+444,137,True,6,2007-10-04 18:34:29+00:00,True,100,259213,259213,,2019-03-29T05:12:51Z,all-rights-reserved,27,1856,True,,4,finished,True,Forss: Paradigm Shift (Rupert Remix),2007-10-04 18:34:29+00:00
+422,137,True,5,2007-10-03 16:44:20+00:00,True,100,237766,237766,,2019-04-08T22:57:07Z,all-rights-reserved,16,712,True,,0,finished,True,Generikum,2007-10-03 16:44:20+00:00
+421,137,True,8,2007-10-03 16:16:07+00:00,True,96,267049,267049,,2019-03-29T05:12:53Z,all-rights-reserved,16,849,True,,2,finished,True,"Links auf der Fahrbahn, ein totes Tier",2007-10-03 16:16:07+00:00
+406,137,True,7,2007-10-02 21:12:09+00:00,True,100,270452,270452,,2019-04-08T22:57:58Z,all-rights-reserved,18,749,True,,0,finished,True,Lügendetektor sein,2007-10-02 21:12:09+00:00

@@ -18,65 +18,78 @@ if __name__ == '__main__':
     --nlp <number of liked playlists> (default: 1000)
     --pdp <processed data path> (default: ./data/processed)
     -m <sampling method> (default: random)
+    -c used to continue crawling from last user id (forward and backward)
     '''
 
     # Argument parsings
     optlist, _ = getopt.getopt(
         sys.argv[1:],
-        '-r:m:',
+        '-r:m:c',
         ['nu=', 'nr=', 'ep=', 'rdp=', 'nct=', 'nlt=', 'ncp=', 'nlp=', 'pdp=']
     )
 
     # Init variables
-    nu = 1000
-    nr = nct = nlt = ncp = nlp = 1000
-    ep = './chromedriver'
-    rdp = './data/raw'
-    pdp = './data/processed'
-    r = [1, 999999999]
+    no_users = 1000
+    no_records = no_created_tracks = no_liked_tracks = \
+        no_created_playlists = noliked_playlist = 1000
+    executable_path = './chromedriver'
+    raw_data_path = './data/raw'
+    processed_data_path = './data/processed'
+    id_range = [1, 999999999]
+    checkpoint = False
     method = 'random'
 
     # Parse arguments
     for opt, arg in optlist:
         if opt == '--nr':
-            nct = nlt = ncp = nlt = arg
+            no_created_tracks = no_liked_tracks = \
+                no_created_playlists = noliked_playlist = arg
         elif opt == '-r':
-            r = list(map(int, arg.split(':')))
+            id_range = list(map(int, arg.split(':')))
         elif opt == '--nu':
-            nu = int(arg)
+            no_users = int(arg)
         elif opt == '--nct':
-            nct = int(arg)
+            no_created_tracks = int(arg)
         elif opt == '--nlt':
-            nlt = int(arg)
+            no_liked_tracks = int(arg)
         elif opt == '--ncp':
-            ncp = int(arg)
+            no_created_playlists = int(arg)
         elif opt == '--nlp':
-            nlp = int(arg)
+            noliked_playlist = int(arg)
         elif opt == '--pdp':
-            pdp = arg
+            processed_data_path = arg
         elif opt == '--rdp':
-            rdp = arg
+            raw_data_path = arg
         elif opt == '-m':
             method = arg
+        elif opt == '--ep':
+            executable_path = arg
+        elif opt == '-c':
+            checkpoint = True
         else:
             raise Exception('Bad arguments')
 
+    # Further checkings
+    if method == 'random' and checkpoint == True:
+        raise Exception('checkpoint does not work with random method')
+
     # Crawl data
     crawler = SoundcloudCrawler(
-        userid_min=r[0],
-        userid_max=r[1],
-        no_users=nu,
-        no_tracks_liked=nlt,
-        no_tracks_created=nct,
-        no_playlists_liked=nlp,
-        no_playlists_created=ncp,
-        executable_path=ep,
-        data_path=rdp
+        userid_min=id_range[0],
+        userid_max=id_range[1],
+        no_users=no_users,
+        no_tracks_liked=no_liked_tracks,
+        no_tracks_created=no_created_tracks,
+        no_playlists_liked=no_liked_tracks,
+        no_playlists_created=no_created_playlists,
+        executable_path=executable_path,
+        data_path=raw_data_path,
+        checkpoint=checkpoint
     )
 
     crawler.get_data(method)
 
     # Preprocess
-    preproc = SoundcloudPreprocess(rdp, pdp)
+    preproc = SoundcloudPreprocess(raw_data_path, processed_data_path)
 
     preproc.process()
