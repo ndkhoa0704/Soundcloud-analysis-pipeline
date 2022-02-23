@@ -15,7 +15,7 @@ jobs:
           pip3 install -r requirements.txt
           export PYTHONPATH=.:$PYTHONPATH
       - name: Getting data
-        run: python3 ./main.py --nu 2000 -m random
+        run: python3 ./main.py --nu 2000 -m forward -c
       - name: Update changes
         run: |
           now=`date`
