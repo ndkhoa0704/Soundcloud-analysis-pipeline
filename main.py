@@ -19,6 +19,7 @@ if __name__ == '__main__':
     --pdp <processed data path> (default: ./data/processed)
     -m <sampling method> (default: random)
     -c used to continue crawling from last user id (forward and backward)
+    --clr create data file
     '''
 
     # Argument parsings
@@ -90,6 +91,6 @@ if __name__ == '__main__':
     crawler.get_data(method)
 
     # Preprocess
-    preproc = SoundcloudPreprocess(raw_data_path, processed_data_path)
+    # preproc = SoundcloudPreprocess(raw_data_path, processed_data_path)
 
-    preproc.process()
+    # preproc.process()

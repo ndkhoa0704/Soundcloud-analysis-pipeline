@@ -46,7 +46,7 @@ class SoundcloudCrawler:
         self._data_path = data_path
 
         # Only used for forward and backward sampling
-        self._checkpoint_path = './checkpoint'
+        self._checkpoint_path = './data/checkpoint'
         self._checkpoint = checkpoint
 
         self._no_tracks_liked = no_tracks_liked
