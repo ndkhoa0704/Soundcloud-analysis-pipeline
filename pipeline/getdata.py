@@ -106,9 +106,12 @@ class SoundcloudCrawler:
 
         # Load checkpoint
         if self._checkpoint:
-            with open(self._checkpoint_path, 'r') as f:
+            try:
+                f = open(self._checkpoint_path, 'r')
                 self._userid_min, self._userid_max = tuple(
                     map(int, f.read().split()))
+            except:
+                pass
 
         cur_id = self._userid_min
         for i in range(self._no_users):
