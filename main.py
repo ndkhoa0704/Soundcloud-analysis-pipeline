@@ -2,6 +2,8 @@ from pipeline.getdata import SoundcloudCrawler
 from pipeline.preprocess import SoundcloudPreprocess
 import sys
 import getopt
+import os
+import glob
 
 if __name__ == '__main__':
 
@@ -26,7 +28,8 @@ if __name__ == '__main__':
     optlist, _ = getopt.getopt(
         sys.argv[1:],
         '-r:m:c',
-        ['nu=', 'nr=', 'ep=', 'rdp=', 'nct=', 'nlt=', 'ncp=', 'nlp=', 'pdp=']
+        ['nu=', 'nr=', 'ep=', 'rdp=', 'nct=',
+            'nlt=', 'ncp=', 'nlp=', 'pdp=', 'clr']
     )
 
     # Init variables
@@ -67,9 +70,13 @@ if __name__ == '__main__':
             executable_path = arg
         elif opt == '-c':
             checkpoint = True
+        elif opt == '--clr':
+            os.chdir('./data')
+            for f in glob.glob("*.csv"):
+                os.remove(f)
         else:
             raise Exception('Bad arguments')
-
+    print(optlist)
     # Further checkings
     if method == 'random' and checkpoint == True:
         raise Exception('checkpoint does not work with random method')

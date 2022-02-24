@@ -23,7 +23,7 @@ class SoundcloudCrawler:
         no_playlists_created: int,
         checkpoint: bool,
         executable_path: str = None,
-        data_path: str = './data/raw'
+        data_path: str = '../data/raw'
     ):
         '''
         Use both api and html parser method to crawl data

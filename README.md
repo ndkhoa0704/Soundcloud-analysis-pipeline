@@ -56,6 +56,8 @@ pip install -r requirements.txt
     --nlp <number of liked playlists> (default: 1000)
     --pdp <processed data path> (default: ./data/processed)
     -m <sampling method> (default: random)
+    -c used to continue crawling from last user id (forward and backward)
+    --clr create data file
 **Run**
 ```
 python -m main <arguments>

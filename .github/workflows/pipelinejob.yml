@@ -3,7 +3,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 */2 * * *"
 
 jobs:
   soundcloud:
@@ -15,7 +15,7 @@ jobs:
           pip3 install -r requirements.txt
           export PYTHONPATH=.:$PYTHONPATH
       - name: Getting data
-        run: python3 ./main.py --nu 2000 -m forward -c
+        run: python3 ./main.py --nu 1000 -m forward -c
       - name: Update changes
         run: |
           now=`date`
