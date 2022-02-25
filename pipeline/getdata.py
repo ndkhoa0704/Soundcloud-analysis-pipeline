@@ -8,6 +8,7 @@ import pandas as pd
 import time
 from datetime import date
 import os
+import glob
 
 
 class SoundcloudCrawler:
@@ -23,7 +24,7 @@ class SoundcloudCrawler:
         no_playlists_created: int,
         checkpoint: bool,
         executable_path: str = None,
-        data_path: str = '../data/raw'
+        data_path: str = './data/raw'
     ):
         '''
         Use both api and html parser method to crawl data
@@ -104,11 +105,14 @@ class SoundcloudCrawler:
         Update exists data files or save new ones
         '''
         today = date.today().strftime("%m-%d-%Y")
-        if os.path.exists(path.format(today)):
-            data.to_csv(path.format(today), mode='a',
-                        index=False, escapechar='\\')
-        else:
-            data.to_csv(path.format(today), index=False, escapechar='\\')
+        similar_files = glob.glob(f'../data/raw/*{today}')
+        counter = 0
+        for f in similar_files:
+            t = re.search(r'\d{2}-\d{2}-\d{4}-\d{1,}',
+                          f).group(0).split('-')[-1]
+            if counter < t:
+                counter = t
+        data.to_csv(path.format(today + f'-{counter}.csv'))
 
     def _get_user_info(self, sampling_method: str):
         '''
@@ -176,7 +180,7 @@ class SoundcloudCrawler:
 
         data = pd.json_normalize(jsondata)
         data['id'] = self._userids
-        self._save_data(data, self._data_path + '/users-{}.csv')
+        self._save_data(data, self._data_path + '/users-{}')
 
     def _crawl(self, url, limit, msg):
         '''
@@ -219,7 +223,7 @@ class SoundcloudCrawler:
         ))
 
         # Save
-        self._save_data(data, self._data_path + '/created_tracks-{}.csv')
+        self._save_data(data, self._data_path + '/created_tracks-{}')
 
         # Crawl liked tracks
         data = pd.json_normalize(self._crawl(
@@ -229,7 +233,7 @@ class SoundcloudCrawler:
         ))
 
         # Save
-        self._save_data(data, self._data_path + '/liked_tracks-{}.csv')
+        self._save_data(data, self._data_path + '/liked_tracks-{}')
 
     def _get_playlist_data(self):
         '''
@@ -245,7 +249,7 @@ class SoundcloudCrawler:
         ))
 
         # Save
-        self._save_data(data, self._data_path + '/created_playlists-{}.csv')
+        self._save_data(data, self._data_path + '/created_playlists-{}')
 
         # Crawl liked playlists
         data = pd.json_normalize(self._crawl(
@@ -255,7 +259,7 @@ class SoundcloudCrawler:
         ))
 
         # Save
-        self._save_data(data, self._data_path + '/liked_playlists-{}.csv')
+        self._save_data(data, self._data_path + '/liked_playlists-{}')
 
     def get_data(self, sampling_method: str = 'forward'):
         '''

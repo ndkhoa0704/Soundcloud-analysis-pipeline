@@ -42,7 +42,6 @@ if __name__ == '__main__':
     id_range = [1, 999999999]
     checkpoint = False
     method = 'random'
-
     # Parse arguments
     for opt, arg in optlist:
         if opt == '--nr':
@@ -71,12 +70,11 @@ if __name__ == '__main__':
         elif opt == '-c':
             checkpoint = True
         elif opt == '--clr':
-            os.chdir('./data')
-            for f in glob.glob("*.csv"):
+            for f in glob.glob("../data/**/*.csv", recursive=True):
                 os.remove(f)
         else:
             raise Exception('Bad arguments')
-    print(optlist)
+
     # Further checkings
     if method == 'random' and checkpoint == True:
         raise Exception('checkpoint does not work with random method')
