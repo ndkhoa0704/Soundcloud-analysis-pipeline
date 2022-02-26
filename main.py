@@ -93,7 +93,7 @@ if __name__ == '__main__':
         checkpoint=checkpoint
     )
 
-    crawler.get_data(method)
+    crawler.get_data(sampling_method=method, waiting_time=0.03)
 
     # Preprocess
     # preproc = SoundcloudPreprocess(raw_data_path, processed_data_path)

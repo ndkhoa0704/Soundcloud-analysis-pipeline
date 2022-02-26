@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import time
 from datetime import date
-import os
 import glob
 
 
@@ -41,7 +40,7 @@ class SoundcloudCrawler:
         '''
 
         # Init variables
-        self._WAITING_TIME = 0.05
+        self._WAITING_TIME = 0.03
         self._NUMBER_OF_ATTEMPTS = 3
         self._userid_max = userid_max
         self._userid_min = userid_min
@@ -100,26 +99,33 @@ class SoundcloudCrawler:
         else:
             raise Exception('Invalid argument')
 
-    def _save_data(self, data, path):
+    def _save_data(self, data, filename):
         '''
         Update exists data files or save new ones
         '''
         today = date.today().strftime("%m-%d-%Y")
-        similar_files = glob.glob(f'../data/raw/*{today}')
+        similar_files = glob.glob(f'./data/raw/{filename}-{today}*')
         counter = 0
         for f in similar_files:
-            t = re.search(r'\d{2}-\d{2}-\d{4}-\d{1,}',
-                          f).group(0).split('-')[-1]
+            t = int(
+                re.search(
+                    r'\d{2}-\d{2}-\d{4}-\d{1,}',
+                    f).group(0).split('-')[-1]
+            )
+
             if counter < t:
                 counter = t
-        data.to_csv(path.format(today + f'-{counter}.csv'))
+        data.to_csv(
+            self._data_path + f'/{filename}-{today}-{counter + 1}.csv',
+            escapechar='\\',
+            index=False
+        )
 
     def _get_user_info(self, sampling_method: str):
         '''
         Get user data and store in user.csv
         '''
         jsondata = []
-        print("GET USER INFO")
 
         # Load checkpoint
         if self._checkpoint:
@@ -131,7 +137,7 @@ class SoundcloudCrawler:
                 pass
 
         cur_id = self._userid_min
-        for i in range(self._no_users):
+        for _ in range(self._no_users):
             attempts = 0
             while True:
                 attempts += 1
@@ -144,12 +150,10 @@ class SoundcloudCrawler:
                 got_user_in4 = False
 
                 if user_id not in self._userids:
-                    print(f'* Try: {user_id}, collected_users: {i}')
-                    for j in range(self._NUMBER_OF_ATTEMPTS):
+                    for _ in range(self._NUMBER_OF_ATTEMPTS):
                         # Reset attemps since user id has not crawled yet
                         attempts = 0
                         time.sleep(self._WAITING_TIME)
-                        print(f'Attempt {j + 1}')
                         response = None
 
                         try:
@@ -180,20 +184,16 @@ class SoundcloudCrawler:
 
         data = pd.json_normalize(jsondata)
         data['id'] = self._userids
-        self._save_data(data, self._data_path + '/users-{}')
+        self._save_data(data, 'users')
 
-    def _crawl(self, url, limit, msg):
+    def _crawl(self, url, limit):
         '''
         Only used for get tracks and playlists
         limit: number of items to be crawled
         '''
         jsondata = []
-        count = 0
         for user_id in self._userids:
-            print(f'* Task: {msg}, User id: {user_id}, user_number: {count}')
-            count += 1
-            for i in range(self._NUMBER_OF_ATTEMPTS):
-                print(f'Attempt {i + 1}')
+            for _ in range(self._NUMBER_OF_ATTEMPTS):
                 time.sleep(self._WAITING_TIME)
                 try:
                     response = requests.get(url.format(
@@ -203,8 +203,8 @@ class SoundcloudCrawler:
                 if response and response.ok == True:
                     # Add user id
                     raw = response.json()['collection']
-                    for i in raw:
-                        i['userid'] = user_id
+                    for data in raw:
+                        data['userid'] = user_id
                     jsondata += raw
                     break
         return jsondata
@@ -218,22 +218,20 @@ class SoundcloudCrawler:
         # Crawl created tracks
         data = pd.json_normalize(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/tracks?client_id={}&limit={}',
-            self._no_tracks_created,
-            "GET CREATED TRACKS DATA"
+            self._no_tracks_created
         ))
 
         # Save
-        self._save_data(data, self._data_path + '/created_tracks-{}')
+        self._save_data(data, 'created_tracks')
 
         # Crawl liked tracks
         data = pd.json_normalize(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/track_likes?client_id={}&limit={}',
-            self._no_tracks_liked,
-            "GET LIKED TRACKS DATA"
+            self._no_tracks_liked
         ))
 
         # Save
-        self._save_data(data, self._data_path + '/liked_tracks-{}')
+        self._save_data(data, 'liked_tracks')
 
     def _get_playlist_data(self):
         '''
@@ -244,24 +242,22 @@ class SoundcloudCrawler:
         # Crawl created playlists
         data = pd.json_normalize(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/playlists?client_id={}&limit={}',
-            self._no_playlists_created,
-            "GET CREATED PLAYLISTS DATA"
+            self._no_playlists_created
         ))
 
         # Save
-        self._save_data(data, self._data_path + '/created_playlists-{}')
+        self._save_data(data, 'created_playlists')
 
         # Crawl liked playlists
         data = pd.json_normalize(self._crawl(
             'https://api-v2.soundcloud.com/users/{}/playlist_likes?client_id={}&limit={}',
-            self._no_playlists_liked,
-            "GET LIKED PLAYLISTS DATA"
+            self._no_playlists_liked
         ))
 
         # Save
-        self._save_data(data, self._data_path + '/liked_playlists-{}')
+        self._save_data(data, 'liked_playlists')
 
-    def get_data(self, sampling_method: str = 'forward'):
+    def get_data(self, waiting_time, sampling_method: str = 'forward'):
         '''
         Parameters:
 
@@ -269,7 +265,11 @@ class SoundcloudCrawler:
         * random: random sampling
         * forward: userid_min -> userid_max
         * backward: userid_max -> userid_min
+        waiting_time: amount of time needed between records (None: default 0.03)
         '''
+        if waiting_time != None:
+            self._WAITING_TIME = waiting_time
+
         self._get_user_info(sampling_method)
         self._get_track_data()
         self._get_playlist_data()
