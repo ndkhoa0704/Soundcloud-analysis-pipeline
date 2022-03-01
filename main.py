@@ -1,5 +1,5 @@
-from pipeline.getdata import SoundcloudCrawler
-from pipeline.preprocess import SoundcloudPreprocess
+from pipeline.getdata import SCcrawl
+from pipeline.visualize import SCviz
 import sys
 import getopt
 import os
@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     '''
     Arguments: 
-    -r <userid_min:userid_max> (default: 1:999999999)
+    -r <userid_min:userid_max> (default: 1:999999999)c
     --nu <number of users> (default: 1000)
     --nr <number of records for each users> (default: 1000)
     --ep <driver path> (default: ./chromedriver)
@@ -29,7 +29,7 @@ if __name__ == '__main__':
         sys.argv[1:],
         '-r:m:c',
         ['nu=', 'nr=', 'ep=', 'rdp=', 'nct=',
-            'nlt=', 'ncp=', 'nlp=', 'pdp=', 'clr']
+            'nlt=', 'ncp=', 'nlp=', 'pdp=', 'clr', 'split']
     )
 
     # Init variables
@@ -42,6 +42,7 @@ if __name__ == '__main__':
     id_range = [1, 999999999]
     checkpoint = False
     method = 'random'
+    split_data = False
     # Parse arguments
     for opt, arg in optlist:
         if opt == '--nr':
@@ -70,17 +71,21 @@ if __name__ == '__main__':
         elif opt == '-c':
             checkpoint = True
         elif opt == '--clr':
-            for f in glob.glob("../data/**/*.csv", recursive=True):
+
+            for f in glob.glob("./data/**/*.csv", recursive=True):
                 os.remove(f)
+        elif opt == '--split':
+            split_data = True
         else:
             raise Exception('Bad arguments')
 
     # Further checkings
     if method == 'random' and checkpoint == True:
+
         raise Exception('checkpoint does not work with random method')
 
     # Crawl data
-    crawler = SoundcloudCrawler(
+    crawler = SCcrawl(
         userid_min=id_range[0],
         userid_max=id_range[1],
         no_users=no_users,
@@ -90,12 +95,13 @@ if __name__ == '__main__':
         no_playlists_created=no_created_playlists,
         executable_path=executable_path,
         data_path=raw_data_path,
-        checkpoint=checkpoint
+        checkpoint=checkpoint,
+        split_data=split_data
     )
 
     crawler.get_data(sampling_method=method, waiting_time=0.03)
 
     # Preprocess
-    # preproc = SoundcloudPreprocess(raw_data_path, processed_data_path)
+    preproc = SCviz(raw_data_path, processed_data_path)
 
-    # preproc.process()
+    preproc._preprocess()

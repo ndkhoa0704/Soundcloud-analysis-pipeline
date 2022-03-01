@@ -24,4 +24,4 @@ COPY . /project
 # Install dependencies
 RUN pip3 install -r requirements.txt
 
-CMD ["python3", "-m","main"]
+# ENTRYPOINT [ "python", "main.py"]
