@@ -133,3 +133,4 @@ test.ipynb
 
 *.csv
 .vscode
+chromedriver
