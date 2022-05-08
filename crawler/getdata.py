@@ -26,6 +26,7 @@ class SCcrawl:
 ):
 
         # Init variables
+        self._NUMBER_OF_ATTEMPTS = 10
         self._WAITING_TIME = 0.03
         self._top_chart_user = None
         self._records_limit = 100
@@ -49,7 +50,8 @@ class SCcrawl:
             self._driver = Chrome(options=option)
 
     def _get_genres(self):
-        while True:
+        for _ in range(self._NUMBER_OF_ATTEMPTS):
+            time.sleep(self._WAITING_TIME)
             try:
                 self._driver.get(
                     "https://soundcloud.com/charts/top?genre=all-music&country=all-countries")
@@ -79,7 +81,14 @@ class SCcrawl:
         jsondata = []
         # Get top 100 music for each genre
         for g in genres:
-            while True:
+            #####
+            # Test
+            print(f'Current genre: {g}')
+            #####
+
+            time.sleep(self._WAITING_TIME)
+
+            for _ in range(self._NUMBER_OF_ATTEMPTS):
                 response = requests.get(
                     f'''
                     https://api-v2.soundcloud.com/charts?kind=top&genre=soundcloud%3Agenres%3A{g}&offset=0&limit=100&client_id={client_id}&app_version=1461312517
@@ -99,7 +108,8 @@ class SCcrawl:
     def _get_client_id(self):
         # Use selenium to get client id
         # Get client id of the logged-in user in the browser
-        while True:
+        for _ in range(self._NUMBER_OF_ATTEMPTS):
+            time.sleep(self._WAITING_TIME)
             try:
                 self._driver.get('https://soundcloud.com')
                 log = self._driver.get_log('browser')
@@ -118,10 +128,13 @@ class SCcrawl:
         self._get_genres()
         genres = list(self._top_chart_user.keys())
         for g in genres:
+            print(f'Current genre: {g}')
             jsondata = []
+            time.sleep(self._WAITING_TIME)
             for user_id in self._top_chart_user[g]:
-                while True:
-                    # Reset attemps since user id has not crawled yet
+                print(f'Current user id: {user_id}')
+                for _ in range(self._NUMBER_OF_ATTEMPTS):
+
                     response = None
                     time.sleep(self._WAITING_TIME)
 
@@ -133,9 +146,10 @@ class SCcrawl:
                     
                     if response and response.ok == True:
                         # Get tracks and playlists data of each user
-                        jsondata['created_tracks'], jsondata['liked_tracks'] = self._get_track_data(user_id, client_id) 
-                        jsondata['created_playlists'], jsondata['liked_playlists'] = self._get_playlist_data(user_id, client_id) 
-                        jsondata.append(response.json())
+                        data = response.json()
+                        data['created_tracks'], data['liked_tracks'] = self._get_track_data(user_id, client_id) 
+                        data['created_playlists'], data['liked_playlists'] = self._get_playlist_data(user_id, client_id) 
+                        jsondata.append(data)
                         break
                     
             # Save data
@@ -147,20 +161,14 @@ class SCcrawl:
         limit: number of items to be crawled
         '''
         jsondata = []
-        for user_id in self._userids:
-            for _ in range(self._NUMBER_OF_ATTEMPTS):
-                time.sleep(self._WAITING_TIME)
-                try:
-                    response = requests.get(url)
-                except:
-                    pass
-                if response and response.ok == True:
-                    # Add user id
-                    raw = response.json()['collection']
-                    for data in raw:
-                        data['userid'] = user_id
-                    jsondata += raw
-                    break
+        for _ in range(self._NUMBER_OF_ATTEMPTS):
+            time.sleep(self._WAITING_TIME)
+            try:
+                response = requests.get(url)
+            except:
+                pass
+            if response and response.ok == True:
+                break
         return jsondata
 
     def _get_track_data(self, user_id, client_id):
