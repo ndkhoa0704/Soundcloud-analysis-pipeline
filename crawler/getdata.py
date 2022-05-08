@@ -1,3 +1,4 @@
+from bleach import clean
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -54,7 +55,7 @@ class SCcrawl:
                     "https://soundcloud.com/charts/top?genre=all-music&country=all-countries")
                 WebDriverWait(self._driver, 30).until(EC.presence_of_element_located(
                 (By.XPATH, '//*[@id="content"]/div/div/div[1]/div[3]/div/div[4]/ul/li[1]/div/div[1]')))
-                soup = BeautifulSoup(self._driver.page_source)
+                soup = BeautifulSoup(self._driver.page_source, features="html.parser")
                 genres_raw = soup.findAll("span",class_="sc-button-label-alt")
                 # Remove tags about current genres from the sample page
                 genres_raw.pop(0)
@@ -73,7 +74,7 @@ class SCcrawl:
         return genres
 
     def _get_top_chart(self, client_id):
-        top_user = dict
+        top_user = dict()
         genres = self._get_genres()
         jsondata = []
         # Get top 100 music for each genre
@@ -114,6 +115,7 @@ class SCcrawl:
         '''
         Get user data
         '''
+        self._get_genres()
         genres = list(self._top_chart_user.keys())
         for g in genres:
             jsondata = []
@@ -131,8 +133,8 @@ class SCcrawl:
                     
                     if response and response.ok == True:
                         # Get tracks and playlists data of each user
-                        jsondata['created_tracks'], jsondata['liked_tracks'] = self._get_track_data(user_id) 
-                        jsondata['created_playlists'], jsondata['liked_playlists'] = self._get_playlist_data(user_id) 
+                        jsondata['created_tracks'], jsondata['liked_tracks'] = self._get_track_data(user_id, client_id) 
+                        jsondata['created_playlists'], jsondata['liked_playlists'] = self._get_playlist_data(user_id, client_id) 
                         jsondata.append(response.json())
                         break
                     
@@ -212,6 +214,7 @@ class SCcrawl:
             self._WAITING_TIME = waiting_time
         
         client_id = self._get_client_id()
+        self._get_top_chart(client_id)
         self._get_user_info(client_id)
         del client_id
 
@@ -222,3 +225,5 @@ if __name__ == '__main__':
         connection_string="mongodb://localhost:27017/",
         executable_path='./chromedriver'
         )
+    
+    crawler.get_data(0.3)
