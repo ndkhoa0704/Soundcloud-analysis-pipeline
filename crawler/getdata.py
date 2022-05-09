@@ -76,10 +76,18 @@ class SCcrawl:
         return genres
 
     def _get_top_chart(self, client_id):
+        '''
+        Parameters:
+        - client_id: client id for soundcloud api
+        Return: None
+        
+        Description:
+        - Get top 100 tracks from top charts for each genre
+        - Store tracks' creators' id to crawl their info
+        '''
         top_user = dict()
         genres = self._get_genres()
         jsondata = []
-        # Get top 100 music for each genre
         for g in genres:
             #####
             # Test
@@ -106,8 +114,11 @@ class SCcrawl:
         self._database['top_chart'].insert_many(jsondata)
 
     def _get_client_id(self):
-        # Use selenium to get client id
-        # Get client id of the logged-in user in the browser
+        '''
+        Description:
+        - Function to get client id
+        - Return client id
+        '''
         for _ in range(self._NUMBER_OF_ATTEMPTS):
             time.sleep(self._WAITING_TIME)
             try:

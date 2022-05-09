@@ -24,4 +24,4 @@ COPY . /project
 # Install dependencies
 RUN pip3 install -r requirements.txt
 
-# ENTRYPOINT [ "python", "main.py"]
+ENTRYPOINT [ "python", "getdata.py"]
