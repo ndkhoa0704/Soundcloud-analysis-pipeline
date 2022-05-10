@@ -1,4 +1,3 @@
-from bleach import clean
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -241,7 +240,7 @@ class SCcrawl:
 if __name__ == '__main__':
 
     crawler = SCcrawl(
-        connection_string="mongodb://localhost:27017/",
+        connection_string="mongodb://scdb:27017/",
         executable_path='./chromedriver'
         )
     

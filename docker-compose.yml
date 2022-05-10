@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  scdb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    
+  crawler:
+    image: koanguyn0407/sc_crawler:latest
