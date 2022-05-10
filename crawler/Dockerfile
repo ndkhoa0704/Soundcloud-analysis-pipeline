@@ -3,10 +3,12 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # # Environment
-# ENV TZ=Asia/Ho_Chi_Minh
-# RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt-get update && apt-get install -y curl wget python3.10 python3-distutils python3-pip python3-apt
-RUN python3 -m pip install --upgrade pip
+RUN apt-get update && apt-get install -y wget unzip
+
+RUN apt-get install -y software-properties-common gcc && \
+    add-apt-repository -y ppa:deadsnakes/ppa
+
+RUN apt-get install -y python3.10 python3-distutils python3-pip python3-apt
 
 # # Install chrome
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -26,4 +28,4 @@ COPY . /code
 # Install dependencies
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT [ "python", "getdata.py"]
+ENTRYPOINT [ "python3", "getdata.py"]
