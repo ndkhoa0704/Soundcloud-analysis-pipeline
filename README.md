@@ -16,29 +16,7 @@ conda activate workenv
 ```
 **To get data generated from container:**
 ```
-docker cp <CONTAINER's NAME/ID>:<data path in the container> <data path on host>
-```
-
-## Ubuntu
-**Dependencies:**
-* chromedriver
-* google chrome or chromium web browser
-* selenium 4.1.0
-* sklearn
-* beautifulsoup 4.10.0
-* numpy
-* pandas
-* requests 2.27.1
-
-
-### Conda
-```
-conda env create -n environment.yml
-```
-
-### Python venv
-```
-pip install -r requirements.txt
+docker-compose up 
 ```
 
 ## Execution:
