@@ -7,7 +7,9 @@ import numpy as np
 import pandas as pd
 import time
 from datetime import date
-import glob
+import pymongo
+
+CURRENT_TIME_STR = date.today().strftime("%d-%m-%Y")
 
 
 class SCcrawl:
@@ -21,10 +23,9 @@ class SCcrawl:
         no_tracks_created: int,
         no_playlists_liked: int,
         no_playlists_created: int,
-        checkpoint: bool,
-        split_data: bool,
-        executable_path: str = None,
-        data_path: str = './data/raw'
+        driver_path: str = None,
+        conn_str='mongodb://127.0.0.1:27017',
+        dbname='scpipe'
     ):
         '''
         Use both api and html parser method to crawl data
@@ -36,7 +37,7 @@ class SCcrawl:
         * no_tracks_created: number of created tracks to be crawled for each user
         * no_playlists_created: number of created playlists to be crawled for each user
         * checkpoint: boolean indicates use of check point
-        * executable_path: path to webdriver
+        * driver_path: path to webdriver
         * data_path: path to folder to save data
         '''
 
@@ -46,19 +47,16 @@ class SCcrawl:
         self._userid_max = userid_max
         self._userid_min = userid_min
         self._no_users = no_users
-        self._data_path = data_path
-
-        # Only used for forward and backward sampling
-        self._checkpoint_path = './data/checkpoint'
-        self._checkpoint = checkpoint
 
         self._no_tracks_liked = no_tracks_liked
         self._no_tracks_created = no_tracks_created
         self._no_playlists_liked = no_playlists_liked
         self._no_playlists_created = no_playlists_created
         self._userids = []
-        self._cur_user_id = None
-        self._split_data = split_data
+
+        # Setup database
+        client = pymongo.MongoClient(conn_str)
+        self._db = client.get_database(dbname)
 
         # Create driver
         option = Options()
@@ -67,18 +65,35 @@ class SCcrawl:
         option.add_argument('--no-sandbox')
 
         self._driver = None
-        if executable_path:
+        if driver_path:
             self._driver = Chrome(service=Service(
-                executable_path), options=option)
+                driver_path), options=option)
         else:
             self._driver = Chrome(options=option)
 
         # Get client id
         self._client_id = self._get_client_id()
 
+    def _save_data(self, collname: str, data: list):
+        '''
+        Save data to mongodb
+
+        # Parameters:
+        - collname: collection name
+        - data: list of json data
+
+        # Return: 
+        - None
+        '''
+        collection = self._db.get_collection(collname)
+        collection.insert_many(data)
+
     def _get_client_id(self):
-        # Use selenium to get client id
-        # Get client id of the logged-in user in the browser
+        '''
+        Get soundcloud client's id from with chrome
+        # Return 
+        - client_id: str
+        '''
         while True:
             try:
                 self._driver.get('https://soundcloud.com')
@@ -100,40 +115,6 @@ class SCcrawl:
             return count - 1
         else:
             raise Exception('Invalid argument')
-
-    def _save_data_split(self, data, filename):
-        '''
-        Save data to csv
-        Split to multiple files with date and index
-        '''
-        today = date.today().strftime("%m-%d-%Y")
-        similar_files = glob.glob(f'./data/raw/{filename}-{today}*')
-        counter = 0
-        for f in similar_files:
-            t = int(
-                re.search(
-                    r'\d{2}-\d{2}-\d{4}-\d{1,}',
-                    f).group(0).split('-')[-1]
-            )
-
-            if counter < t:
-                counter = t
-        data.to_csv(
-            self._data_path + f'/{filename}-{today}-{counter + 1}.csv',
-            escapechar='\\',
-            index=False
-        )
-
-    def _save_data(self, data, filename):
-        '''
-        Save data to files
-        '''
-        today = date.today().strftime("%m-%d-%Y")
-        data.to_csv(
-            self._data_path +
-            f'/{filename}-{today}.csv',
-            escapechar='\\',
-            index=False)
 
     def _get_user_info(self, sampling_method: str):
         '''
@@ -193,18 +174,11 @@ class SCcrawl:
             if not self._userid_min <= cur_id <= self._userid_max:
                 break
 
-        # Used as checkpoint
-        self._cur_user_id = cur_id
-
         data = pd.json_normalize(jsondata)
         data['id'] = self._userids
 
-        # Type of saving
-        save = self._save_data
-        if self._split_data:
-            self._save_data_split
-
-        save(data, 'users')
+        # Save
+        self._save_data('users', data)
 
     def _crawl(self, url, limit):
         '''
@@ -251,18 +225,13 @@ class SCcrawl:
         ))
 
         # Save
-        self._save_data(data, 'liked_tracks')
+        self._save_data('liked_tracks', data)
 
     def _get_playlist_data(self):
         '''
         Get liked playlists
         Get created playlists
         '''
-
-        # Type of saving
-        save = self._save_data
-        if self._split_data:
-            save = self._save_data_split
 
         # Crawl created playlists
         data = pd.json_normalize(self._crawl(
@@ -271,7 +240,7 @@ class SCcrawl:
         ))
 
         # Save
-        save(data, 'created_playlists')
+        self._save_data('created_playlists', data)
 
         # Crawl liked playlists
         data = pd.json_normalize(self._crawl(
@@ -280,7 +249,7 @@ class SCcrawl:
         ))
 
         # Save
-        save(data, 'liked_playlists')
+        self._save_data('liked_playlists', data)
 
     def get_data(self, waiting_time, sampling_method: str = 'forward'):
         '''

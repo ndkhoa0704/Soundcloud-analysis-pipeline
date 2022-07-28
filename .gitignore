@@ -133,5 +133,6 @@ test.ipynb
 
 *.csv
 .vscode
-
+.devcontainer
+chromedriver
 chkpnt

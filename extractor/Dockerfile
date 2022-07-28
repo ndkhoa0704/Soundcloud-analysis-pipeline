@@ -1,27 +1,21 @@
-ARG UBUNTU_VER=20.04
+FROM python:3.8
 
-FROM ubuntu:${UBUNTU_VER}
+# Chrome
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
+    apt-get -y update && apt-get install -y google-chrome-stable && \
+    apt-get install -yqq unzip && \
+    apt-get clean
 
-# System packages 
-RUN apt-get update && apt-get install -yq curl wget jq vim
-RUN apt-get update && apt-get install -y software-properties-common gcc
+WORKDIR /code
+COPY . /code
 
-RUN apt-get update && apt-get install -y python3.10 python3-distutils python3-pip python3-apt
-RUN python3 -m pip install --upgrade pip
-
-ENV TZ=Asia/Ho_Chi_Minh
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-# Get browser
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt install ./google-chrome-stable_current_amd64.deb -y
-
-# Copy files
-RUN mkdir /project
-WORKDIR /project
-COPY . /project
+# Setup chromedriver
+RUN latest=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE) && \
+    wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/"$latest"/chromedriver_linux64.zip && \
+    unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/ && rm /tmp/chromedriver.zip
 
 # Install dependencies
-RUN pip3 install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# ENTRYPOINT [ "python", "main.py"]
+# ENTRYPOINT [ "python3", "getdata.py"]

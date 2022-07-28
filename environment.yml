@@ -1,0 +1,14 @@
+name: scpipe
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - scikit-learn
+  - requests
+  - pandas
+  - pymongo
+  - pip:
+    - lxml
+    - html5lib
+    - beautifulsoup4
+    - selenium
