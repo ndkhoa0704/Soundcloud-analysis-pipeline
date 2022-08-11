@@ -1,10 +1,5 @@
 # Soundcloud-analysis-pipeline
-[![.github/workflows/pipelinejob.yml](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/pipelinejob.yml/badge.svg)](https://github.com/ndkhoa0704/Soundcloud-analysis-pipeline/actions/workflows/pipelinejob.yml)
-
-A simple pipeline that does:
-* Data collection 
-* Preprocess data
-* Analyze and generate report
+A simple pipeline to analyze soundcloud top tracks charts
 
 ---
 # Usage
@@ -47,6 +42,3 @@ python -m main <arguments>
 * Liked tracks
 * Created playlists
 * Liked playlists
-
-# Important:
-The project uses soundcloud api-v2, which is undocumented and can be easily changed in the future.
