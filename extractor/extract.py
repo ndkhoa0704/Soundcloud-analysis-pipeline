@@ -26,9 +26,9 @@ if __name__ == '__main__':
     )
 
     # Init variables
-    no_users = 1000
+    no_users = 50
     no_records = no_created_tracks = no_liked_tracks = \
-        no_created_playlists = noliked_playlist = 1000
+        no_created_playlists = noliked_playlist = 10000
     driver_path = './chromedriver'
     id_range = [1, 999999999]
     method = 'random'
@@ -67,3 +67,5 @@ if __name__ == '__main__':
         no_playlists_created=no_created_playlists,
         driver_path=driver_path,
     )
+
+    crawler.get_data()

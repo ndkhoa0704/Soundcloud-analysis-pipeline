@@ -4,5 +4,6 @@ services:
     image: mongo:latest
     ports:
       - "27017:27017" 
+  
   scpipe_extractor:
     build: ./extractor/.

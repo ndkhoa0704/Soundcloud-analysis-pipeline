@@ -4,12 +4,12 @@ from selenium.webdriver.chrome.service import Service
 import requests
 import re
 import numpy as np
-import pandas as pd
 import time
-from datetime import date
+import datetime as dt
 import pymongo
 
-CURRENT_TIME_STR = date.today().strftime("%d-%m-%Y")
+# UTC format
+CURRENT_TIME_STR = dt.datetime.utcnow().isoformat()[:-7] + 'Z'
 
 
 class SCcrawl:
@@ -24,8 +24,8 @@ class SCcrawl:
         no_playlists_liked: int,
         no_playlists_created: int,
         driver_path: str = None,
-        conn_str='mongodb://127.0.0.1:27017',
-        dbname='scpipe'
+        conn_str='mongodb://scpipe_mongo:27017',
+        dbname=None
     ):
         '''
         Use both api and html parser method to crawl data
@@ -36,13 +36,12 @@ class SCcrawl:
         * no_tracks_liked: number of liked tracks to be crawled for each user
         * no_tracks_created: number of created tracks to be crawled for each user
         * no_playlists_created: number of created playlists to be crawled for each user
-        * checkpoint: boolean indicates use of check point
         * driver_path: path to webdriver
         * data_path: path to folder to save data
         '''
 
         # Init variables
-        self._WAITING_TIME = 0.03
+        self._WAITING_TIME = None
         self._NUMBER_OF_ATTEMPTS = 3
         self._userid_max = userid_max
         self._userid_min = userid_min
@@ -53,10 +52,19 @@ class SCcrawl:
         self._no_playlists_liked = no_playlists_liked
         self._no_playlists_created = no_playlists_created
         self._userids = []
+        
+        self.__MAX_SKIP_USER = 100
 
         # Setup database
         client = pymongo.MongoClient(conn_str)
+
+        if dbname == None:
+            dbname = 'scpipe'
+    
+        client.get_database(dbname)
+
         self._db = client.get_database(dbname)
+
 
         # Create driver
         option = Options()
@@ -82,16 +90,20 @@ class SCcrawl:
         - collname: collection name
         - data: list of json data
 
-        # Return: 
+        # Return:
         - None
         '''
+        if data == None:
+            return False
+        
         collection = self._db.get_collection(collname)
         collection.insert_many(data)
+        return True
 
     def _get_client_id(self):
         '''
         Get soundcloud client's id from with chrome
-        # Return 
+        # Return
         - client_id: str
         '''
         while True:
@@ -121,29 +133,19 @@ class SCcrawl:
         Get user data and store in user.csv
         '''
         jsondata = []
-
-        # Load checkpoint
-        if self._checkpoint:
-            try:
-                f = open(self._checkpoint_path, 'r')
-                self._userid_min, self._userid_max = tuple(
-                    map(int, f.read().split()))
-            except:
-                pass
-
         cur_id = self._userid_min
+        cur_try_get_user = 0
         for _ in range(self._no_users):
+            # Stop because of posible server's error
+            if cur_try_get_user == self.__MAX_SKIP_USER:
+                raise "Max amount attempts of getting user info"
+                
             attempts = 0
             while True:
                 attempts += 1
                 cur_id = self.__sampling(cur_id, sampling_method)
-                # This checking is used for random method
-                if cur_id in self._userids:
-                    continue
-
                 user_id = cur_id
                 got_user_in4 = False
-
                 if user_id not in self._userids:
                     for _ in range(self._NUMBER_OF_ATTEMPTS):
                         # Reset attemps since user id has not crawled yet
@@ -157,8 +159,14 @@ class SCcrawl:
                         except:
                             pass
 
+                        # Log
+                        # print('Current user: ', user_id)
+
                         if response and response.ok == True:
-                            jsondata.append(response.json())
+                            # Add date
+                            data = response.json()
+                            data['get_date'] = CURRENT_TIME_STR
+                            jsondata.append(data)
                             self._userids.append(user_id)
                             got_user_in4 = True
                             break
@@ -174,11 +182,8 @@ class SCcrawl:
             if not self._userid_min <= cur_id <= self._userid_max:
                 break
 
-        data = pd.json_normalize(jsondata)
-        data['id'] = self._userids
-
         # Save
-        self._save_data('users', data)
+        self._save_data('users', jsondata)
 
     def _crawl(self, url, limit):
         '''
@@ -196,11 +201,15 @@ class SCcrawl:
                     pass
                 if response and response.ok == True:
                     # Add user id
-                    raw = response.json()['collection']
-                    for data in raw:
-                        data['userid'] = user_id
-                    jsondata += raw
+                    data = response.json()
+                    data['get_date'] = CURRENT_TIME_STR
+                    data['userid'] = user_id
+                    jsondata.append(data)
                     break
+
+        if len(jsondata) == 0:
+            return None
+            
         return jsondata
 
     def _get_track_data(self):
@@ -210,19 +219,19 @@ class SCcrawl:
         '''
 
         # Crawl created tracks
-        data = pd.json_normalize(self._crawl(
+        data = self._crawl(
             'https://api-v2.soundcloud.com/users/{}/tracks?client_id={}&limit={}',
             self._no_tracks_created
-        ))
+        )
 
         # Save
-        self._save_data(data, 'created_tracks')
+        self._save_data('created_tracks', data)
 
         # Crawl liked tracks
-        data = pd.json_normalize(self._crawl(
+        data = self._crawl(
             'https://api-v2.soundcloud.com/users/{}/track_likes?client_id={}&limit={}',
             self._no_tracks_liked
-        ))
+        )
 
         # Save
         self._save_data('liked_tracks', data)
@@ -234,24 +243,24 @@ class SCcrawl:
         '''
 
         # Crawl created playlists
-        data = pd.json_normalize(self._crawl(
+        data = self._crawl(
             'https://api-v2.soundcloud.com/users/{}/playlists?client_id={}&limit={}',
             self._no_playlists_created
-        ))
+        )
 
         # Save
         self._save_data('created_playlists', data)
 
         # Crawl liked playlists
-        data = pd.json_normalize(self._crawl(
+        data = self._crawl(
             'https://api-v2.soundcloud.com/users/{}/playlist_likes?client_id={}&limit={}',
             self._no_playlists_liked
-        ))
+        )
 
         # Save
         self._save_data('liked_playlists', data)
 
-    def get_data(self, waiting_time, sampling_method: str = 'forward'):
+    def get_data(self, waiting_time=0.03, sampling_method: str = 'random'):
         '''
         Parameters:
 
@@ -261,16 +270,10 @@ class SCcrawl:
         * backward: userid_max -> userid_min
         waiting_time: amount of time needed between records (None: default 0.03)
         '''
-        if waiting_time != None:
-            self._WAITING_TIME = waiting_time
+
+        self._WAITING_TIME = waiting_time
 
         self._get_user_info(sampling_method)
         self._get_track_data()
         self._get_playlist_data()
         self._driver.close()
-
-        # Update checkpoint
-        if self._checkpoint:
-            with open(self._checkpoint_path, 'w') as f:
-                f.write(str(self._cur_user_id) + '\n')
-                f.write(str(self._userid_max))
