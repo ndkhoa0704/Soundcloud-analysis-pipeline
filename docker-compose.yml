@@ -1,9 +1,9 @@
-version: "3.7"
+version: "3.9"
 services:
-  scdb:
+  scpipe_mongo:
     image: mongo:latest
     ports:
-      - 27017:27017
-    
-  crawler:
-    image: koanguyn0407/sc_crawler:latest
+      - "27017:27017" 
+  
+  scpipe_extractor:
+    build: ./extractor/.
