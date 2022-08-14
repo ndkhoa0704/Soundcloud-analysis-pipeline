@@ -1,4 +1,4 @@
-from getdata import SCcrawl
+from getdata import SC_crawler
 import sys
 import getopt
 
@@ -57,7 +57,7 @@ if __name__ == '__main__':
             raise Exception('Bad arguments')
 
     # Crawl data
-    crawler = SCcrawl(
+    crawler = SC_crawler(
         userid_min=id_range[0],
         userid_max=id_range[1],
         no_users=no_users,
@@ -68,4 +68,4 @@ if __name__ == '__main__':
         driver_path=driver_path,
     )
 
-    crawler.get_data()
+    crawler.collect()

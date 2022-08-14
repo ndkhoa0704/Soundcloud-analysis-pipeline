@@ -5,8 +5,10 @@ services:
     ports:
       - "27017:27017" 
   
-  scpipe_extractor:
-    build: ./extractor/.
+  scpipe_collector:
+    build: 
+      context: .
+      dockerfile: Dockerfile-sc_crawler
     depends_on:
       - "scpipe_mongo"
       - "scpipe_mysql"
@@ -19,3 +21,11 @@ services:
       - ./mysqldb/database.sql:/docker-entrypoint-initdb.d/database.sql
     env_file:
         - ./mysqldb/env_file.env
+
+  scpipe_transformer:
+    build: 
+      context: .
+      dockerfile: Dockerfile-sc_transformer
+    depends_on:
+      - "scpipe_mysql"
+      - "scpipe_collector"
