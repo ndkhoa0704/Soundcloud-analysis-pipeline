@@ -7,3 +7,15 @@ services:
   
   scpipe_extractor:
     build: ./extractor/.
+    depends_on:
+      - "scpipe_mongo"
+      - "scpipe_mysql"
+  
+  scpipe_mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysqldb/database.sql:/docker-entrypoint-initdb.d/database.sql
+    env_file:
+        - ./mysqldb/env_file.env
