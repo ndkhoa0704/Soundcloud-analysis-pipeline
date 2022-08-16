@@ -6,13 +6,13 @@ import re
 import numpy as np
 import time
 import datetime as dt
-import pymongo
+from collector.collector import Collector
 
 # UTC format
 CURRENT_TIME_STR = dt.datetime.utcnow().isoformat()[:-7] + 'Z'
 
 
-class SCcrawl:
+class SC_crawler(Collector):
 
     def __init__(
         self,
@@ -24,8 +24,7 @@ class SCcrawl:
         no_playlists_liked: int,
         no_playlists_created: int,
         driver_path: str = None,
-        conn_str='mongodb://scpipe_mongo:27017',
-        dbname=None
+        **kwargs
     ):
         '''
         Use both api and html parser method to crawl data
@@ -40,9 +39,11 @@ class SCcrawl:
         * data_path: path to folder to save data
         '''
 
+        super().__init__(**kwargs)
+
         # Init variables
         self._WAITING_TIME = None
-        self._NUMBER_OF_ATTEMPTS = 3
+        self._NUMBER_OF_ATTEMPTS = 5
         self._userid_max = userid_max
         self._userid_min = userid_min
         self._no_users = no_users
@@ -54,17 +55,6 @@ class SCcrawl:
         self._userids = []
         
         self.__MAX_SKIP_USER = 100
-
-        # Setup database
-        client = pymongo.MongoClient(conn_str)
-
-        if dbname == None:
-            dbname = 'scpipe'
-    
-        client.get_database(dbname)
-
-        self._db = client.get_database(dbname)
-
 
         # Create driver
         option = Options()
@@ -260,7 +250,7 @@ class SCcrawl:
         # Save
         self._save_data('liked_playlists', data)
 
-    def get_data(self, waiting_time=0.03, sampling_method: str = 'random'):
+    def collect(self, waiting_time=0.03, sampling_method: str = 'random'):
         '''
         Parameters:
 

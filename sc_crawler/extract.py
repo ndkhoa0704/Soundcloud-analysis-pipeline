@@ -1,4 +1,4 @@
-from getdata import SCcrawl
+from getdata import SC_crawler
 import sys
 import getopt
 
@@ -57,7 +57,7 @@ if __name__ == '__main__':
             raise Exception('Bad arguments')
 
     # Crawl data
-    crawler = SCcrawl(
+    crawler = SC_crawler(
         userid_min=id_range[0],
         userid_max=id_range[1],
         no_users=no_users,
@@ -66,6 +66,8 @@ if __name__ == '__main__':
         no_playlists_liked=no_liked_tracks,
         no_playlists_created=no_created_playlists,
         driver_path=driver_path,
+        dbname='scpipe',
+        conn_str='mongodb://scpipe_mongo:27017'
     )
 
-    crawler.get_data()
+    crawler.collect()

@@ -8,7 +8,8 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     apt-get clean
 
 WORKDIR /code
-COPY . /code
+COPY ./sc_crawler /code
+COPY ./collector /code/collector
 
 # Setup chromedriver
 RUN latest=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE) && \
