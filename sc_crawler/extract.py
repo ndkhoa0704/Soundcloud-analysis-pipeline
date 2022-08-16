@@ -66,6 +66,8 @@ if __name__ == '__main__':
         no_playlists_liked=no_liked_tracks,
         no_playlists_created=no_created_playlists,
         driver_path=driver_path,
+        dbname='scpipe',
+        conn_str='mongodb://scpipe_mongo:27017'
     )
 
     crawler.collect()

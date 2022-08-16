@@ -6,7 +6,7 @@ import re
 import numpy as np
 import time
 import datetime as dt
-from ..collector.collector import Collector
+from collector.collector import Collector
 
 # UTC format
 CURRENT_TIME_STR = dt.datetime.utcnow().isoformat()[:-7] + 'Z'
@@ -39,7 +39,7 @@ class SC_crawler(Collector):
         * data_path: path to folder to save data
         '''
 
-        super().__init__()
+        super().__init__(**kwargs)
 
         # Init variables
         self._WAITING_TIME = None
