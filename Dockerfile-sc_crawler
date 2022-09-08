@@ -19,4 +19,4 @@ RUN latest=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE) && \
 # Install dependencies
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# ENTRYPOINT [ "python3", "getdata.py"]
+ENTRYPOINT [ "python", "extract.py", '--nu', '1000', '--nr', '1000']

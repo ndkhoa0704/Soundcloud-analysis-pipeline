@@ -44,6 +44,7 @@ class SC_crawler(Collector):
         # Init variables
         self._WAITING_TIME = None
         self._NUMBER_OF_ATTEMPTS = 5
+        self._MAX_SKIP_USER = 1000
         self._userid_max = userid_max
         self._userid_min = userid_min
         self._no_users = no_users
@@ -53,8 +54,6 @@ class SC_crawler(Collector):
         self._no_playlists_liked = no_playlists_liked
         self._no_playlists_created = no_playlists_created
         self._userids = []
-        
-        self.__MAX_SKIP_USER = 100
 
         # Create driver
         option = Options()
@@ -126,20 +125,17 @@ class SC_crawler(Collector):
         cur_id = self._userid_min
         cur_try_get_user = 0
         for _ in range(self._no_users):
-            # Stop because of posible server's error
-            if cur_try_get_user == self.__MAX_SKIP_USER:
-                raise "Max amount attempts of getting user info"
-                
-            attempts = 0
+ 
+            # Stop if a certain amount of user ids are skipped 
+            if cur_try_get_user == self._MAX_SKIP_USER:
+                raise 'Possible server error or we are banned from server'
+
             while True:
-                attempts += 1
                 cur_id = self.__sampling(cur_id, sampling_method)
                 user_id = cur_id
                 got_user_in4 = False
                 if user_id not in self._userids:
                     for _ in range(self._NUMBER_OF_ATTEMPTS):
-                        # Reset attemps since user id has not crawled yet
-                        attempts = 0
                         time.sleep(self._WAITING_TIME)
                         response = None
 
@@ -162,7 +158,10 @@ class SC_crawler(Collector):
                             break
                 # User info retrieved
                 if got_user_in4 == True:
+                    cur_try_get_user = 0
                     break
+                else:
+                    cur_try_get_user += 1
 
                 # Stopping condition
                 # Forward and backward
